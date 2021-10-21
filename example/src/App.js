@@ -1,10 +1,22 @@
 import React from 'react'
 
-import { ExampleComponent } from 'zoinodemodules'
+import { ZTextField, ZGrid, ZTextBoxSearch, ZAppBar } from 'zoinodemodules'
 import 'zoinodemodules/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <div>
+    <ZAppBar position="static">
+      <p>Zoi Fintech</p>
+    </ZAppBar>
+    <ZGrid container >
+      <ZGrid item md={3}>
+        <ZTextField label="name" />
+      </ZGrid>
+      <ZGrid item md={3}>
+        <ZTextBoxSearch placeholder="Search" />
+      </ZGrid>
+    </ZGrid>
+  </div>
 }
 
 export default App
