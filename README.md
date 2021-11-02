@@ -67,7 +67,6 @@ Prop Name | Type | Default | Description
 `helperText` | String | | If `true`, The error text content.
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
-## License
 
 ## Button
 
@@ -105,6 +104,37 @@ Prop Name | Type | Default | Description
 `startIcon` | node | | Element placed before the children.
 `color` | 'inherit' 'primary' 'secondary' 'success' 'error' 'info' 'warning' string | primary| Element placed before the children.
 `variant` | 'contained' 'outlined''text' string | text| The variant to use..
+
+## Typography
+
+```jsx
+import React, { Component } from 'react'
+
+import { ZTypography } from 'zoinodemodules'
+
+class Typography extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <ZTypography isLoading={true}>Hello</ZTypography>
+        <ZTypography variant="h1" component="h2">h1. Heading</ZTypography>  
+      </div>
+    )
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`align` | 'center' 'inherit' 'justify' 'left' 'right' |inherit |Set the text-align on the component.. 
+`isLoading` | bool |false | If `true`, circular progress load. 
+`noWrap` | bool | false| If true, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+
 ## License
 
 
