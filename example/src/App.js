@@ -10,10 +10,10 @@ const App = () => {
     </ZAppBar>
     <ZGrid container >
       <ZGrid item md={3}>
-        <ZTextField label="name" />
+        <ZTextField label="name" isLoading={true}/>
       </ZGrid>
       <ZGrid item md={3}>
-        <ZTextBoxSearch placeholder="Search" />
+        <ZTextBoxSearch  placeholder="Search" />
       </ZGrid>
     </ZGrid>
   </div>
