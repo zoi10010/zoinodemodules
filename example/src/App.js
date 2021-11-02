@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ZTextField, ZGrid, ZTextBoxSearch, ZAppBar } from 'zoinodemodules'
+import { ZTextField, ZGrid, ZTextBoxSearch, ZAppBar,ZButton } from 'zoinodemodules'
 import 'zoinodemodules/dist/index.css'
 
 const App = () => {
@@ -10,10 +10,14 @@ const App = () => {
     </ZAppBar>
     <ZGrid container >
       <ZGrid item md={3}>
-        <ZTextField label="name" isLoading={true}/>
+        <ZTextField label="name" isLoading={true} />
       </ZGrid>
       <ZGrid item md={3}>
-        <ZTextBoxSearch  placeholder="Search" />
+        <ZButton color="primary" name="Save"></ZButton>
+        <ZButton variant="contained" color="success" name="Success" isLoading="true" disabled="true">
+        </ZButton>
+        <ZButton variant="outlined"color="Secondary" name="Error">
+        </ZButton>
       </ZGrid>
     </ZGrid>
   </div>

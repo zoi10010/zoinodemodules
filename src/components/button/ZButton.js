@@ -9,12 +9,15 @@ import { green } from '@material-ui/core/colors';
 export default function ContainedButtons(props) {
     const [loading, setLoading] = useState(false)
     const classes = useStyles();
+
     useEffect(() => {
         setLoading(props.isLoading)
     }, [props.isLoading, props.disabled])
+
     return (
-        <div className={classes.root}>
+        <div>
             <Button
+                {...props}
                 fullWidth={props.fullWidth}
                 size={props.size}
                 onClick={props.onClick}
@@ -23,38 +26,18 @@ export default function ContainedButtons(props) {
                 variant={props.variant}
                 color={props.color}
                 disabled={props.disabled}
-                startIcon={props.icon ? <Icon>{props.icon}</Icon> : props.icon}
-                endIcon={props.endIcon ? <img src={props.endIcon} /> : props.endIcon}
+                startIcon={props.startIcon}
+                endIcon={props.endIcon}
                 size={props.size}
             >
-                <img src={props.src} />
+                {props.children}
                 {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
-                {props.overflow ? props.name : <ZTypography noWrap className={props.buttonLabel}> {props.name}</ZTypography>}
+                <ZTypography noWrap className={props.buttonLabel}> {props.name}</ZTypography>
             </Button>
         </div>
     );
 }
 const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        '& > *': {
-            margin: theme.spacing(0.5),
-        },
-        '& button': {
-            borderRadius: 4,
-            '& p': {
-                fontSize: "1rem",
-                fontFamily: "GT Walsheim Pro",
-                fontWeight: 400,
-                lineHeight: 1.5,
-
-                '& + span': {
-                    right: '1rem',
-                    position: 'absolute'
-                }
-            },
-        }
-    },
     buttonProgress: {
         color: green[500],
         position: 'absolute',
@@ -63,8 +46,6 @@ const useStyles = makeStyles((theme) => ({
         marginTop: -12,
         marginLeft: -12,
     },
-
-
     customWidth: {
         fontSize: 14
     },
