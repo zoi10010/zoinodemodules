@@ -15,11 +15,11 @@ export default function Header(props) {
                     {props.title}
                 </Typography>
             </Tooltip>
-            <ZGrid className={classes.about}>
+            {/* <ZGrid className={classes.about}>
                 <Tooltip title={[props.tooltip ? props.tooltip : props.title]} classes={{ tooltip: classes.customWidth }} arrow >
                     <div className={classes.aboutval}><img  height={20} src={About} /></div>
                 </Tooltip>
-            </ZGrid>
+            </ZGrid> */}
         </ZGrid>
     )
 }

@@ -1,36 +1,22 @@
-# zoinodemodules
+# zoi-node-modules
 
 > Made with create-react-library
 
-[![NPM](https://img.shields.io/npm/v/zoinodemodules.svg)](https://www.npmjs.com/package/zoinodemodules) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/zoi-node-modules.svg)](https://www.npmjs.com/package/zoi-node-modules) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save zoinodemodules
+npm install --save zoi-node-modules
 ```
 
-## Usage
-
-```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'zoinodemodules'
-import 'zoinodemodules/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
-```
 
 ## TextField
 
 ```jsx
 import React, { Component } from 'react'
 
-import { ZTextField } from 'zoinodemodules'
+import { ZTextField } from 'zoi-node-modules'
 
 class TextField extends Component {
   constructor(props) {
@@ -68,12 +54,15 @@ Prop Name | Type | Default | Description
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
+
+
+
 ## Button
 
 ```jsx
 import React, { Component } from 'react'
 
-import { ZButton } from 'zoinodemodules'
+import { ZButton } from 'zoi-node-modules'
 
 class Button extends Component {
   constructor(props) {
@@ -105,12 +94,14 @@ Prop Name | Type | Default | Description
 `color` | 'inherit' 'primary' 'secondary' 'success' 'error' 'info' 'warning' string | primary| Element placed before the children.
 `variant` | 'contained' 'outlined''text' string | text| The variant to use..
 
+
+
 ## Typography
 
 ```jsx
 import React, { Component } from 'react'
 
-import { ZTypography } from 'zoinodemodules'
+import { ZTypography } from 'zoi-node-modules'
 
 class Typography extends Component {
   constructor(props) {
@@ -134,6 +125,46 @@ Prop Name | Type | Default | Description
 `align` | 'center' 'inherit' 'justify' 'left' 'right' |inherit |Set the text-align on the component.. 
 `isLoading` | bool |false | If `true`, circular progress load. 
 `noWrap` | bool | false| If true, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+
+
+## Common Dialog
+
+```jsx
+import React, { Component } from 'react'
+
+import { ZCommonDialog } from 'zoi-node-modules'
+
+class ZCommonDialog extends Component {
+  constructor(props) {
+    super(props)
+     this.state = {
+        isShowModel:false
+    }
+  }
+  const cancelButton = () => {
+    alert("cancel")
+  }
+
+  const okButton = () => {
+    alert("ok")
+  }
+  render() {
+    return (
+       <ZCommonDialog open={this.state.isShowModel} close={() => this.setState({isShowModel:false})} head="User Details" actionButton={[{ name: 'Cancel', action: cancelButton, variant: "outlined", color: "primary" }, { name: 'ok', action: okButton, variant: "contained", color: "primary" }]}>
+        <div>This is common dialog</div>
+      </ZCommonDialog>
+    )
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`align` | 'center' 'inherit' 'justify' 'left' 'right' |inherit |Set the text-align on the component.. 
+`isLoading` | bool |false | If `true`, circular progress load. 
+`noWrap` | bool | false| If true, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+
 
 ## License
 
