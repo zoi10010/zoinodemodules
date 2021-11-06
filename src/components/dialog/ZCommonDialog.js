@@ -33,9 +33,11 @@ const DialogContent = withStyles((theme) => ({
 export default function ZCommonDialog(props) {
     return (
         <div>
-            <Dialog fullWidth={true} maxWidth={"sm"} open={props.open}>
-                <DialogTitle onClose={() => props.close()} head={props.head}>
-                </DialogTitle>
+            <Dialog fullWidth={true} open={props.open} {...props}>
+                {props.head &&
+                    <DialogTitle onClose={() => props.close()} head={props.head}>
+                    </DialogTitle>
+                }
                 <DialogContent >
                     {props.children}
                 </DialogContent>

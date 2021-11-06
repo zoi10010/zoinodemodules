@@ -161,9 +161,11 @@ class ZCommonDialog extends Component {
 
 Prop Name | Type | Default | Description
 --- | --- | --- | ---
-`align` | 'center' 'inherit' 'justify' 'left' 'right' |inherit |Set the text-align on the component.. 
-`isLoading` | bool |false | If `true`, circular progress load. 
-`noWrap` | bool | false| If true, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+`open` | bool |false |	If true, the component is shown. 
+`children` | node | |Dialog children, usually the included sub-components. 
+`close` | func | | this is close button functionality,
+`actionButton` | array | | pass button property and action button details like array,
+
 
 
 ## License
