@@ -2,7 +2,7 @@ import React from 'react'
 
 import {
   ZGrid, ZAppBar,
-  ZCommonTable
+  ZCommonTable, ZTextField, ZTextBoxSearch
 } from 'zoinodemodules'
 import About from '../src/asset/About.svg';
 import 'zoinodemodules/dist/index.css'
@@ -54,10 +54,10 @@ const data = {
       '7:55PM',
       {
         id: 102,
-        isDelete:true,
-        name:"Delete"
+        isDelete: true,
+        name: "Delete"
       }
-    ],  [
+    ], [
       'solomon',
       'test',
       '05 Apr 2021',
@@ -65,10 +65,10 @@ const data = {
       '7:55PM',
       {
         id: 102,
-        isDelete:true,
-        name:"Delete"
+        isDelete: true,
+        name: "Delete"
       }
-    ],  [
+    ], [
       'Melvin Pichaimani',
       'test',
       '05 Apr 2021',
@@ -76,10 +76,10 @@ const data = {
       '7:55PM',
       {
         id: 102,
-        isDelete:true,
-        name:"Delete"
+        isDelete: true,
+        name: "Delete"
       }
-    ],  [
+    ], [
       'Melvin',
       'test',
       '05 Apr 2021',
@@ -87,8 +87,8 @@ const data = {
       '7:55PM',
       {
         id: 102,
-        isDelete:true,
-        name:"Delete"
+        isDelete: true,
+        name: "Delete"
       }
     ]
   ]
@@ -102,11 +102,15 @@ const App = () => {
     {/* <ZAppBar position="static">
       <p>Zoi Fintech</p>
     </ZAppBar> */}
-    <ZGrid container >
+    {/* <ZGrid container >
       <ZCommonTable isPagination={true} isLoading={false} data={data} />
+    </ZGrid> */}
+    <ZTextField label="Name" />
 
-      <img height={20} src={About} />
-    </ZGrid>
+    <ZTextBoxSearch placeholder={"search"} />
+
+
+    <p>hi</p>
   </div>
 }
 

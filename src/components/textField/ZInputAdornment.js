@@ -1,5 +1,5 @@
 import React from 'react'
-import { InputAdornment } from '@material-ui/core';
+import { InputAdornment } from '@mui/material';
 
 export default function ZInputAdornment(props) {
     return (

@@ -1,22 +1,15 @@
 import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import Avatar from '@material-ui/core/Avatar'
-import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import Avatar from '@mui/material/Avatar';
+import { withStyles } from '@mui/styles';
 
-export default function ZAutoCompleteAvatar(props) {
-    const classes = useStyles();
+function ZAutoCompleteAvatar(props) {
+    const { classes } = props
     const [open, setOpen] = React.useState(false);
-    const [error, setError] = React.useState("");
-    const [inputValue, setinputValue] = useState("");
+
     const handleChange = (value) => {
-        setinputValue(value)
-        if (value.length > 2) {
-            setOpen(true);
-            props.onTeam(value)
-        } else {
-            setOpen(false)
-        }
+        props.onTeam(value)
     }
 
     const onSelect = (value) => {
@@ -57,25 +50,14 @@ export default function ZAutoCompleteAvatar(props) {
 
                 open={open}
             />
-            {/* <span className="MuiFormHelperText-root errorText" style={{ fontSize: 12 }}>{props.error}</span> */}
         </>
     );
 }
 
-const useStyles = makeStyles((theme) => ({
+const styles = theme => ({
     root: {
         display: 'flex',
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-    },
-    small: {
-        width: theme.spacing(2),
-        height: theme.spacing(2),
-    },
-    large: {
-        width: theme.spacing(7),
-        height: theme.spacing(7),
+       
     },
     avatar: {
         border: "2px solid #0B5C7E",
@@ -86,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
         border: "2px solid #0B5C7E",
         marginRight: 10
     },
-    // option: {
-    //     zIndex:"1199",
-    // }
-}));
+});
+
+export default withStyles(styles)(ZAutoCompleteAvatar);

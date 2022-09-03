@@ -1,11 +1,11 @@
 import React from 'react'
-import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import { makeStyles } from '@material-ui/core/styles';
-import Skeleton from '@material-ui/lab/Skeleton';
+import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
+import { withStyles } from '@mui/styles';
+import Skeleton from '@mui/material/Skeleton';
 
-export default function TextBox(props) {
-    const classes = useStyles();
+function TextBox(props) {
+    const { classes } = props
 
     return (
         <FormControl className={classes.formControl}>
@@ -20,9 +20,10 @@ export default function TextBox(props) {
     )
 }
 
-const useStyles = makeStyles((theme) => ({
+const styles = theme => ({
     formControl: {
         width: "100%",
     },
-}));
+});
 
+export default withStyles(styles)(TextBox)
