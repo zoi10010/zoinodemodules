@@ -1,5 +1,5 @@
 import React from 'react'
-import { Badge } from '@mui/material/core';
+import { Badge } from '@mui/material';
 
 export default function ZBadge(props) {
     return (

@@ -1,9 +1,13 @@
 import React from 'react'
 
 import {
-  ZGrid, ZAppBar,
-  ZCommonTable, ZTextField, ZTextBoxSearch
+  // ZGrid,
+  // ZAppBar,
+  // ZCommonTable,
+  ZTextField,
+  // ZTextBoxSearch
 } from 'zoinodemodules'
+
 import About from '../src/asset/About.svg';
 import 'zoinodemodules/dist/index.css'
 
@@ -105,12 +109,13 @@ const App = () => {
     {/* <ZGrid container >
       <ZCommonTable isPagination={true} isLoading={false} data={data} />
     </ZGrid> */}
+
+
+    {/* <ZTextBoxSearch placeholder={"search"} /> */}
+
+
+
     <ZTextField label="Name" />
-
-    <ZTextBoxSearch placeholder={"search"} />
-
-
-    <p>hi</p>
   </div>
 }
 

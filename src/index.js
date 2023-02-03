@@ -1,17 +1,16 @@
 import React from 'react'
-import styles from './styles.module.css'
 
 export { default as ZTextField } from './components/textField/ZTextBox';
-export { default as ZInputAdornment } from './components/textField/ZInputAdornment';
-export { default as ZTextBoxSearch } from './components/textField/ZTextBoxSearch';
-export { default as ZGrid } from './components/grid/ZGrid';
-export { default as ZAlert } from './components/alert/ZAlert';
+// export { default as ZInputAdornment } from './components/textField/ZInputAdornment';
+// export { default as ZTextBoxSearch } from './components/textField/ZTextBoxSearch';
+// export { default as ZGrid } from './components/grid/ZGrid';
+// export { default as ZAlert } from './components/alert/ZAlert';
 export { default as ZAppBar } from './components/appBar/ZAppBar';
-export { default as ZAutoComplete } from './components/autoComplete/ZAutoComplete';
-export { default as ZAutoCompleteAvatar } from './components/autoComplete/ZAutoCompleteAvatar';
-export { default as ZAvatar } from './components/avatar/ZAvatar';
-export { default as ZBadge } from './components/badge/ZBadge';
-export { default as ZTypography } from './components/typography/ZTypography';
+// export { default as ZAutoComplete } from './components/autoComplete/ZAutoComplete';
+// export { default as ZAutoCompleteAvatar } from './components/autoComplete/ZAutoCompleteAvatar';
+// export { default as ZAvatar } from './components/avatar/ZAvatar';
+// export { default as ZBadge } from './components/badge/ZBadge';
+// export { default as ZTypography } from './components/typography/ZTypography';
 // export { default as ZBox } from './components/box/ZBox';
 // export { default as ZButton } from './components/button/ZButton';
 // export { default as ZCheckbox } from './components/checkbox/ZCheckbox';

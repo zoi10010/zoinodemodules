@@ -34,6 +34,7 @@ export default function ComboBox(props) {
                 classes={{
                     popper: styles.option
                 }}
+                disabled={props.disabled}
                 getOptionLabel={(option) => option != undefined ? option.name : ""}
                 value={props.value}
                 loading={!open}
