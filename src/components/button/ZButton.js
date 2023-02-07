@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from '@mui/material/CircularProgress';
 import ZTypography from '../typography/ZTypography'
-import { green } from '@material-ui/core/colors';
 
 export default function ContainedButtons(props) {
     const [loading, setLoading] = useState(false)
@@ -28,7 +27,6 @@ export default function ContainedButtons(props) {
                 disabled={props.disabled}
                 startIcon={props.startIcon}
                 endIcon={props.endIcon}
-                size={props.size}
             >
                 {props.children}
                 {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
@@ -39,7 +37,7 @@ export default function ContainedButtons(props) {
 }
 const useStyles = makeStyles((theme) => ({
     buttonProgress: {
-        color: green[500],
+        // color: green[500],
         position: 'absolute',
         top: '50%',
         left: '50%',
@@ -50,5 +48,3 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 14
     },
 }));
-
-

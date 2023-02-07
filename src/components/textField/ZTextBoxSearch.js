@@ -1,48 +1,17 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
-import SearchIcon from '@material-ui/icons/Search';
+import { withStyles } from '@mui/styles';
+import Paper from '@mui/material//Paper';
+import InputBase from '@mui/material/InputBase';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    alignItems: 'center',
-    background: "#eee",
-    borderRadius: 8
-  },
 
-  input: {
-    marginLeft: theme.spacing(1),
-    flex: 1,
-    "& ::-webkit-input-placeholder": {
-      color: "#B1B1B1",
-      fontSize: 14,
-      [theme.breakpoints.only('xs')]: {
-        fontSize: 12,
-      },
-    }
-  },
-
-  iconButton: {
-    padding: 10,
-  },
-  divider: {
-    height: 28,
-    margin: 4,
-  },
-  cursor: {
-    cursor: 'context-menu'
-  }
-}));
-
-export default function ZTextBoxSearch(props) {
-  const classes = useStyles();
+function ZTextBoxSearch(props) {
+  const { classes } = props
 
   return (
     <Paper component="form" elevation={0} className={classes.root}>
-      <IconButton className={classes.iconButton} aria-label="search" className={classes.cursor}>
+      <IconButton className={classes.iconButton} aria-label="search" >
         <SearchIcon />
       </IconButton>
       <InputBase
@@ -55,3 +24,33 @@ export default function ZTextBoxSearch(props) {
     </Paper>
   );
 }
+
+const styles = theme => ({
+  root: {
+    display: 'flex',
+    alignItems: 'center',
+    background: "#F4F6FC !important",
+    borderRadius: 8
+  },
+
+  input: {
+    // marginLeft: theme.spacing(1),
+    flex: 1,
+    "& ::-webkit-input-placeholder": {
+      color: "#B1B1B1",
+      fontSize: 14,
+    }
+  },
+
+  iconButton: {
+    padding: 10,
+    cursor: 'context-menu'
+  },
+  divider: {
+    height: 28,
+    margin: 4,
+  },
+
+});
+
+export default withStyles(styles)(ZTextBoxSearch)

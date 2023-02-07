@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 
 
 export default function ComboBox(props) {
@@ -35,6 +34,7 @@ export default function ComboBox(props) {
                 classes={{
                     popper: styles.option
                 }}
+                disabled={props.disabled}
                 getOptionLabel={(option) => option != undefined ? option.name : ""}
                 value={props.value}
                 loading={!open}
@@ -49,15 +49,3 @@ export default function ComboBox(props) {
         </>
     );
 }
-const useStyles = makeStyles((theme) => ({
-    // option: {
-    //     zIndex:"1199",
-    // }
-}));
-
-
-
-
-
-
-

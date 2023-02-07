@@ -1,9 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
-import Tooltip from '@material-ui/core/Tooltip';
+import Tooltip from '@mui/material/Tooltip';
 export default function CheckboxLabels(props) {
     const classes = useStyles();
 
@@ -21,9 +20,3 @@ export default function CheckboxLabels(props) {
 
     );
 }
-const useStyles = makeStyles((theme) => ({
-    formControl: {
-    },
-
-
-}));

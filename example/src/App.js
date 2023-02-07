@@ -1,8 +1,11 @@
 import React from 'react'
 
 import {
-  ZGrid, ZAppBar,
-  ZCommonTable
+  // ZGrid, 
+  ZTypography,
+  ZAppBar,
+  // ZCommonTable
+  ZTextField,ZInputAdornment
 } from 'zoinodemodules'
 import About from '../src/asset/About.svg';
 import 'zoinodemodules/dist/index.css'
@@ -99,14 +102,16 @@ const App = () => {
 
 
   return <div>
-    {/* <ZAppBar position="static">
+    <ZTextField/>
+   <ZAppBar position="static">
       <p>Zoi Fintech</p>
-    </ZAppBar> */}
-    <ZGrid container >
+    </ZAppBar>
+    <ZTypography>hello</ZTypography>
+    {/*  <ZGrid container >
       <ZCommonTable isPagination={true} isLoading={false} data={data} />
 
       <img height={20} src={About} />
-    </ZGrid>
+    </ZGrid> */}
   </div>
 }
 
