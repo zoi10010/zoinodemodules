@@ -4,7 +4,6 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 
 export default function ComboBox(props) {
-    const styles = useStyles();
     const [open, setOpen] = React.useState(false);
     const [error, setError] = React.useState("");
     const [inputValue, setinputValue] = useState("");
@@ -31,9 +30,7 @@ export default function ComboBox(props) {
         <>
             <Autocomplete
                 options={open ? props.data : []}
-                classes={{
-                    popper: styles.option
-                }}
+                classes={props.classes}
                 disabled={props.disabled}
                 getOptionLabel={(option) => option != undefined ? option.name : ""}
                 value={props.value}

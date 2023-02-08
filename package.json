@@ -1,10 +1,13 @@
 {
-  "name": "zoi-node-modules",
-  "version": "1.0.2",
+  "name": "react-zoi-common-components",
+  "version": "1.0.5",
   "description": "Made with create-react-library",
-  "author": "zoi10010",
+  "author": "melvinzoi",
   "license": "MIT",
-  "repository": "zoi10010/zoinodemodules",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoi10010/zoinodemodules.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -61,5 +64,16 @@
     "material-ui-icons": "^1.0.0-beta.36",
     "react-csv": "^2.0.3",
     "react-icons": "^4.3.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/zoi10010/zoinodemodules/issues"
+  },
+  "homepage": "https://github.com/zoi10010/zoinodemodules#readme",
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "update",
+    "mui"
+  ]
 }

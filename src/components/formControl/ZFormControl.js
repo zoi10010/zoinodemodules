@@ -1,5 +1,5 @@
 import React from 'react'
-import FormControl from '@material-ui/core/FormControl';
+import FormControl from '@mui/material/FormControl';
 
 export default function ZFormControl(props) {
     return (

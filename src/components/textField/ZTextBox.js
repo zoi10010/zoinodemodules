@@ -4,10 +4,9 @@ import FormControl from '@mui/material/FormControl';
 import Skeleton from '@mui/material/Skeleton';
 
 export default function TextBox(props) {
-    const classes = useStyles();
-
+    
     return (
-        <FormControl className={classes.formControl}>
+        <FormControl >
             {props.isLoading ?
                 <Skeleton height={20} variant="rect"></Skeleton>
                 :

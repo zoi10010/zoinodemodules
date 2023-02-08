@@ -1,13 +1,13 @@
-# zoi-node-modules
+# react-zoi-common-components
 
 > Made with create-react-library
 
-[![NPM](https://img.shields.io/npm/v/zoi-node-modules.svg)](https://www.npmjs.com/package/zoi-node-modules) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-zoi-common-components.svg)](https://www.npmjs.com/package/react-zoi-common-components) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save zoi-node-modules
+npm install --save react-zoi-common-components
 ```
 
 
@@ -16,7 +16,7 @@ npm install --save zoi-node-modules
 ```jsx
 import React, { Component } from 'react'
 
-import { ZTextField } from 'zoi-node-modules'
+import { ZTextField } from 'react-zoi-common-components'
 
 class TextField extends Component {
   constructor(props) {
@@ -62,7 +62,7 @@ Prop Name | Type | Default | Description
 ```jsx
 import React, { Component } from 'react'
 
-import { ZButton } from 'zoi-node-modules'
+import { ZButton } from 'react-zoi-common-components'
 
 class Button extends Component {
   constructor(props) {
@@ -101,7 +101,7 @@ Prop Name | Type | Default | Description
 ```jsx
 import React, { Component } from 'react'
 
-import { ZTypography } from 'zoi-node-modules'
+import { ZTypography } from 'react-zoi-common-components'
 
 class Typography extends Component {
   constructor(props) {
@@ -132,7 +132,7 @@ Prop Name | Type | Default | Description
 ```jsx
 import React, { Component } from 'react'
 
-import { ZCommonDialog } from 'zoi-node-modules'
+import { ZCommonDialog } from 'react-zoi-common-components'
 
 class ZCommonDialog extends Component {
   constructor(props) {

@@ -1,11 +1,12 @@
 import React from 'react'
 
 import {
-  // ZGrid, 
-  ZTypography,
+  ZGrid, 
+  ZTypography, ZHeader, ZNoData,
   ZAppBar,
-  // ZCommonTable
-  ZTextField,ZInputAdornment
+  ZCommonDialog,
+  // ZCommonTable,
+  ZTextField, ZInputAdornment
 } from 'zoinodemodules'
 import About from '../src/asset/About.svg';
 import 'zoinodemodules/dist/index.css'
@@ -57,10 +58,10 @@ const data = {
       '7:55PM',
       {
         id: 102,
-        isDelete:true,
-        name:"Delete"
+        isDelete: true,
+        name: "Delete"
       }
-    ],  [
+    ], [
       'solomon',
       'test',
       '05 Apr 2021',
@@ -68,10 +69,10 @@ const data = {
       '7:55PM',
       {
         id: 102,
-        isDelete:true,
-        name:"Delete"
+        isDelete: true,
+        name: "Delete"
       }
-    ],  [
+    ], [
       'Melvin Pichaimani',
       'test',
       '05 Apr 2021',
@@ -79,10 +80,10 @@ const data = {
       '7:55PM',
       {
         id: 102,
-        isDelete:true,
-        name:"Delete"
+        isDelete: true,
+        name: "Delete"
       }
-    ],  [
+    ], [
       'Melvin',
       'test',
       '05 Apr 2021',
@@ -90,8 +91,8 @@ const data = {
       '7:55PM',
       {
         id: 102,
-        isDelete:true,
-        name:"Delete"
+        isDelete: true,
+        name: "Delete"
       }
     ]
   ]
@@ -102,16 +103,21 @@ const App = () => {
 
 
   return <div>
-    <ZTextField/>
-   <ZAppBar position="static">
+    <ZTextField />
+    <ZAppBar position="static">
       <p>Zoi Fintech</p>
     </ZAppBar>
+    <ZNoData></ZNoData>
+    <ZHeader title={"hello"}></ZHeader>
     <ZTypography>hello</ZTypography>
-    {/*  <ZGrid container >
+    {/* <ZGrid container >
       <ZCommonTable isPagination={true} isLoading={false} data={data} />
 
       <img height={20} src={About} />
     </ZGrid> */}
+     {/* <ZCommonDialog open={true} close={() => {}} head="User Details" actionButton={[{ name: 'Cancel', action: {}, variant: "outlined", color: "primary" }, { name: 'ok', action: {}, variant: "contained", color: "primary" }]}>
+        <div>This is common dialog</div>
+      </ZCommonDialog> */}
   </div>
 }
 

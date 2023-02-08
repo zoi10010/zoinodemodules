@@ -1,10 +1,10 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import classNames from 'classnames';
 import About from '../../asset/svg/About.svg';
 import ZGrid from '../grid/ZGrid';
-import Tooltip from '@material-ui/core/Tooltip';
-import Typography from '@material-ui/core/Typography';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
 
 export default function Header(props) {
     const classes = useStyles();
@@ -15,11 +15,11 @@ export default function Header(props) {
                     {props.title}
                 </Typography>
             </Tooltip>
-            {/* <ZGrid className={classes.about}>
+            <ZGrid className={classes.about}>
                 <Tooltip title={[props.tooltip ? props.tooltip : props.title]} classes={{ tooltip: classes.customWidth }} arrow >
                     <div className={classes.aboutval}><img  height={20} src={About} /></div>
                 </Tooltip>
-            </ZGrid> */}
+            </ZGrid>
         </ZGrid>
     )
 }
