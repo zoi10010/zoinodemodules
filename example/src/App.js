@@ -1,11 +1,12 @@
 import React from 'react'
 
 import {
-  ZGrid, 
+  ZGrid,
   ZTypography, ZHeader, ZNoData,
   ZAppBar,
   ZCommonDialog,
-  // ZCommonTable,
+  ZPaper,
+  ZCommonTable,
   ZTextField, ZInputAdornment
 } from 'zoinodemodules'
 import About from '../src/asset/About.svg';
@@ -104,18 +105,24 @@ const App = () => {
 
   return <div>
     <ZTextField />
+    <ZHeader title={"helloss"}></ZHeader>
+    {/* <ZPaper elevation={0} />
+    <ZPaper />
+    <ZPaper elevation={3} /> */}
+    {/* <ZTextField />
     <ZAppBar position="static">
       <p>Zoi Fintech</p>
     </ZAppBar>
     <ZNoData></ZNoData>
-    <ZHeader title={"hello"}></ZHeader>
-    <ZTypography>hello</ZTypography>
+   
+    <ZTypography>hello</ZTypography> */}
+
     {/* <ZGrid container >
       <ZCommonTable isPagination={true} isLoading={false} data={data} />
 
       <img height={20} src={About} />
     </ZGrid> */}
-     {/* <ZCommonDialog open={true} close={() => {}} head="User Details" actionButton={[{ name: 'Cancel', action: {}, variant: "outlined", color: "primary" }, { name: 'ok', action: {}, variant: "contained", color: "primary" }]}>
+    {/* <ZCommonDialog open={true} close={() => {}} head="User Details" actionButton={[{ name: 'Cancel', action: {}, variant: "outlined", color: "primary" }, { name: 'ok', action: {}, variant: "contained", color: "primary" }]}>
         <div>This is common dialog</div>
       </ZCommonDialog> */}
   </div>

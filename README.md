@@ -134,23 +134,28 @@ import React, { Component } from 'react'
 
 import { ZCommonDialog } from 'react-zoi-common-components'
 
-class ZCommonDialog extends Component {
+export default class ZCommonDialogs extends Component {
   constructor(props) {
     super(props)
      this.state = {
-        isShowModel:false
+        isShowModel:true
     }
   }
-  const cancelButton = () => {
+   cancelButton = () => {
     alert("cancel")
+
+    this.setState({
+        isShowModel:false
+    })
   }
 
-  const okButton = () => {
+   okButton = () => {
     alert("ok")
   }
   render() {
     return (
-       <ZCommonDialog open={this.state.isShowModel} close={() => this.setState({isShowModel:false})} head="User Details" actionButton={[{ name: 'Cancel', action: cancelButton, variant: "outlined", color: "primary" }, { name: 'ok', action: okButton, variant: "contained", color: "primary" }]}>
+        
+       <ZCommonDialog open={this.state.isShowModel} close={() => this.setState({isShowModel:false})} head="Delete" actionButton={[{ name: 'No', action: this.cancelButton, variant: "outlined", color: "primary" }, { name: 'Yes', action: this.okButton, variant: "contained", color: "primary" }]}>
         <div>This is common dialog</div>
       </ZCommonDialog>
     )

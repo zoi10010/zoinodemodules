@@ -3,7 +3,7 @@ import { withStyles } from '@mui/styles';
 import Paper from '@mui/material//Paper';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
+// import SearchIcon from '@mui/icons-material/Search';
 
 
 function ZTextBoxSearch(props) {
@@ -12,7 +12,7 @@ function ZTextBoxSearch(props) {
   return (
     <Paper component="form" elevation={0} className={classes.root}>
       <IconButton className={classes.iconButton} aria-label="search" >
-        <SearchIcon />
+        {/* <SearchIcon /> */}
       </IconButton>
       <InputBase
         className={classes.input}

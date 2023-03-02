@@ -1,23 +1,29 @@
 import React from 'react'
 import { makeStyles } from '@mui/styles';
 import classNames from 'classnames';
-import About from '../../asset/svg/About.svg';
+// import About from '../../asset/png/info-popup.png';
+
 import ZGrid from '../grid/ZGrid';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
+// import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 export default function Header(props) {
     const classes = useStyles();
     return (
         <ZGrid container className={classes.gridHeader} style={props.style}>
             <Tooltip title={[props.tooltip ? props.tooltip : props.title]} classes={{ tooltip: classes.customWidth }} arrow >
-                <Typography align={props.align} className={classNames(classes.heading, props.className)}>
+                {/* <Typography align={props.align} className={classNames(classes.heading, props.className)}>
                     {props.title}
-                </Typography>
+                </Typography> */}
             </Tooltip>
             <ZGrid className={classes.about}>
                 <Tooltip title={[props.tooltip ? props.tooltip : props.title]} classes={{ tooltip: classes.customWidth }} arrow >
-                    <div className={classes.aboutval}><img  height={20} src={About} /></div>
+                    <div className={classes.aboutval}>
+                        <p>hi</p>
+                        {/* <img height={20} src={About} /> */}
+                        {/* <InfoOutlinedIcon /> */}
+                    </div>
                 </Tooltip>
             </ZGrid>
         </ZGrid>
@@ -28,7 +34,7 @@ const useStyles = makeStyles({
     gridHeader: {
         flexWrap: 'nowrap',
         paddingBottom: 10,
-        zIndex:1
+        zIndex: 1
     },
     heading: {
         fontSize: 20,
@@ -49,7 +55,7 @@ const useStyles = makeStyles({
         fontSize: 14
     },
 
-       about:{
-        zIndex:1 
-       }
+    about: {
+        zIndex: 1
+    }
 });
