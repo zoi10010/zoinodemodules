@@ -1,42 +1,63 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@mui/styles';
+import { withStyles } from '@mui/styles';
 import Button from '@mui/material/Button';
+import Icon from '@mui/material/Icon';
 import CircularProgress from '@mui/material/CircularProgress';
-import ZTypography from '../typography/ZTypography'
+import { green } from '@mui/material/colors';
 
-export default function ContainedButtons(props) {
+function ZButton(props) {
     const [loading, setLoading] = useState(false)
-    const classes = useStyles();
-
+    const { classes } = props
     useEffect(() => {
         setLoading(props.isLoading)
     }, [props.isLoading, props.disabled])
-
     return (
-        <div>
+        <div className={classes.root}>
+
             <Button
-                {...props}
                 fullWidth={props.fullWidth}
                 size={props.size}
                 onClick={props.onClick}
                 className={props.className}
                 style={props.style}
                 variant={props.variant}
-                color={props.color}
+                color="primary"
                 disabled={props.disabled}
-                startIcon={props.startIcon}
-                endIcon={props.endIcon}
+                startIcon={props.icon ? <Icon>{props.icon}</Icon> : props.icon}
+                endIcon={props.endIcon ? <img src={props.endIcon} /> : props.endIcon}
+                to={props.to}
+                component={props.component}
             >
-                {props.children}
+                <img src={props.src} />
                 {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
-                <ZTypography noWrap className={props.buttonLabel}> {props.name}</ZTypography>
+                {props.name}
             </Button>
+
         </div>
     );
 }
-const useStyles = makeStyles((theme) => ({
+const styles = theme => ({
+    root: {
+        display: 'flex',
+        '& > *': {
+            margin: theme.spacing(0.5),
+        },
+        '& button': {
+            borderRadius: 4,
+            '& p': {
+                fontSize: 13,
+                fontFamily: "GT Walsheim Pro",
+                lineHeight: 1.5,
+
+                '& + span': {
+                    right: '1rem',
+                    position: 'absolute'
+                }
+            },
+        }
+    },
     buttonProgress: {
-        // color: green[500],
+        color: green[500],
         position: 'absolute',
         top: '50%',
         left: '50%',
@@ -46,4 +67,6 @@ const useStyles = makeStyles((theme) => ({
     customWidth: {
         fontSize: 14
     },
-}));
+});
+
+export default withStyles(styles)(ZButton)

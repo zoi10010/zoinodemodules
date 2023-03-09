@@ -4,20 +4,18 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 
 export default function ComboBox(props) {
+    // const styles = styles();
     const [open, setOpen] = React.useState(false);
     const [error, setError] = React.useState("");
     const [inputValue, setinputValue] = useState("");
     const handleChange = (value) => {
-        setinputValue(value)
-        if (value.length > 2) {
-            setOpen(true);
-            props.onTeam(value)
-        } else {
-            setOpen(false)
-        }
+        setinputValue(value)     
+        setOpen(true);
+           // props.onTeam(value)
+   
     }
 
-    const onSelect = (value) => {
+    const onSelect = (value) => {  
         props.selectvalue(value)
         setOpen(false)
     }
@@ -29,20 +27,33 @@ export default function ComboBox(props) {
     return (
         <>
             <Autocomplete
-                options={open ? props.data : []}
-                classes={props.classes}
-                disabled={props.disabled}
+              options={props.data}
+                // classes={{
+                //     popper: styles.option
+                // }}
                 getOptionLabel={(option) => option != undefined ? option.name : ""}
                 value={props.value}
-                loading={!open}
+            //    loading={!open}
                 loadingText={props.Loading}
                 onChange={(event, values) => onSelect(values)}
                 renderInput={(params) => <TextField onChange={(e) => handleChange(e.target.value)} onBlur={closePopup} {...params} label={props.label}
-                    className={props.className} error={props.error.length > 0}
-                    helperText={props.error} />}
-                open={open}
+                placeholder={props.placeholder}
+                     className={props.className} error={props.error}
+                     helperText={props.error} variant ="standard"
+                    />}
+              //  open={open}
             />
             {/* <span className="MuiFormHelperText-root errorText" style={{ fontSize: 12 }}>{props.error}</span> */}
         </>
     );
 }
+
+
+
+
+
+
+
+
+
+
