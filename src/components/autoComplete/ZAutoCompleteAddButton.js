@@ -76,11 +76,11 @@ function ZAutoCompleteAddButton(props) {
                 getOptionLabel={(option) => option != undefined ? option.name : ""}
                 renderOption={(prop, option) => (
                     <>
-                        {option.isButton ?
+                        {option.isButton ?  
 
                             <li  {...prop}>
                                 <Button
-                                    variant="outlined"
+                                   variant="contained"
                                     color="primary"
                                     onMouseDown={() => {
                                         checkDuplicate(text.trim()) ? props.popupError() : props.showpopup(text.trim())
@@ -100,7 +100,8 @@ function ZAutoCompleteAddButton(props) {
                 loading={!open}
                 loadingText={props.Loading ? props.Loading : "Loading..."}
                 onChange={(event, values) => props.selectvalue(values)}
-                renderInput={(params) => <TextField inputProps={{ maxLength: 3 }} onKeyPress={alpha} onBlur={props.onBlur} onChange={onChange} {...params} label={props.label}
+                renderInput={(params) => <TextField inputProps={{ maxLength: 3 }} 
+                variant="standard" onKeyPress={alpha} onBlur={props.onBlur} onChange={onChange} {...params} label={props.label}
                     className={props.className} onPaste={checkReg} error={props.error != undefined && props.error.length > 0 ? true : false} helperText={props.error} />}
 
 
