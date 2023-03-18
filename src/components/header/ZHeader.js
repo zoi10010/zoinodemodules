@@ -13,19 +13,10 @@ export default function Header(props) {
     return (
         <ZGrid container className={classes.gridHeader} style={props.style}>
             <Tooltip title={[props.tooltip ? props.tooltip : props.title]} classes={{ tooltip: classes.customWidth }} arrow >
-                {/* <Typography align={props.align} className={classNames(classes.heading, props.className)}>
+                <Typography align={props.align} className={classNames(classes.heading, props.className)}>
                     {props.title}
-                </Typography> */}
+                </Typography>
             </Tooltip>
-            <ZGrid className={classes.about}>
-                <Tooltip title={[props.tooltip ? props.tooltip : props.title]} classes={{ tooltip: classes.customWidth }} arrow >
-                    <div className={classes.aboutval}>
-                        <p>hi</p>
-                        {/* <img height={20} src={About} /> */}
-                        {/* <InfoOutlinedIcon /> */}
-                    </div>
-                </Tooltip>
-            </ZGrid>
         </ZGrid>
     )
 }

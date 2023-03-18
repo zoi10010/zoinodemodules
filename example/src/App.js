@@ -7,7 +7,7 @@ import {
   ZCommonDialog,
   ZPaper,
   ZCommonTable,
-  ZTextField, ZInputAdornment
+  ZTextField, ZInputAdornment, ZDropZone
 } from 'zoinodemodules'
 import About from '../src/asset/About.svg';
 import 'zoinodemodules/dist/index.css'
@@ -105,6 +105,14 @@ const App = () => {
 
   return <div>
     <ZTextField />
+    <ZDropzone
+      accept={".png,.PNG,.jpg,.JPG,.jpeg,.JPEG"}
+
+      onDrop={(acceptedFiles) => this.fileDrop(acceptedFiles)}
+      file={this.state.profilepic}
+      fileSrc={this.state.profilepic.value}
+      error={this.state.profilepic.error}
+      remove={this.removeImage} />
     <ZHeader title={"helloss"}></ZHeader>
     {/* <ZPaper elevation={0} />
     <ZPaper />

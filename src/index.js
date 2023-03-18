@@ -34,6 +34,7 @@ export { default as ZRadioGroup } from './components/radio/ZRadioGroup';
 export { default as ZSkeleton } from './components/SkeletonLoader/ZSkeleton';
 export { default as ZSnackbar } from './components/snackBar/ZSnackbar';
 export { default as ZCommonDialog } from './components/dialog/ZCommonDialog';
+export { default as ZDropZone } from "./components/dropZone/ZDropZone";
 // export { default as ZCommonTable } from './components/table/ZTable';
 
 

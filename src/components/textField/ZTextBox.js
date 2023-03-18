@@ -1,22 +1,31 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
-import Skeleton from '@mui/material/Skeleton';
+import { withStyles } from '@mui/styles';
 
-export default function TextBox(props) {
+function ZTextBox(props) {
+    const { classes } = props
     
+
     return (
-        <FormControl >
-            {props.isLoading ?
-                <Skeleton height={20} variant="rect"></Skeleton>
-                :
-                <TextField
-                    {...props}
-                />
-            }
+        <FormControl className={classes.formControl}>
+            <TextField
+                {...props}
+               variant="standard"
+                InputLabelProps={{ style: { fontSize: 14 } }}
+                
+            />
         </FormControl>
     )
 }
 
+const styles = theme => ({
+    formControl: {
+        width: "100%"
+    },
+    textStyle: {
+        fontSize: 10
+    }
+});
 
-
+export default withStyles(styles)(ZTextBox);
