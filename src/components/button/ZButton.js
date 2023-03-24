@@ -15,16 +15,14 @@ function ZButton(props) {
         <div className={classes.root}>
 
             <Button
+                {...props}
                 fullWidth={props.fullWidth}
                 size={props.size}
                 onClick={props.onClick}
                 className={props.className}
                 style={props.style}
                 variant={props.variant}
-                color="primary"
                 disabled={props.disabled}
-                startIcon={props.icon ? <Icon>{props.icon}</Icon> : props.icon}
-                endIcon={props.endIcon ? <img src={props.endIcon} /> : props.endIcon}
                 to={props.to}
                 component={props.component}
             >

@@ -11,8 +11,6 @@ function ZTextBox(props) {
         <FormControl className={classes.formControl}>
             <TextField
                 {...props}
-               variant="standard"
-                InputLabelProps={{ style: { fontSize: 14 } }}
                 
             />
         </FormControl>
