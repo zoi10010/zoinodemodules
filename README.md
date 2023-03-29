@@ -206,8 +206,8 @@ Prop Name | Type | Default | Description
 `inputRef` | ref | | Pass a ref to the `input` element.
 `label` | node | | A text or an element to be used in an enclosing label element.
 `labelPlacement` | 'bottom','end','start','top' | 'end' | The position of the label.
-`onChange` | func | | Callback fired when the state is changed.Signature:function(event: React.SyntheticEvent) => void 
-event: The event source of the callback. You can pull out the new checked state by accessing event.target.checked (boolean).
+`onChange` | func | | Callback fired when the state is changed.Signature:function(event: React.SyntheticEvent) => void. event: The event source of the callback. You can pull out the new checked state by accessing event.target.checked (boolean). 
+
 `slotProps` | { typography?: object } | {} | The props used for each slot inside.
 `sx` | Array<func, object, bool>, func, object | | The system prop that allows defining system overrides as well as additional CSS styles.
 `value` | any | | The value of the component.
