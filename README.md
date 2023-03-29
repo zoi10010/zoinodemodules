@@ -172,6 +172,48 @@ Prop Name | Type | Default | Description
 `actionButton` | array | | pass button property and action button details like array,
 
 
+## FormControlLabel
+```jsx
+import React, { Component } from 'react'
+
+import { ZFormControlLabel ,ZRadio  } from 'react-zoi-common-components'
+
+class FormControlLabel  extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <ZFormControlLabel label="YES"
+          value="yes" control={<ZRadio />} />
+       <ZFormControlLabel label="NO" value="no"
+          control={<ZRadio />} disabled />
+      </div>
+    )
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`control` | element | | A control element. For instance, it can be a Radio, a Switch or a Checkbox.
+`checked` | bool | | If `true`, the component appears selected.
+`classes` | object | | Override or extend the styles applied to the component.
+`componentsProps` | { typography?: object } | {} | The props used for each slot inside.
+`disabled` | bool | | If `true`, the control is disabled.
+`disableTypography` | bool | | If `true`, the label is rendered as it is passed without an additional typography node.
+`inputRef` | ref | | Pass a ref to the `input` element.
+`label` | node | | A text or an element to be used in an enclosing label element.
+`labelPlacement` | 'bottom','end','start','top' | 'end' | The position of the label.
+`onChange` | func | | Callback fired when the state is changed. Signature:
+function(event: React.SyntheticEvent) => void
+event: The event source of the callback. You can pull out the new checked state by accessing event.target.checked (boolean).
+`slotProps` | { typography?: object } | {} | The props used for each slot inside.
+`sx` | Array<func, object, bool>, func, object | | The system prop that allows defining system overrides as well as additional CSS styles.
+`value` | any | | The value of the component.
 
 ## License
 
