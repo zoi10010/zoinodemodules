@@ -12,14 +12,13 @@ npm install --save react-zoi-common-components
 
 <!-- TOC -->
 
-- [Components Navigation](#react-zoi-common-components -navigation)
+- [Zoi Components Navigation](#react-zoi-common-components -navigation)
     - [TextField](#TextField)
+    - [Button](#Button)
+    - [Typography](#Typography)
+    - [Common Dialog](#CommonDialog)   
     - [FormControlLabel](#FormControlLabel)
-    - [Usage](#usage)
-    - [What's New?](#whats-new)
-    - [Question](#question)
-    - [License](#license)
-    - [Links](#links)
+    - [CircularProgress](#CircularProgress)
 
 <!-- /TOC -->
 
@@ -219,10 +218,44 @@ Prop Name | Type | Default | Description
 `inputRef` | ref | | Pass a ref to the `input` element.
 `label` | node | | A text or an element to be used in an enclosing label element.
 `labelPlacement` | 'bottom','end','start','top' | 'end' | The position of the label.
-`onChange` | func | | Callback fired when the state is changed.Signature:function(event: React.SyntheticEvent) => void. event: The event source of the callback. You can pull out the new checked state by accessing event.target.checked (boolean).
+`onChange` | func | | Callback fired when the state is changed. Signature:function(event: React.SyntheticEvent) => void. event: The event source of the callback. You can pull out the new checked state by accessing event.target.checked (boolean).
 `slotProps` | { typography?: object } | {} | The props used for each slot inside.
 `sx` | Array<func, object, bool>, func, object | | The system prop that allows defining system overrides as well as additional CSS styles.
 `value` | any | | The value of the component.
+
+## CircularProgress 
+```jsx
+import React, { Component } from 'react'
+
+import { ZCircularProgress } from 'react-zoi-common-components'
+
+class CircularProgress  extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <ZCircularProgress  />
+       <ZCircularProgress color="secondary"  />
+       <ZCircularProgress variant="determinate" value={75} />
+      </div>
+    )
+  }
+}
+```
+`Property`
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`classes` | object | | Override or extend the styles applied to the component.
+`color` | 'inherit', 'primary', 'secondary', 'error', 'info', 'success', 'warning', string | 'primary' | The color of the component. It supports both default and custom theme colors.
+`disableShrink` | bool | false | If `true`, the shrink animation is disabled. This only works if variant is `indeterminate`
+`size` | number, string | 40 | The size of the component. If using a number, the pixel unit is assumed. If using a string, you need to provide the CSS unit, e.g '3rem'.
+`sx` | 	Array<func, object, bool>, func, object | | The system prop that allows defining system overrides as well as additional CSS styles.
+`thickness` | number | 3.6 | The thickness of the circle.
+`value` | number | 0 | The value of the progress indicator for the determinate variant. Value between 0 and 100.
+`variant` | 'determinate', 'indeterminate' | 'indeterminate' | The variant to use. Use indeterminate when there is no progress value.
 
 ## License
 
