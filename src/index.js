@@ -8,6 +8,7 @@ export { default as ZGrid } from './components/grid/ZGrid';
 export { default as ZAlert } from './components/alert/ZAlert';
 export { default as ZAppBar } from './components/appBar/ZAppBar';
 export { default as ZAutoComplete } from './components/autoComplete/ZAutoComplete';
+export { default as ZAutoCompleteAddButton } from './components/autoComplete/ZAutoCompleteAddButton';
 export { default as ZAutoCompleteAvatar } from './components/autoComplete/ZAutoCompleteAvatar';
 export { default as ZAvatar } from './components/avatar/ZAvatar';
 export { default as ZBadge } from './components/badge/ZBadge';
