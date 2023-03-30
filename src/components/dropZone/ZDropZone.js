@@ -16,7 +16,7 @@ function ZDropzone(props) {
     const { classes } = props;
     return (
         <div>
-            <div className={classes.root} >
+            <div className={classes.root} style={props.containerStyle}>
                 {props.fileSrc != "" && props.fileSrc != null ? <ZCloseIcon style={{ fontSize: 18 }} onClick={props.remove} /> : null}
                 <div {...getRootProps()}>
                     <input {...getInputProps()} multiple={false}
