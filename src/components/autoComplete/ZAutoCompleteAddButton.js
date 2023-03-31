@@ -71,10 +71,9 @@ function ZAutoCompleteAddButton(props) {
                 return filtered;
             }}
             getOptionLabel={(option) => option != undefined ? option.name : ""}
-            renderOption={(prop, option) => (
-                <>
-                    {option.isButton ?
-
+            renderOption={(prop, option) => {
+                if (option.isButton) {
+                    return (
                         <li  {...prop}>
                             <Button
                                 variant="contained"
@@ -87,11 +86,14 @@ function ZAutoCompleteAddButton(props) {
                             </Button>
 
                         </li>
-                        :
+                    )
+                }
+                else {
+                    return (
                         <li {...prop}>{option.name}</li>
-                    }
-                </>
-            )
+                    )
+                }
+            }
             }
             value={props.value}
             loading={!open}
