@@ -390,8 +390,7 @@ Name |	Type |	Default |	Description
 `action`|	node||The action to display. It renders after the message, at the end of the alert.
 `children`|	node	||The content of the component.
 `classes`|	object	||Override or extend the styles applied to the component. See CSS API below for more details.
-`closeText`|	string|	'Close'	|Override the default label for the close popup icon button.
-For localization purposes, you can use the provided translations.
+`closeText`|	string|	'Close'	|Override the default label for the close popup icon button.For localization purposes, you can use the provided translations.
 `color`|	'error'', 'info'', 'success'', 'warning', string	||The color of the component. Unless provided, the value is taken from the severity prop. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.
 components|	{ CloseButton?: elementType, CloseIcon?: elementType }|	{}	|The components used for each slot inside.This prop is an alias for the slots prop. It's recommended to use the slots prop instead.
 componentsProps|	{ closeButton?: object, closeIcon?: object }|	{}	|The extra props for the slot components. You can override the existing props or add new ones.This prop is an alias for the slotProps prop. It's recommended to use the slotProps prop instead, as componentsProps will be deprecated in the future.
