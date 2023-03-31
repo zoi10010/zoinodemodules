@@ -21,7 +21,8 @@ npm install --save react-zoi-common-components
     - [CircularProgress](#CircularProgress)   
     - [Grid](#Grid)  
     - [SearchTextBox](#SearchTextBox)   
-    - [Alert](#ZAlert)   
+    - [Alert](#ZAlert) 
+
 <!-- /TOC -->
 
 
@@ -260,6 +261,43 @@ Prop Name | Type | Default | Description
 `variant` | 'determinate', 'indeterminate' | 'indeterminate' | The variant to use. Use indeterminate when there is no progress value.
 
 
+## BOX 
+```jsx
+import React, { Component } from 'react'
+
+import { ZBox } from 'react-zoi-common-components'
+
+class Box  extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <Box
+          sx={{
+          width: 300,
+          height: 300,
+          backgroundColor: 'primary.dark',
+          '&:hover': {
+          backgroundColor: 'primary.main',
+          opacity: [0.9, 0.8, 0.7],
+          },
+        }}
+       />
+       <Box component="span" sx={{ p: 2, border: '1px dashed grey' }}>
+       <Box sx={{ border: '1px dashed grey' }}>
+      </div>
+    )
+  }
+}
+```
+`Property`
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`component`| elementType| |The component used for the root node. Either a string to use a HTML element or a component.
+`sx` | 	Array<func, object, bool>, func, object | | The system prop that allows defining system overrides as well as additional CSS styles.
 ## Grid
 
 ```jsx

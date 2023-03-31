@@ -25,7 +25,6 @@ export default function ComboBox(props) {
   
 
     return (
-        <>
             <Autocomplete
               options={props.data}
                 // classes={{
@@ -43,17 +42,6 @@ export default function ComboBox(props) {
                     />}
               //  open={open}
             />
-            {/* <span className="MuiFormHelperText-root errorText" style={{ fontSize: 12 }}>{props.error}</span> */}
-        </>
+           
     );
 }
-
-
-
-
-
-
-
-
-
-
