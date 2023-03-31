@@ -1,11 +1,13 @@
 import React from 'react'
 
 import {
-  // ZGrid,
-  // ZAppBar,
-  // ZCommonTable,
-  ZTextField,
-  // ZTextBoxSearch
+  ZGrid,
+  ZTypography, ZHeader, ZNoData,
+  ZAppBar,
+  ZCommonDialog,
+  ZPaper,
+  ZCommonTable,
+  ZTextField, ZInputAdornment, ZDropZone
 } from 'zoinodemodules'
 
 import About from '../src/asset/About.svg';
@@ -103,19 +105,36 @@ const App = () => {
 
 
   return <div>
-    {/* <ZAppBar position="static">
+    <ZTextField />
+    <ZDropzone
+      accept={".png,.PNG,.jpg,.JPG,.jpeg,.JPEG"}
+
+      onDrop={(acceptedFiles) => this.fileDrop(acceptedFiles)}
+      file={this.state.profilepic}
+      fileSrc={this.state.profilepic.value}
+      error={this.state.profilepic.error}
+      remove={this.removeImage} />
+    <ZHeader title={"helloss"}></ZHeader>
+    {/* <ZPaper elevation={0} />
+    <ZPaper />
+    <ZPaper elevation={3} /> */}
+    {/* <ZTextField />
+    <ZAppBar position="static">
       <p>Zoi Fintech</p>
-    </ZAppBar> */}
+    </ZAppBar>
+    <ZNoData></ZNoData>
+   
+    <ZTypography>hello</ZTypography> */}
+
     {/* <ZGrid container >
       <ZCommonTable isPagination={true} isLoading={false} data={data} />
     </ZGrid> */}
 
-
-    {/* <ZTextBoxSearch placeholder={"search"} /> */}
-
-
-
-    <ZTextField label="Name" />
+      <img height={20} src={About} />
+    </ZGrid> */}
+    {/* <ZCommonDialog open={true} close={() => {}} head="User Details" actionButton={[{ name: 'Cancel', action: {}, variant: "outlined", color: "primary" }, { name: 'ok', action: {}, variant: "contained", color: "primary" }]}>
+        <div>This is common dialog</div>
+      </ZCommonDialog> */}
   </div>
 }
 

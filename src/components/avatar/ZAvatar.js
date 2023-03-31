@@ -6,4 +6,3 @@ export default function Avatars(props) {
         <Avatar {...props}>{props.children}</Avatar>
     )
 }
-

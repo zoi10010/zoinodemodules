@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import ZTypography from '../typography/ZTypography'
-import { green } from '@material-ui/core/colors';
+import { withStyles , makeStyles } from '@mui/styles';
+import Button from '@mui/material/Button';
+import Icon from '@mui/material/Icon';
+import CircularProgress from '@mui/material/CircularProgress';
+import { green } from '@mui/material/colors';
 
-export default function ContainedButtons(props) {
+function ZButton(props) {
     const [loading, setLoading] = useState(false)
-    const classes = useStyles();
-
+    const { classes } = props
     useEffect(() => {
         setLoading(props.isLoading)
     }, [props.isLoading, props.disabled])
-
     return (
-        <div>
+        <div className={classes.root}>
+
             <Button
                 {...props}
                 fullWidth={props.fullWidth}
@@ -24,31 +22,81 @@ export default function ContainedButtons(props) {
                 className={props.className}
                 style={props.style}
                 variant={props.variant}
-                color={props.color}
                 disabled={props.disabled}
-                startIcon={props.startIcon}
-                endIcon={props.endIcon}
-                size={props.size}
+                to={props.to}
+                component={props.component}
             >
-                {props.children}
+                <img src={props.src} />
                 {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
-                <ZTypography noWrap className={props.buttonLabel}> {props.name}</ZTypography>
+                {props.name}
             </Button>
+
         </div>
     );
 }
-const useStyles = makeStyles((theme) => ({
+const styles = makeStyles((theme) => ({
     buttonProgress: {
-        color: green[500],
-        position: 'absolute',
+        position: constants.position.absolute,
         top: '50%',
         left: '50%',
-        marginTop: -12,
-        marginLeft: -12,
+        marginTop: "-.75rem",
+        marginLeft: "-.75rem",
     },
     customWidth: {
-        fontSize: 14
+        fontSize: constants.fontSize.sm,
     },
+
+    root: {
+        display: constants.display.flex,
+        '& button': {
+            borderRadius: constants.borderRadius.xs, 
+            fontSize: constants.fontSize.md,
+            fontWeight: constants.fontWeight.sm,
+            lineHeight: constants.lineHeight.md,
+            boxShadow:constants.boxShadow.none,
+            textTransform:constants.textTransform.capital,
+            "&:hover":{
+                boxShadow:constants.boxShadow.none,
+            },
+
+            '& + span': {
+                right: constants.inset.md,
+                position: constants.position.absolute
+            }
+        }
+    },
+
 }));
 
+// const theme = createTheme({
+//     palette: {
+//         primary: {
+//             main: Colors.primary,
+//             contrastText: Colors.white,
+//         },
+//         secondary: {
+//             main: Colors.secondary,
+//             contrastText: Colors.white,
+//         },
+//     },
 
+//     overrides: {
+//         MuiButton: {
+//           root: {
+//             borderRadius: 0,
+//             fontWeight: constants.fontWeight.bold,
+//           },
+//           containedPrimary: {
+//             color: Colors.white,
+//             backgroundColor: Colors.red,
+//             '&:hover': {
+//               backgroundColor: Colors.darkRed,
+//             },
+//           },
+//           text: {
+//             textTransform: constants.textTransform.lower
+//           },
+//         },
+//       },
+// });
+export default withStyles(styles)(ZButton)
