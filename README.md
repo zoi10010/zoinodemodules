@@ -19,7 +19,8 @@ npm install --save react-zoi-common-components
     - [Common Dialog](#CommonDialog)   
     - [FormControlLabel](#FormControlLabel)
     - [CircularProgress](#CircularProgress)
-    - [Box](#Box)   
+    - [Box](#Box) 
+    - [Bage](#Bage)   
 
 <!-- /TOC -->
 
@@ -296,6 +297,7 @@ Prop Name | Type | Default | Description
 --- | --- | --- | ---
 `component`| elementType| |The component used for the root node. Either a string to use a HTML element or a component.
 `sx` | 	Array<func, object, bool>, func, object | | The system prop that allows defining system overrides as well as additional CSS styles.
+
 ## Grid
 
 ```jsx
@@ -440,6 +442,53 @@ slotProps|	{ closeButton?: object, closeIcon?: object }|	{}	|The extra props for
 slots|	{ closeButton?: elementType, closeIcon?: elementType }|	{}|The components used for each slot inside.This prop is an alias for the components prop, which will be deprecated in the future.
 `sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
 `variant`|	'filled', 'outlined', 'standard', string|	'standard'	|The variant to use.
+
+
+## Bage
+```jsx
+import React, { Component } from 'react'
+
+import { ZBage} from 'react-zoi-common-components'
+
+class Bage  extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <Badge badgeContent={4} color="primary"></Badge>
+       <Badge color="secondary" badgeContent={0}></Badge>
+       <Badge color="secondary" overlap="circular" badgeContent=" "></Badge>
+    )
+  }
+}
+```
+`Property`
+
+Name |	Type |	Default |	Description
+--- | --- | --- | ---
+`anchorOrigin`|{ horizontal: 'left','right', vertical: 'bottom', 'top' }|{ vertical: 'top', horizontal: 'right', }|The anchor of the badge.
+`badgeContent`|node| |The content rendered within the badge.
+`children`|node	| |The badge will be added relative to this node.
+`classes`|object| |Override or extend the styles applied to the component. 
+`color`|'default', 'primary','secondary','error','info','success','warning',string|'default'|	
+The color of the component. It supports both default and custom theme colors
+`component`| elementType| |The component used for the root node. Either a string to use a HTML element or a component.
+`components`|	{ Badge?: elementType, Root?: elementType }|{}|The components used for each slot inside.
+This prop is an alias for the slots prop. It's recommended to use the slots prop instead.
+`componentsProps`|{ badge?: func,object, root?: func, object }|{}|The extra props for the slot components. You can override the existing props or add new ones.
+This prop is an alias for the slotProps prop. It's recommended to use the slotProps prop instead, as componentsProps will be deprecated in the future.
+`invisible`|bool|false|	If true, the badge is invisible.
+`max`|number|	99|Max count to show.
+`overlap`|'circular','rectangular'|'rectangular'|Wrapped shape the badge should overlap.
+`showZero`|bool|false|Controls whether the badge is hidden when badgeContent is zero.
+`slotProps`|{ badge?: func,object, root?: func,object }|{}|	The props used for each slot inside the Badge.
+`slots`|	{ badge?: elementType, root?: elementType }|{}|	The components used for each slot inside the Badge. Either a string to use a HTML element or a component.
+`sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+`variant`|	'dot', 'standard', 'string'|	'standard'	|The variant to use.
+
 
 
 ## License
