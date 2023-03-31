@@ -19,7 +19,9 @@ npm install --save react-zoi-common-components
     - [Common Dialog](#CommonDialog)   
     - [FormControlLabel](#FormControlLabel)
     - [CircularProgress](#CircularProgress)   
-
+    - [Grid](#Grid)  
+    - [SearchTextBox](#SearchTextBox)   
+    - [Alert](#ZAlert)   
 <!-- /TOC -->
 
 
