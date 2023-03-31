@@ -18,7 +18,8 @@ npm install --save react-zoi-common-components
     - [Typography](#Typography)
     - [Common Dialog](#CommonDialog)   
     - [FormControlLabel](#FormControlLabel)
-    - [CircularProgress](#CircularProgress)   
+    - [CircularProgress](#CircularProgress)
+    - [Box](#Box)   
 
 <!-- /TOC -->
 
@@ -256,6 +257,46 @@ Prop Name | Type | Default | Description
 `thickness` | number | 3.6 | The thickness of the circle.
 `value` | number | 0 | The value of the progress indicator for the determinate variant. Value between 0 and 100.
 `variant` | 'determinate', 'indeterminate' | 'indeterminate' | The variant to use. Use indeterminate when there is no progress value.
+
+
+## BOX 
+```jsx
+import React, { Component } from 'react'
+
+import { ZBox } from 'react-zoi-common-components'
+
+class Box  extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <Box
+          sx={{
+          width: 300,
+          height: 300,
+          backgroundColor: 'primary.dark',
+          '&:hover': {
+          backgroundColor: 'primary.main',
+          opacity: [0.9, 0.8, 0.7],
+          },
+        }}
+       />
+       <Box component="span" sx={{ p: 2, border: '1px dashed grey' }}>
+       <Box sx={{ border: '1px dashed grey' }}>
+      </div>
+    )
+  }
+}
+```
+`Property`
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`component`| elementType| The component used for the root node. Either a string to use a HTML element or a component.
+`sx` | 	Array<func, object, bool>, func, object | | The system prop that allows defining system overrides as well as additional CSS styles.
+
 
 ## License
 
