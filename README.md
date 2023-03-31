@@ -398,7 +398,6 @@ componentsProps|	{ closeButton?: object, closeIcon?: object }|	{}	|The extra pro
 `icon`|	node	||Override the icon displayed before the children. Unless provided, the icon is mapped to the value of the severity prop. Set to false to remove the icon.
 `iconMapping`|	{ error?: node, info?: node, success?: node, warning?: node }	||The component maps the severity prop to a range of different icons, for instance success to <SuccessOutlined>. If you wish to change this mapping, you can provide your own. Alternatively, you can use the icon prop to override the icon displayed.
 `onClose`|	func||Callback fired when the component requests to be closed. When provided and no action prop is set, a close icon button is displayed that triggers the callback when clicked.
-
 `severity`|	'error'', 'info'', 'success'', 'warning'	'success'	||The severity of the alert. This defines the color and icon used.
 slotProps|	{ closeButton?: object, closeIcon?: object }|	{}	|The extra props for the slot components. You can override the existing props or add new ones.This prop is an alias for the componentsProps prop, which will be deprecated in the future.
 slots|	{ closeButton?: elementType, closeIcon?: elementType }|	{}|The components used for each slot inside.This prop is an alias for the components prop, which will be deprecated in the future.
