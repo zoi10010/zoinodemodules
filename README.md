@@ -21,6 +21,10 @@ npm install --save react-zoi-common-components
     - [CircularProgress](#CircularProgress)
     - [Box](#Box) 
     - [Bage](#Bage)   
+    - [CircularProgress](#CircularProgress)   
+    - [Grid](#Grid)  
+    - [SearchTextBox](#SearchTextBox)   
+    - [Alert](#ZAlert) 
 
 <!-- /TOC -->
 
