@@ -68,35 +68,35 @@ const styles = makeStyles((theme) => ({
 
 }));
 
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: Colors.primary,
-            contrastText: Colors.white,
-        },
-        secondary: {
-            main: Colors.secondary,
-            contrastText: Colors.white,
-        },
-    },
+// const theme = createTheme({
+//     palette: {
+//         primary: {
+//             main: Colors.primary,
+//             contrastText: Colors.white,
+//         },
+//         secondary: {
+//             main: Colors.secondary,
+//             contrastText: Colors.white,
+//         },
+//     },
 
-    overrides: {
-        MuiButton: {
-          root: {
-            borderRadius: 0,
-            fontWeight: constants.fontWeight.bold,
-          },
-          containedPrimary: {
-            color: Colors.white,
-            backgroundColor: Colors.red,
-            '&:hover': {
-              backgroundColor: Colors.darkRed,
-            },
-          },
-          text: {
-            textTransform: constants.textTransform.lower
-          },
-        },
-      },
-});
+//     overrides: {
+//         MuiButton: {
+//           root: {
+//             borderRadius: 0,
+//             fontWeight: constants.fontWeight.bold,
+//           },
+//           containedPrimary: {
+//             color: Colors.white,
+//             backgroundColor: Colors.red,
+//             '&:hover': {
+//               backgroundColor: Colors.darkRed,
+//             },
+//           },
+//           text: {
+//             textTransform: constants.textTransform.lower
+//           },
+//         },
+//       },
+// });
 export default withStyles(styles)(ZButton)

@@ -1,4 +1,4 @@
-module.exports = {
+const Colors  = {
     primary:"rgb(74, 114, 245)",
     secondary:"#FF9567",
 
@@ -12,3 +12,6 @@ module.exports = {
     lightGray:"#D8D8DF",   
 
   };    
+
+  
+export default Colors;
