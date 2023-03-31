@@ -344,6 +344,7 @@ const [data,setData]=useState(["Siva","Ram","Dhanush"])
 export default SearchBoxSample;
 ```
 `Property`
+
 Prop Name | Type | Default | Description
 --- | --- | --- | ---
 `classes` | object | | Override or extend the styles applied to the component.
