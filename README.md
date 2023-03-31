@@ -296,6 +296,150 @@ Prop Name | Type | Default | Description
 --- | --- | --- | ---
 `component`| elementType| The component used for the root node. Either a string to use a HTML element or a component.
 `sx` | 	Array<func, object, bool>, func, object | | The system prop that allows defining system overrides as well as additional CSS styles.
+## Grid
+
+```jsx
+import {
+  ZGrid
+} from 'react-zoi-common-components'
+function GridExample() {
+  return (
+    <div>
+      <div >
+          <ZGrid container spacing={2} >
+            <ZGrid item xs={12} sm={6} md={4} >
+                  <div>
+                     Control 1
+                  </div>
+              </ZGrid>
+             <ZGrid item xs={12} sm={6} md={4} >
+                  <div>
+                    Control 2
+                  </div>
+            </ZGrid>
+          </ZGrid>
+      
+      </div>
+    </div>
+  );
+}
+
+export default GridExample;
+```
+`Property`
+
+Name|	Type	|Default	|Description
+--- | --- | --- | ---
+`children`|	node	||The content of the component.
+`classes`|	object||		
+`columns`|	Array<number>, number, object	|12|	The number of columns.
+`columnSpacing`|	Array<number string>number object string	||Defines the horizontal space between the type item components. It overrides the value of the spacing prop.component	elementType		
+`container`|	bool|	false	|If true, the component will have the flex container behavior. You should be wrapping items with a container.
+`direction`|	'column-reverse', 'column', 'row-reverse', 'row', Array<'column-reverse', 'column', 'row-reverse', 'row'>, object	'row'||Defines the flex-direction style property. It is applied for all screen sizes.
+`item`|	bool|	false	| |
+`lg`|	'auto', number, bool|	false	|If a number, it sets the number of columns the grid item uses. It can't be greater than the total number of columns of the container (12 by default). If 'auto', the grid item's width matches its content. If false, the prop is ignored. If true, the grid item's width grows to use the space available in the grid container. The value is applied for the lg breakpoint and wider screens if not overridden.
+`md`|	'auto', number, bool|	false	|If a number, it sets the number of columns the grid item uses. It can't be greater than the total number of columns of the container (12 by default). If 'auto', the grid item's width matches its content. If false, the prop is ignored. If true, the grid item's width grows to use the space available in the grid container. The value is applied for the md breakpoint and wider screens if not overridden.
+`rowSpacing`|	Array<number, string>, number, object, string|	|	Defines the vertical space between the type item components. It overrides the value of the spacing prop.
+`sm`|	'auto', number, bool|	false	|If a number, it sets the number of columns the grid item uses. It can't be greater than the total number of columns of the container (12 by default). If 'auto', the grid item's width matches its content. If false, the prop is ignored. If true, the grid item's width grows to use the space available in the grid container. The value is applied for the sm breakpoint and wider screens if not overridden.
+`spacing`|	Array<number, string>, number, object, string|	0	|Defines the space between the type item components. It can only be used on a type container component.
+
+
+## SearchTextBox 
+```jsx
+import {
+  ZTextBoxSearch,
+  ZGrid
+} from 'react-zoi-common-components'
+import { useState } from 'react';
+function SearchBoxSample() {
+const [search,setSearch]=useState('')
+const [data,setData]=useState(["Siva","Ram","Dhanush"])
+  const handleSearch=(e)=>{
+    setSearch(e)
+    // here you will get the search value using that need to filter your data
+    var fileterData= data.filter(value => value.toLowerCase().includes(e.toLowerCase()) == true)
+    setData(fileterData)  
+    console.log(data)  
+  }
+  return (
+    <div>
+      <div >
+          <ZGrid container spacing={2} >
+            <ZGrid item xs={12} >
+                 <ZTextBoxSearch
+                  placeholder={"Search..."} 
+                  value={search} 
+                  onChange={(value) => handleSearch(value.target.value)}
+                 />
+              </ZGrid>
+          </ZGrid>
+      
+      </div>
+    </div>
+  );
+}
+
+export default SearchBoxSample;
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`classes` | object | | Override or extend the styles applied to the component.
+`value` | number |  | The value of search on change of text box
+`placeholder` | string |  | which place holder need to show in text box
+
+## ZAlert 
+```jsx
+import {
+  ZGrid,
+  ZAlert
+} from 'react-zoi-common-components'
+function AlertSample() {
+
+  return (
+    <div>
+      <div >
+          <ZGrid container spacing={2} >
+            <ZGrid item xs={12} >
+                <ZAlert variant="outlined" severity="error" action={
+                  <button  color="inherit" size="small">
+                    Close
+                  </button>
+                }>error alert</ZAlert>
+                <ZAlert severity="warning">warning alert </ZAlert>
+                <ZAlert severity="info">info alert </ZAlert>
+                <ZAlert severity="success">success alert </ZAlert>
+              </ZGrid>
+          </ZGrid>
+      
+      </div>
+    </div>
+  );
+}
+
+export default AlertSample;
+
+```
+`Property`
+
+Name |	Type |	Default |	Description
+--- | --- | --- | ---
+`action`|	node||The action to display. It renders after the message, at the end of the alert.
+`children`|	node	||The content of the component.
+`classes`|	object	||Override or extend the styles applied to the component. See CSS API below for more details.
+`closeText`|	string|	'Close'	|Override the default label for the close popup icon button.For localization purposes, you can use the provided translations.
+`color`|	'error'', 'info'', 'success'', 'warning', string	||The color of the component. Unless provided, the value is taken from the severity prop. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.
+components|	{ CloseButton?: elementType, CloseIcon?: elementType }|	{}	|The components used for each slot inside.This prop is an alias for the slots prop. It's recommended to use the slots prop instead.
+componentsProps|	{ closeButton?: object, closeIcon?: object }|	{}	|The extra props for the slot components. You can override the existing props or add new ones.This prop is an alias for the slotProps prop. It's recommended to use the slotProps prop instead, as componentsProps will be deprecated in the future.
+`icon`|	node	||Override the icon displayed before the children. Unless provided, the icon is mapped to the value of the severity prop. Set to false to remove the icon.
+`iconMapping`|	{ error?: node, info?: node, success?: node, warning?: node }	||The component maps the severity prop to a range of different icons, for instance success to <SuccessOutlined>. If you wish to change this mapping, you can provide your own. Alternatively, you can use the icon prop to override the icon displayed.
+`onClose`|	func||Callback fired when the component requests to be closed. When provided and no action prop is set, a close icon button is displayed that triggers the callback when clicked.
+`severity`|	'error'', 'info'', 'success'', 'warning'	'success'	||The severity of the alert. This defines the color and icon used.
+slotProps|	{ closeButton?: object, closeIcon?: object }|	{}	|The extra props for the slot components. You can override the existing props or add new ones.This prop is an alias for the componentsProps prop, which will be deprecated in the future.
+slots|	{ closeButton?: elementType, closeIcon?: elementType }|	{}|The components used for each slot inside.This prop is an alias for the components prop, which will be deprecated in the future.
+`sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+`variant`|	'filled', 'outlined', 'standard', string|	'standard'	|The variant to use.
 
 
 ## License
