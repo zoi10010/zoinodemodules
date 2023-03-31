@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { withStyles , makeStyles } from '@mui/styles';
+import { withStyles } from '@mui/styles';
 import Button from '@mui/material/Button';
 import Icon from '@mui/material/Icon';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -34,69 +34,37 @@ function ZButton(props) {
         </div>
     );
 }
-const styles = makeStyles((theme) => ({
-    buttonProgress: {
-        position: constants.position.absolute,
-        top: '50%',
-        left: '50%',
-        marginTop: "-.75rem",
-        marginLeft: "-.75rem",
-    },
-    customWidth: {
-        fontSize: constants.fontSize.sm,
-    },
-
+const styles = theme => ({
     root: {
-        display: constants.display.flex,
+        display: 'flex',
+        '& > *': {
+            margin: theme.spacing(0.5),
+        },
         '& button': {
-            borderRadius: constants.borderRadius.xs, 
-            fontSize: constants.fontSize.md,
-            fontWeight: constants.fontWeight.sm,
-            lineHeight: constants.lineHeight.md,
-            boxShadow:constants.boxShadow.none,
-            textTransform:constants.textTransform.capital,
-            "&:hover":{
-                boxShadow:constants.boxShadow.none,
-            },
+            borderRadius: 4,
+            '& p': {
+                fontSize: 13,
+                fontFamily: "GT Walsheim Pro",
+                lineHeight: 1.5,
 
-            '& + span': {
-                right: constants.inset.md,
-                position: constants.position.absolute
-            }
+                '& + span': {
+                    right: '1rem',
+                    position: 'absolute'
+                }
+            },
         }
     },
+    buttonProgress: {
+        color: green[500],
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        marginTop: -12,
+        marginLeft: -12,
+    },
+    customWidth: {
+        fontSize: 14
+    },
+});
 
-}));
-
-// const theme = createTheme({
-//     palette: {
-//         primary: {
-//             main: Colors.primary,
-//             contrastText: Colors.white,
-//         },
-//         secondary: {
-//             main: Colors.secondary,
-//             contrastText: Colors.white,
-//         },
-//     },
-
-//     overrides: {
-//         MuiButton: {
-//           root: {
-//             borderRadius: 0,
-//             fontWeight: constants.fontWeight.bold,
-//           },
-//           containedPrimary: {
-//             color: Colors.white,
-//             backgroundColor: Colors.red,
-//             '&:hover': {
-//               backgroundColor: Colors.darkRed,
-//             },
-//           },
-//           text: {
-//             textTransform: constants.textTransform.lower
-//           },
-//         },
-//       },
-// });
 export default withStyles(styles)(ZButton)
