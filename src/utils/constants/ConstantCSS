@@ -1,4 +1,13 @@
 const constants = {
+
+    color:{
+        primary:'primary',
+        secondary:"secondary",
+        textSecondary:'textSecondary',
+        inherit:"inherit",
+        default:"default",        
+    },
+
     borderRadius:{
       xs: '4px',
       sm: '8px',
@@ -10,17 +19,25 @@ const constants = {
     boxShadow:{
         none:"none",
         modalShadow: '0 0 #000, 0 0 #000, 0.3px 0.8px 1.1px rgba(187 187 187 / 0.12),1.1px 2.8px 3.9px -0.4px rgba(187 187 187 / 0.17), 2.4px 6.1px 8.6px -0.8px rgba(187 187 187 / 0.23), 5.3px 13.3px 18.8px -1.2px rgba(187 187 187 / 0.29)',
-       
+        cardShadow: '0 0 #000, 0 0 #000, 0.3px 0.8px 1.1px rgba(187 187 187 / 0.11), 0.5px 1.3px 1.8px -0.6px rgba(187 187 187 / 0.18), 1.1px 2.7px 3.8px -1.2px rgba(187 187 187 / 0.26)'
+   
     },   
 
     flexItems:{
         center:"center"
     },
 
+    border:{
+        solid:"1px solid"
+    },
+
+
     position:{
         static:"static",
         absolute:"absolute",
-        fixed:"fixed"
+        fixed:"fixed",
+        start:"start",
+        end:"end"
     },
 
     fontSize:{
@@ -56,11 +73,8 @@ const constants = {
        bold:"bold",        
     },
 
-    inset:{
-        
+    inset:{        
         md:"1rem",
-
-
     },
 
     lineHeight:{
@@ -75,7 +89,8 @@ const constants = {
         nav:"nav",
         permanent:"permanent",
         outlined:"outlined",
-        contained:"contained"
+        contained:"contained",
+        standard:"standard"
     },
 
     direction:{
@@ -90,7 +105,8 @@ const constants = {
 
     display:{
         flex:"flex",
-        block:"block"
+        block:"block",
+        inlineFlex:"inline-flex"
     },
 
     flexWrap:{

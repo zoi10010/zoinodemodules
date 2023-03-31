@@ -1,17 +1,26 @@
-const Colors  = {
-    primary:"rgb(74, 114, 245)",
-    secondary:"#FF9567",
+const Colors = {
+  primary:"rgb(74, 114, 245)",
+  secondary:"#000000",
+  border:"#d9d9d9",
+  highlightedBorder:"#4096ff",
+  white:"#ffffff",
+  whiteSmoke:"#f3f3f3",
+  placeholder:"#bfbfbf",
+  red:"#ff0000",
+  darkRed:"#dd0000",
+  fadedWhite:"rgba(255 255 255 / 0.85)",
+  fadedBlack:"rgba(0,0,0,0.5)",
+  fadedBlackPearl:"rgb(16 22 26 / 40%)",
+  lightGray:"#D8D8DF",  
+  solitude:"#E7EBF0" ,
+  transparent:"transparent",
+  Cello:"rgba(57,75,89)",
+  fadedCello:"rgba(57,75,89,.5)",
+  fadedpattensBlue:"rgba(206,217,224,.5)",
+  darkBlue:"#30404d",
+  fadedBlue:"#ebf1f5",
+  aliceBlue:"#f5f8fa",
+  navyBlue:"#106BA3",
+};    
 
-
-    white:"#ffffff",
-    red:"#ff0000",
-    darkRed:"#dd0000",
-    fadedWhite:"rgba(255 255 255 / 0.85)",
-
-
-    lightGray:"#D8D8DF",   
-
-  };    
-
-  
 export default Colors;

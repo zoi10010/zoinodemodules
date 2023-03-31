@@ -27,30 +27,30 @@ function ZTextBoxSearch(props) {
 
 const styles = theme => ({
   root: {
-    display: 'flex',
-    alignItems: 'center',
-    background: "#F4F6FC !important",
-    borderRadius: 8
+    display:constants.display.inlineFlex,
+    border: `${constants.border.solid} ${Colors.border}`,
+    width:"100%"
   },
 
   input: {
-    // marginLeft: theme.spacing(1),
     flex: 1,
-    "& ::-webkit-input-placeholder": {
-      color: "#B1B1B1",
-      fontSize: 14,
+    
+    "& input":{
+      padding: ".375rem .5rem",
+      "&::-webkit-input-placeholder": {
+        color:Colors.placeholder,
+        fontSize: constants.fontSize.sm,
+      },
     }
   },
 
   iconButton: {
-    padding: 10,
-    cursor: 'context-menu'
+    padding: ".375rem .5rem"
   },
   divider: {
     height: 28,
-    margin: 4,
+    margin: ".25rem",
   },
-
 });
 
 export default withStyles(styles)(ZTextBoxSearch)
