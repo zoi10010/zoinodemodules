@@ -384,6 +384,7 @@ export default AlertSample;
 
 ```
 `Property`
+
 Name|	Type|	Default|	Description
 `action`|	node||The action to display. It renders after the message, at the end of the alert.
 `children`|	node	||The content of the component.
