@@ -477,13 +477,10 @@ Name |	Type |	Default |	Description
 `badgeContent`|node| |The content rendered within the badge.
 `children`|node	| |The badge will be added relative to this node.
 `classes`|object| |Override or extend the styles applied to the component. 
-`color`|'default', 'primary','secondary','error','info','success','warning',string|'default'|	
-The color of the component. It supports both default and custom theme colors
+`color`|'default', 'primary','secondary','error','info','success','warning',string|'default'|The color of the component. It supports both default and custom theme colors
 `component`| elementType| |The component used for the root node. Either a string to use a HTML element or a component.
-`components`|	{ Badge?: elementType, Root?: elementType }|{}|The components used for each slot inside.
-This prop is an alias for the slots prop. It's recommended to use the slots prop instead.
-`componentsProps`|{ badge?: func,object, root?: func, object }|{}|The extra props for the slot components. You can override the existing props or add new ones.
-This prop is an alias for the slotProps prop. It's recommended to use the slotProps prop instead, as componentsProps will be deprecated in the future.
+`components`|	{ Badge?: elementType, Root?: elementType }|{}|The components used for each slot inside.This prop is an alias for the slots prop. It's recommended to use the slots prop instead.
+`componentsProps`|{ badge?: func,object, root?: func, object }|{}|The extra props for the slot components.You can override the existing props or add new ones.This prop is an alias for the slotProps prop. It's recommended to use the slotProps prop instead, as componentsProps will be deprecated in the future.
 `invisible`|bool|false|	If true, the badge is invisible.
 `max`|number|	99|Max count to show.
 `overlap`|'circular','rectangular'|'rectangular'|Wrapped shape the badge should overlap.
