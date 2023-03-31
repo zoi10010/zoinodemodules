@@ -294,7 +294,7 @@ class Box  extends Component {
 `Property`
 Prop Name | Type | Default | Description
 --- | --- | --- | ---
-`component`| elementType| The component used for the root node. Either a string to use a HTML element or a component.
+`component`| elementType| |The component used for the root node. Either a string to use a HTML element or a component.
 `sx` | 	Array<func, object, bool>, func, object | | The system prop that allows defining system overrides as well as additional CSS styles.
 ## Grid
 
