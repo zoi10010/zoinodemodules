@@ -30,7 +30,7 @@ npm install --save react-zoi-common-components
     - [Chip](#Chip) 
     - [CheckBox](#CheckBox) 
     - [Skeleton](#Skeleton) 
-
+    - [AppBar](#ZAppBar)
 <!-- /TOC -->
 
 
@@ -922,7 +922,7 @@ Name |	Type |	Default |	Description
 `width`|number,string| |Width of the skeleton. Useful when the skeleton is inside an inline element with no width of its own.
 `sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
 `variant`|'circular','rectangular','rounded','text',string|text|The type of content that will be rendered.
-## ZAlert 
+## ZAppBar 
 ```jsx
 import {
   ZAppBar,
