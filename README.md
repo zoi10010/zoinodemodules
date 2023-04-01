@@ -30,6 +30,7 @@ npm install --save react-zoi-common-components
     - [Collapse](#Collapse) 
     - [Chip](#ZChip) 
     - [CheckBox](#ZCheckBox) 
+    - [Skeleton ](#ZSkeleton ) 
 
 <!-- /TOC -->
 
