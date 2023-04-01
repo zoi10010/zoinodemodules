@@ -12,9 +12,7 @@ npm install --save react-zoi-common-components
 
 <!-- TOC -->
 
-## Index
-
-- Zoi Common components 
+- [Zoi Components Navigation](#react-zoi-common-components -navigation)
    
     - [TextField](#TextField)
     - [Button](#Button)
@@ -33,9 +31,9 @@ npm install --save react-zoi-common-components
     - [CheckBox](#CheckBox) 
     - [Skeleton](#Skeleton) 
     - [AppBar](#ZAppBar)
-    - [IconButton](#ZIconButton)
-    - [Icon](#ZIcon)
-    - [Header](#ZHeader)
+    - [IconButton](#IconButton)
+    - [Icon](#Icon)
+    - [Header](#Header)
 <!-- /TOC -->
 
 
