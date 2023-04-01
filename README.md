@@ -33,6 +33,9 @@ npm install --save react-zoi-common-components
     - [CheckBox](#CheckBox) 
     - [Skeleton](#Skeleton) 
     - [AppBar](#ZAppBar)
+    - [IconButton](#ZIconButton)
+    - [Icon](#ZIcon)
+    - [Header](#ZHeader)
 <!-- /TOC -->
 
 
