@@ -866,7 +866,39 @@ Name |	Type |	Default |	Description
 `sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
 `value`|any| |The value of the component. The DOM API casts this to a string. The browser uses "on" as the default value.
 
+## Skeleton 
+```jsx
+import React, { Component } from 'react'
 
+import { ZSkeleton } from 'react-zoi-common-components'
+
+class Skeleton   extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
+       <Skeleton variant="circular" width={40} height={40} />
+       <Skeleton variant="rounded" width={210} height={60} />
+       <Skeleton animation="wave" />
+    )
+  }
+}
+```
+`Property`
+
+Name |	Type |	Default |	Description
+--- | --- | --- | ---
+`animation`|'pulse','wave',false|pulse|	The animation. If false the animation effect is disabled.
+`classes`|object| |Override or extend the styles applied to the component. 
+`component`|elementType| |The component used for the root node. Either a string to use a HTML element or a component.
+`height`| number,string| |Height of the skeleton. Useful when you don't want to adapt the skeleton to a text element but for instance a card.
+`width`|number,string| |Width of the skeleton. Useful when the skeleton is inside an inline element with no width of its own.
+`sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+`variant`|'circular','rectangular','rounded','text',string|text|The type of content that will be rendered.
 
 ## License
 
