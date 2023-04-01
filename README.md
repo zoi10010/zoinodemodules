@@ -28,6 +28,8 @@ npm install --save react-zoi-common-components
     - [Alert](#ZAlert) 
     - [Dialog](#Dialog) 
     - [Collapse](#Collapse) 
+    - [Chip](#ZChip) 
+    - [CheckBox](#ZCheckBox) 
 
 <!-- /TOC -->
 
@@ -599,6 +601,329 @@ Name |	Type |	Default |	Description
 `transitionDuration`| number, { appear?: number, enter?: number, exit?: number } | { enter: theme.transitions.duration.enteringScreen, exit: theme.transitions.duration.leavingScreen, } |The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object.
 `TransitionProps`| object | | Props applied to the transition element. By default, the element is based on this Transition component.
 
+
+
+## No Data
+
+ ```jsx
+ import React, { Component } from 'react'
+ import { ZNoData } from 'zoi-node-modules' 
+
+ class NoData extends Component{
+   constructor(props){
+    super(props)
+    this.state = {
+       nodata:""
+    }
+   }
+
+   render() {
+    return (
+       <div>
+          <ZNoData
+             name="nodata"
+             value={this.state.nodata}
+          />   
+       </div>
+    )
+   }
+ }
+ ```
+ `Property`
+
+ Prop Name | Type | Default | Decription
+ --- | --- | --- | ---
+ `name` | string | | The name of the nodata.
+ `value` | any | | The message. when data is not available
+
+## Paper
+
+```jsx
+import React, { Component } from 'react'
+
+import { ZPaper } from 'zoi-node-modules'
+
+class Paper extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+
+    }
+  }
+  render(){
+    return(
+      <div>
+         <ZPaper elevation={0} />
+         <ZPaper elevation={3} variant="outlined" square/>
+      </div>
+    )
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`elevation` | integer | 1 | Shadow depth, It accepts values between 0 and 24 inclusive.
+`variant` | 'elevation' 'outlined' 'string' | elevation | The variant to use.
+`square` | bool | false | If true, rounded corners are disabled.
+ 
+
+## Popover
+
+```jsx
+import React, { Component } from 'react'
+import { ZPopover } from 'zoi-node-modules' 
+
+class Popover extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+       anchorE1: event.currentTarget  
+    }
+  }
+  
+  render(){
+    const open = Boolean(anchorE1);
+    return (
+       <div>
+          <ZPopover
+             id={"id"}
+             open={"open"}
+             anchorE1={this.state.anchorE1}
+             onClose={handleclose}
+             anchorOrigin={{
+                vertical:"bottom",
+                horizontal:"left"
+             }}
+             transformOrigin={{
+                vertical:"bottom",
+                horizontal:"left"
+             }}
+          />
+       </div>
+    )
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`open` | bool | | If true, The component is shown.
+`anchorE1` | 'HTML element' 'func' | | An HTML element or a function that returns one.It's used to set the position of the popover.
+`anchorOrigin` | { horizontal: 'center' 'left' 'right' 'number', vertical: 'bottom' 'center' 'top' 'number'} | { vertical: 'top', horizontal: 'left'} | This is the point on the anchor where the popover's anchorE1 will attach to.
+`transformOrigin` | { horizontal: 'center' 'left' 'right' 'number', vertical: 'bottom' 'center' 'top' 'number'} | { vertical: 'top', horizontal: 'left'} | This is the point on the popover which will attach to the anchor's origin.
+`onClose` | func | | Callback fired when the component requests to be closed.
+
+## Radio Group
+
+```jsx
+import React, { Component } from 'react'
+import { ZRadioGroup } from 'zoi-node-modules' 
+
+class RadioGroup extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+       value:""
+    }
+  }
+  render() {
+    return (
+      <div>
+        <ZRadioGroup
+          name="use-radio-group" 
+          defaultValue="first"
+          aria-labelledby="demo-controlled-radio-buttons-group"
+          value={this.state.value}
+        >  
+          <FormControlLabel value="first" label="first" control={<Radio />} />
+          <FormControlLabel value="second" label="second" control={<Radio />} />
+        </ZRadioGroup>
+      </div>
+    )
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`name` | string | | The name used to reference the value of the control.
+`defaultValue` | any | | The default value. Use when the component is not controlled.
+`value` | any | | Value of the selected radio button.
+
+
+## Radio 
+
+ ```jsx
+ import React, { Component } from 'react'
+ import { ZRadioGroup } from 'zoi-node-modules' 
+
+ class Radio extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+       name:""
+       disable:false
+    }
+  }
+
+  render() {
+    return (
+       <div>
+         <ZRadio
+            checked={selectedValue === 'a'}
+            onChange={(e)=>this.setState({name:e.target.value})}
+            id="use-radio-button"
+            value="a"
+            name="radio-buttons"
+            size="small"
+            color="default"
+            inputProps={{ 'aria-label': 'A' }}
+            disabled={this.state.disable}
+         />
+       </div>
+    )
+  }
+ }
+ ```
+ `Property`
+
+ Prop Name | Type | Default | Description
+ --- | --- | --- | ---
+`checked` | bool | | If true, The component is checked.
+`onChange` | func | | Callback fired when the state is changed.
+`id` | string | | The id of the input element.
+`value` | any | | The value of the component.
+`name` | string | | Name attribute of the input element.
+`size` | 'medium' 'small' string | medium | The size of the component.
+`color` | 'default' 'primary' 'secondary' 'error' 'info' 'success' 'warning' string | primary | The color of the component.
+`inputProps` | object | | Attributes applied to the input element.
+`disabled` | bool | | If true, The component is disabled.
+
+## Chip
+```jsx
+import React, { Component } from 'react'
+
+import { ZChip} from 'react-zoi-common-components'
+
+class Chip  extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <Chip label="Chip Filled" />
+       <Chip label="Custom delete icon"
+             onClick={handleClick}
+             onDelete={handleDelete}
+             deleteIcon={<DeleteIcon />}
+             variant="outlined"
+       />
+      <Chip label="success" color="success" />
+       
+    )
+  }
+}
+```
+`Property`
+
+Name |	Type |	Default |	Description
+--- | --- | --- | ---
+`avatar	`|element| |	The Avatar element to display.
+`classes`|object| |Override or extend the styles applied to the component. 
+`clickable`|bool| |If true, the chip will appear clickable, and will raise when pressed, even if the onClick prop is not defined. If false, the chip will not appear clickable, even if onClick prop is defined. This can be used, for example, along with the component prop to indicate an anchor Chip is clickable. Note: this controls the UI and does not affect the onClick event.
+`color`|'default', 'primary','secondary','error','info','success','warning',string|'default'|The color of the component. It supports both default and custom theme colors
+`component`|elementType| |The component used for the root node. Either a string to use a HTML element or a component.en the component is unchecked.
+`deleteIcon`|element| |	If true, the component is disabled.
+`icon`|element| |	Icon element.
+`label`|node| |The content of the component.
+`onDelete`|func| |Callback fired when the delete icon is clicked. If set, the delete icon will be shown.
+`size`|	'medium','small',string|'medium'|	The size of the component. small is equivalent to the dense checkbox styling.
+`sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+`variant`|'filled','outlined',string| filled|The variant to use.
+
+## CheckBox
+```jsx
+import React, { Component } from 'react'
+
+import { ZCheckBox} from 'react-zoi-common-components'
+
+class CheckBox  extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <Checkbox {...label} defaultChecked />
+       <Checkbox {...label} disabled />
+       <Checkbox {...label} defaultChecked size="small" />
+       <Checkbox {...label} defaultChecked color="success" />
+    )
+  }
+}
+```
+`Property`
+
+Name |	Type |	Default |	Description
+--- | --- | --- | ---
+`checked`|bool| |	If true, the component is checked.
+`checkedIcon`|node|	<CheckBoxIcon /> |The icon to display when the component is checked.
+`classes`|object| |Override or extend the styles applied to the component. 
+`color`|'default', 'primary','secondary','error','info','success','warning',string|'default'|The color of the component. It supports both default and custom theme colors
+`defaultChecked`| bool| |	The default checked state. Use when the component is not controlled.
+`disabled`|bool|false|If true, the component is disabled.
+`icon`|node|	<CheckBoxOutlineBlankIcon />|The icon to display when the component is unchecked.
+`id`|string| |	The id of the input element.
+`inputProps`|object| |	Attributes applied to the input element.
+`inputRef`|ref| |Pass a ref to the input element.
+`onChange`|func| |	Callback fired when the state is changed.Signature:function(event: React.ChangeEvent<HTMLInputElement>) => void event: The event source of the callback. You can pull out the new checked state by accessing event.target.checked (boolean).
+`required`|bool|false|If true, the input element is required.
+`size`|	'medium','small',string|'medium'|	The size of the component. small is equivalent to the dense checkbox styling.
+`sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+`value`|any| |The value of the component. The DOM API casts this to a string. The browser uses "on" as the default value.
+
+
+## ZAlert 
+```jsx
+import {
+  ZAppBar,
+} from 'react-zoi-common-components'
+import Toolbar from '@mui/material/Toolbar';
+
+import { useState } from 'react';
+function AppBarExample () {
+
+  return (
+    <div>
+      <div >
+          <ZAppBar position="static" color="primary" enableColorOnDark>
+              <Toolbar variant="dense">
+                    icon
+              </Toolbar>
+          </ZAppBar>
+      </div>
+    </div>
+  );
+}
+
+export default AppBarExample;
+```
+`Property`
+
+Name|	Type|	Default|	Description
+--- | --- | --- | ---
+`children`|	node||The content of the component.
+`classes`|	object	||Override or extend the styles applied to the component. See CSS API below for more details.
+color|	'default', 'inherit', 'primary', 'secondary', 'transparent', string|	'primary'	|The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.enableColorOnDark	bool	false	.If true, the color prop is applied in dark mode.
+`position`|	'absolute', 'fixed', 'relative'| 'static', 'sticky'|	'fixed'	|The positioning type. The behavior of the different options is described in the MDN web docs. Note: sticky is not universally supported and will fall back to static when unavailable.
+`sx`	|Array<func, object , bool> , func, object	||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
 
 ## License
 
