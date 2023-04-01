@@ -13,11 +13,12 @@ npm install --save react-zoi-common-components
 <!-- TOC -->
 
 - [Zoi Components Navigation](#react-zoi-common-components -navigation)
-    - [TextField](#TextField)
-    - [Button](#Button)
-    - [Typography](#Typography)
-    - [Common Dialog](#CommonDialog)   
-    - [FormControlLabel](#FormControlLabel)
+<!--     - [TextField](#TextField) -->
+    - [TextField](#TextField)
+    - [Button](#Button)
+    - [Typography](#Typography)
+    - [Common Dialog](#CommonDialog)
+    - [FormControlLabel](#FormControlLabel)
     - [CircularProgress](#CircularProgress)
     - [Box](#Box) 
     - [Bage](#Bage)   
@@ -25,6 +26,8 @@ npm install --save react-zoi-common-components
     - [Grid](#Grid)  
     - [SearchTextBox](#SearchTextBox)   
     - [Alert](#ZAlert) 
+    - [Dialog](#Dialog) 
+    - [Collapse](#Collapse) 
     - [Chip](#ZChip) 
     - [CheckBox](#ZCheckBox) 
 
@@ -280,7 +283,7 @@ class Box  extends Component {
   render() {
     return (
       <div>
-       <Box
+       <ZBox
           sx={{
           width: 300,
           height: 300,
@@ -291,8 +294,8 @@ class Box  extends Component {
           },
         }}
        />
-       <Box component="span" sx={{ p: 2, border: '1px dashed grey' }}>
-       <Box sx={{ border: '1px dashed grey' }}>
+       <ZBox component="span" sx={{ p: 2, border: '1px dashed grey' }}>
+       <ZBox sx={{ border: '1px dashed grey' }}>
       </div>
     )
   }
@@ -454,7 +457,7 @@ slots|	{ closeButton?: elementType, closeIcon?: elementType }|	{}|The components
 ```jsx
 import React, { Component } from 'react'
 
-import { ZBage} from 'react-zoi-common-components'
+import { ZBage } from 'react-zoi-common-components'
 
 class Bage  extends Component {
   constructor(props) {
@@ -464,9 +467,9 @@ class Bage  extends Component {
   render() {
     return (
       <div>
-       <Badge badgeContent={4} color="primary"></Badge>
-       <Badge color="secondary" badgeContent={0}></Badge>
-       <Badge color="secondary" overlap="circular" badgeContent=" "></Badge>
+       <ZBage badgeContent={4} color="primary"></ZBage>
+       <ZBage color="secondary" badgeContent={0}></ZBage>
+       <ZBage color="secondary" overlap="circular" badgeContent=" "></ZBage>
     )
   }
 }
@@ -543,12 +546,14 @@ import { ZDialog , ZDialogTitle, ZTypography, ZDialogContent, ZDialogActions, ZB
 class Dialog  extends Component {
   constructor(props) {
     super(props)
-  
+    this.state={
+      open:true
+    }
   }
   render() {
     return (
       <div>
-        <ZDialog  open={true}>
+        <ZDialog  open={this.state.open}>
           <ZDialogTitle>
             {" "}
             <ZTypography variant="h4">Lorem ipsum dolor sit amet consectetuer</ZTypography>
@@ -576,7 +581,25 @@ class Dialog  extends Component {
 
 Name |	Type |	Default |	Description
 --- | --- | --- | ---
-
+`open*`| bool | | If `true`, the component is shown.
+`aria-describedby`| string | | The id(s) of the element(s) that describe the dialog.
+`aria-labelledby`| string | | The id(s) of the element(s) that label the dialog.
+`BackdropComponent`| elementType | styled(Backdrop, { name: 'MuiModal', slot: 'Backdrop', verridesResolver: (props, styles) => { return styles.backdrop; }, })({ zIndex: -1, }) | A backdrop component. This prop enables custom backdrop rendering.
+`children`| node | | Dialog children, usually the included sub-components.
+`classes`| object | | Override or extend the styles applied to the component.
+`disableEscapeKeyDown`| bool | false | If `true`, hitting escape will not fire the `onClose` callback.
+`fullScreen`| bool | false | If `true`, the dialog is full-screen.
+`fullWidth`| bool | false | If `true`, the dialog stretches to `maxWidth`. Notice that the dialog width grow is limited by the default margin.
+`maxWidth`| 'xs', 'sm', 'md', 'lg', 'xl', false, string | 'sm' | Determine the max-width of the dialog. The dialog width grows with the size of the screen. Set to `false` to disable `maxWidth`.
+`onBackdropClick	`| func | | Callback fired when the backdrop is clicked.
+`onClose`| func | | Callback fired when the component requests to be closed. Signature:`function(event: object, reason: string) => void`, event: The event source of the callback. reason: Can be: "escapeKeyDown", "backdropClick".
+`PaperComponent`| elementType | Paper | The component used to render the body of the dialog.
+`PaperProps`| object | {} | Props applied to the Paper element.
+`scroll`| 'body', 'paper' | 'paper' | Determine the container for scrolling the dialog.
+`sx`| Array<func, object, bool>, func, objectThe system prop that allows defining system overrides as well as additional CSS styles.
+`TransitionComponent`| elementType | Fade | The component used for the transition.
+`transitionDuration`| number, { appear?: number, enter?: number, exit?: number } | { enter: theme.transitions.duration.enteringScreen, exit: theme.transitions.duration.leavingScreen, } |The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object.
+`TransitionProps`| object | | Props applied to the transition element. By default, the element is based on this Transition component.
 
 
 
@@ -784,7 +807,7 @@ Prop Name | Type | Default | Description
 ```jsx
 import React, { Component } from 'react'
 
-import { ZChip} from 'react-zoi-common-components'
+import { ZChip } from 'react-zoi-common-components'
 
 class Chip  extends Component {
   constructor(props) {
@@ -794,14 +817,14 @@ class Chip  extends Component {
   render() {
     return (
       <div>
-       <Chip label="Chip Filled" />
-       <Chip label="Custom delete icon"
+       <ZChip label="Chip Filled" />
+       <ZChip label="Custom delete icon"
              onClick={handleClick}
              onDelete={handleDelete}
              deleteIcon={<DeleteIcon />}
              variant="outlined"
        />
-      <Chip label="success" color="success" />
+      <ZChip label="success" color="success" />
        
     )
   }
@@ -828,7 +851,7 @@ Name |	Type |	Default |	Description
 ```jsx
 import React, { Component } from 'react'
 
-import { ZCheckBox} from 'react-zoi-common-components'
+import { ZCheckBox } from 'react-zoi-common-components'
 
 class CheckBox  extends Component {
   constructor(props) {
@@ -838,10 +861,10 @@ class CheckBox  extends Component {
   render() {
     return (
       <div>
-       <Checkbox {...label} defaultChecked />
-       <Checkbox {...label} disabled />
-       <Checkbox {...label} defaultChecked size="small" />
-       <Checkbox {...label} defaultChecked color="success" />
+       <ZCheckBox {...label} defaultChecked />
+       <ZCheckBox {...label} disabled />
+       <ZCheckBox {...label} defaultChecked size="small" />
+       <ZCheckBox {...label} defaultChecked color="success" />
     )
   }
 }
@@ -866,7 +889,39 @@ Name |	Type |	Default |	Description
 `sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
 `value`|any| |The value of the component. The DOM API casts this to a string. The browser uses "on" as the default value.
 
+## Skeleton 
+```jsx
+import React, { Component } from 'react'
 
+import { ZSkeleton } from 'react-zoi-common-components'
+
+class Skeleton   extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <ZSkeleton variant="text" sx={{ fontSize: '1rem' }} />
+       <ZSkeleton variant="circular" width={40} height={40} />
+       <ZSkeleton variant="rounded" width={210} height={60} />
+       <ZSkeleton animation="wave" />
+    )
+  }
+}
+```
+`Property`
+
+Name |	Type |	Default |	Description
+--- | --- | --- | ---
+`animation`|'pulse','wave',false|pulse|	The animation. If false the animation effect is disabled.
+`classes`|object| |Override or extend the styles applied to the component. 
+`component`|elementType| |The component used for the root node. Either a string to use a HTML element or a component.
+`height`| number,string| |Height of the skeleton. Useful when you don't want to adapt the skeleton to a text element but for instance a card.
+`width`|number,string| |Width of the skeleton. Useful when the skeleton is inside an inline element with no width of its own.
+`sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+`variant`|'circular','rectangular','rounded','text',string|text|The type of content that will be rendered.
 ## ZAlert 
 ```jsx
 import {
