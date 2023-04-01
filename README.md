@@ -280,7 +280,7 @@ class Box  extends Component {
   render() {
     return (
       <div>
-       <Box
+       <ZBox
           sx={{
           width: 300,
           height: 300,
@@ -291,8 +291,8 @@ class Box  extends Component {
           },
         }}
        />
-       <Box component="span" sx={{ p: 2, border: '1px dashed grey' }}>
-       <Box sx={{ border: '1px dashed grey' }}>
+       <ZBox component="span" sx={{ p: 2, border: '1px dashed grey' }}>
+       <ZBox sx={{ border: '1px dashed grey' }}>
       </div>
     )
   }
@@ -454,7 +454,7 @@ slots|	{ closeButton?: elementType, closeIcon?: elementType }|	{}|The components
 ```jsx
 import React, { Component } from 'react'
 
-import { ZBage} from 'react-zoi-common-components'
+import { ZBage } from 'react-zoi-common-components'
 
 class Bage  extends Component {
   constructor(props) {
@@ -464,9 +464,9 @@ class Bage  extends Component {
   render() {
     return (
       <div>
-       <Badge badgeContent={4} color="primary"></Badge>
-       <Badge color="secondary" badgeContent={0}></Badge>
-       <Badge color="secondary" overlap="circular" badgeContent=" "></Badge>
+       <ZBage badgeContent={4} color="primary"></ZBage>
+       <ZBage color="secondary" badgeContent={0}></ZBage>
+       <ZBage color="secondary" overlap="circular" badgeContent=" "></ZBage>
     )
   }
 }
@@ -784,7 +784,7 @@ Prop Name | Type | Default | Description
 ```jsx
 import React, { Component } from 'react'
 
-import { ZChip} from 'react-zoi-common-components'
+import { ZChip } from 'react-zoi-common-components'
 
 class Chip  extends Component {
   constructor(props) {
@@ -794,14 +794,14 @@ class Chip  extends Component {
   render() {
     return (
       <div>
-       <Chip label="Chip Filled" />
-       <Chip label="Custom delete icon"
+       <ZChip label="Chip Filled" />
+       <ZChip label="Custom delete icon"
              onClick={handleClick}
              onDelete={handleDelete}
              deleteIcon={<DeleteIcon />}
              variant="outlined"
        />
-      <Chip label="success" color="success" />
+      <ZChip label="success" color="success" />
        
     )
   }
@@ -828,7 +828,7 @@ Name |	Type |	Default |	Description
 ```jsx
 import React, { Component } from 'react'
 
-import { ZCheckBox} from 'react-zoi-common-components'
+import { ZCheckBox } from 'react-zoi-common-components'
 
 class CheckBox  extends Component {
   constructor(props) {
@@ -838,10 +838,10 @@ class CheckBox  extends Component {
   render() {
     return (
       <div>
-       <Checkbox {...label} defaultChecked />
-       <Checkbox {...label} disabled />
-       <Checkbox {...label} defaultChecked size="small" />
-       <Checkbox {...label} defaultChecked color="success" />
+       <ZCheckBox {...label} defaultChecked />
+       <ZCheckBox {...label} disabled />
+       <ZCheckBox {...label} defaultChecked size="small" />
+       <ZCheckBox {...label} defaultChecked color="success" />
     )
   }
 }
@@ -880,10 +880,10 @@ class Skeleton   extends Component {
   render() {
     return (
       <div>
-       <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-       <Skeleton variant="circular" width={40} height={40} />
-       <Skeleton variant="rounded" width={210} height={60} />
-       <Skeleton animation="wave" />
+       <ZSkeleton variant="text" sx={{ fontSize: '1rem' }} />
+       <ZSkeleton variant="circular" width={40} height={40} />
+       <ZSkeleton variant="rounded" width={210} height={60} />
+       <ZSkeleton animation="wave" />
     )
   }
 }
