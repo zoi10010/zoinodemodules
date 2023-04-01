@@ -13,7 +13,7 @@ npm install --save react-zoi-common-components
 <!-- TOC -->
 
 - [Zoi Components Navigation](#react-zoi-common-components -navigation)
-<!--     - [TextField](#TextField) -->
+   
     - [TextField](#TextField)
     - [Button](#Button)
     - [Typography](#Typography)
@@ -21,8 +21,7 @@ npm install --save react-zoi-common-components
     - [FormControlLabel](#FormControlLabel)
     - [CircularProgress](#CircularProgress)
     - [Box](#Box) 
-    - [Bage](#Bage)   
-    - [CircularProgress](#CircularProgress)   
+    - [Bage](#Bage)    
     - [Grid](#Grid)  
     - [SearchTextBox](#SearchTextBox)   
     - [Alert](#ZAlert) 
