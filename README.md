@@ -25,6 +25,8 @@ npm install --save react-zoi-common-components
     - [Grid](#Grid)  
     - [SearchTextBox](#SearchTextBox)   
     - [Alert](#ZAlert) 
+    - [Chip](#ZChip) 
+    - [CheckBox](#ZCheckBox) 
 
 <!-- /TOC -->
 
@@ -777,6 +779,93 @@ Prop Name | Type | Default | Description
 `color` | 'default' 'primary' 'secondary' 'error' 'info' 'success' 'warning' string | primary | The color of the component.
 `inputProps` | object | | Attributes applied to the input element.
 `disabled` | bool | | If true, The component is disabled.
+
+## Chip
+```jsx
+import React, { Component } from 'react'
+
+import { ZChip} from 'react-zoi-common-components'
+
+class Chip  extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <Chip label="Chip Filled" />
+       <Chip label="Custom delete icon"
+             onClick={handleClick}
+             onDelete={handleDelete}
+             deleteIcon={<DeleteIcon />}
+             variant="outlined"
+       />
+      <Chip label="success" color="success" />
+       
+    )
+  }
+}
+```
+`Property`
+
+Name |	Type |	Default |	Description
+--- | --- | --- | ---
+`avatar	`|element| |	The Avatar element to display.
+`classes`|object| |Override or extend the styles applied to the component. 
+`clickable`|bool| |If true, the chip will appear clickable, and will raise when pressed, even if the onClick prop is not defined. If false, the chip will not appear clickable, even if onClick prop is defined. This can be used, for example, along with the component prop to indicate an anchor Chip is clickable. Note: this controls the UI and does not affect the onClick event.
+`color`|'default', 'primary','secondary','error','info','success','warning',string|'default'|The color of the component. It supports both default and custom theme colors
+`component`|elementType| |The component used for the root node. Either a string to use a HTML element or a component.en the component is unchecked.
+`deleteIcon`|element| |	If true, the component is disabled.
+`icon`|element| |	Icon element.
+`label`|node| |The content of the component.
+`onDelete`|func| |Callback fired when the delete icon is clicked. If set, the delete icon will be shown.
+`size`|	'medium','small',string|'medium'|	The size of the component. small is equivalent to the dense checkbox styling.
+`sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+`variant`|'filled','outlined',string| filled|The variant to use.
+
+## CheckBox
+```jsx
+import React, { Component } from 'react'
+
+import { ZCheckBox} from 'react-zoi-common-components'
+
+class CheckBox  extends Component {
+  constructor(props) {
+    super(props)
+  
+  }
+  render() {
+    return (
+      <div>
+       <Checkbox {...label} defaultChecked />
+       <Checkbox {...label} disabled />
+       <Checkbox {...label} defaultChecked size="small" />
+       <Checkbox {...label} defaultChecked color="success" />
+    )
+  }
+}
+```
+`Property`
+
+Name |	Type |	Default |	Description
+--- | --- | --- | ---
+`checked`|bool| |	If true, the component is checked.
+`checkedIcon`|node|	<CheckBoxIcon /> |The icon to display when the component is checked.
+`classes`|object| |Override or extend the styles applied to the component. 
+`color`|'default', 'primary','secondary','error','info','success','warning',string|'default'|The color of the component. It supports both default and custom theme colors
+`defaultChecked`| bool| |	The default checked state. Use when the component is not controlled.
+`disabled`|bool|false|If true, the component is disabled.
+`icon`|node|	<CheckBoxOutlineBlankIcon />|The icon to display when the component is unchecked.
+`id`|string| |	The id of the input element.
+`inputProps`|object| |	Attributes applied to the input element.
+`inputRef`|ref| |Pass a ref to the input element.
+`onChange`|func| |	Callback fired when the state is changed.Signature:function(event: React.ChangeEvent<HTMLInputElement>) => void event: The event source of the callback. You can pull out the new checked state by accessing event.target.checked (boolean).
+`required`|bool|false|If true, the input element is required.
+`size`|	'medium','small',string|'medium'|	The size of the component. small is equivalent to the dense checkbox styling.
+`sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+`value`|any| |The value of the component. The DOM API casts this to a string. The browser uses "on" as the default value.
+
 
 
 ## License
