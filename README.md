@@ -14,6 +14,7 @@ npm install --save react-zoi-common-components
 
 ## Index
 
+- Zoi Components components 
    
     - [TextField](#TextField)
     - [Button](#Button)
