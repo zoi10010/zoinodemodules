@@ -602,6 +602,150 @@ Name |	Type |	Default |	Description
 `TransitionProps`| object | | Props applied to the transition element. By default, the element is based on this Transition component.
 
 
+## Header
+
+```jsx
+import React, { Component } from 'react'
+import { ZHeader } from 'react-zoi-common-components'
+
+class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        name:""
+    }
+  }
+  render() {
+    return (
+      <div>
+        <ZHeader title={"helloss"} className={classes.headerDesign} style={height:'80px'}></ZHeader>
+      </div>
+    )
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`title` | String | | To give `title` to the Header. 
+`className` | bool | | To give custom Class to the header. 
+`style` | String | | Particular `style` to the header.
+
+
+
+## Icon
+
+```jsx
+import React, { Component } from 'react'
+import { ZIcon } from 'react-zoi-common-components'
+
+class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        name:""
+    }
+  }
+  render() {
+    return (
+      <div>
+       <ZIcon baseClassName="fas" className="fa-plus-circle" fontSize="small" />
+       <ZIcon sx={{ color: green[500] }}>add_circle</ZIcon>
+      </div>
+    )
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`baseClassName` | string | 'material-icons' | The base class applied to the icon. Defaults to 'material-icons', but can be changed to any other base class that suits the icon font you're using (e.g. material-icons-rounded, fas, etc). 
+`children` | node | | The name of the icon font ligature. 
+`classes` | String | | Override or extend the styles applied to the component. See CSS API below for more details.
+`color` | 	'inherit'
+| 'action'
+| 'disabled'
+| 'primary'
+| 'secondary'
+| 'error'
+| 'info'
+| 'success'
+| 'warning'
+| string | 'inherit' | The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.
+`component` | elementType | | The component used for the root node. Either a string to use a HTML element or a component.
+`fontSize` | 	'inherit'
+| 'large'
+| 'medium'
+| 'small'
+| string | 'medium' | The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
+`sx` | 	Array<func
+| object
+| bool>
+| func
+| object | | The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+
+
+## IconButton
+
+```jsx
+import React, { Component } from 'react'
+import { ZIconButton } from 'react-zoi-common-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons/faEllipsisV';
+
+class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+        name:""
+    }
+  }
+  render() {
+    return (
+      <div>
+        <ZIconButton aria-label="Example">
+          <FontAwesomeIcon icon={faEllipsisV} />
+        </ZIconButton>
+      </div>
+    )
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`children` | 	node | 	The icon to display. 
+`classes` | object | | Override or extend the styles applied to the component. See CSS API below for more details.
+`color` | 	'inherit'
+| 'action'
+| 'disabled'
+| 'primary'
+| 'secondary'
+| 'error'
+| 'info'
+| 'success'
+| 'warning'
+| string | 'inherit' | The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.
+`disabled` | bool | false | If true, the component is disabled.
+`disableFocusRipple` | string | false | If true, the keyboard focus ripple is disabled.
+`disableRipple` | bool | false | If true, the ripple effect is disabled.
+⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure to highlight the element by applying separate styles with the .Mui-focusVisible class.
+`edge` | 	'end'
+| 'start'
+| false | false | If given, uses a negative margin to counteract the padding on one side (this is often helpful for aligning the left or right side of the icon with content above or below, without ruining the border size and shape).
+`size` | 	'small'
+| 'medium'
+| 'large'
+| string | 'medium' | The size of the component. small is equivalent to the dense button styling.
+`sx` | 	Array<func
+| object
+| bool>
+| func
+| object | false | The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+
 
 ## No Data
 
