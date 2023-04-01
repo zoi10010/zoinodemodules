@@ -12,7 +12,7 @@ npm install --save react-zoi-common-components
 
 <!-- TOC -->
 
-- [Zoi Components Navigation](#react-zoi-common-components -navigation)
+- Zoi Components components Index
    
     - [TextField](#TextField)
     - [Button](#Button)
