@@ -13,11 +13,12 @@ npm install --save react-zoi-common-components
 <!-- TOC -->
 
 - [Zoi Components Navigation](#react-zoi-common-components -navigation)
-    - [TextField](#TextField)
-    - [Button](#Button)
-    - [Typography](#Typography)
-    - [Common Dialog](#CommonDialog)   
-    - [FormControlLabel](#FormControlLabel)
+<!--     - [TextField](#TextField) -->
+    - [TextField](#TextField)
+    - [Button](#Button)
+    - [Typography](#Typography)
+    - [Common Dialog](#CommonDialog)
+    - [FormControlLabel](#FormControlLabel)
     - [CircularProgress](#CircularProgress)
     - [Box](#Box) 
     - [Bage](#Bage)   
@@ -25,6 +26,8 @@ npm install --save react-zoi-common-components
     - [Grid](#Grid)  
     - [SearchTextBox](#SearchTextBox)   
     - [Alert](#ZAlert) 
+    - [Dialog](#Dialog) 
+    - [Collapse](#Collapse) 
 
 <!-- /TOC -->
 
@@ -541,12 +544,14 @@ import { ZDialog , ZDialogTitle, ZTypography, ZDialogContent, ZDialogActions, ZB
 class Dialog  extends Component {
   constructor(props) {
     super(props)
-  
+    this.state={
+      open:true
+    }
   }
   render() {
     return (
       <div>
-        <ZDialog  open={true}>
+        <ZDialog  open={this.state.open}>
           <ZDialogTitle>
             {" "}
             <ZTypography variant="h4">Lorem ipsum dolor sit amet consectetuer</ZTypography>
@@ -574,7 +579,25 @@ class Dialog  extends Component {
 
 Name |	Type |	Default |	Description
 --- | --- | --- | ---
-
+`open*`| bool | | If `true`, the component is shown.
+`aria-describedby`| string | | The id(s) of the element(s) that describe the dialog.
+`aria-labelledby`| string | | The id(s) of the element(s) that label the dialog.
+`BackdropComponent`| elementType | styled(Backdrop, { name: 'MuiModal', slot: 'Backdrop', verridesResolver: (props, styles) => { return styles.backdrop; }, })({ zIndex: -1, }) | A backdrop component. This prop enables custom backdrop rendering.
+`children`| node | | Dialog children, usually the included sub-components.
+`classes`| object | | Override or extend the styles applied to the component.
+`disableEscapeKeyDown`| bool | false | If `true`, hitting escape will not fire the `onClose` callback.
+`fullScreen`| bool | false | If `true`, the dialog is full-screen.
+`fullWidth`| bool | false | If `true`, the dialog stretches to `maxWidth`. Notice that the dialog width grow is limited by the default margin.
+`maxWidth`| 'xs', 'sm', 'md', 'lg', 'xl', false, string | 'sm' | Determine the max-width of the dialog. The dialog width grows with the size of the screen. Set to `false` to disable `maxWidth`.
+`onBackdropClick	`| func | | Callback fired when the backdrop is clicked.
+`onClose`| func | | Callback fired when the component requests to be closed. Signature:`function(event: object, reason: string) => void`, event: The event source of the callback. reason: Can be: "escapeKeyDown", "backdropClick".
+`PaperComponent`| elementType | Paper | The component used to render the body of the dialog.
+`PaperProps`| object | {} | Props applied to the Paper element.
+`scroll`| 'body', 'paper' | 'paper' | Determine the container for scrolling the dialog.
+`sx`| Array<func, object, bool>, func, objectThe system prop that allows defining system overrides as well as additional CSS styles.
+`TransitionComponent`| elementType | Fade | The component used for the transition.
+`transitionDuration`| number, { appear?: number, enter?: number, exit?: number } | { enter: theme.transitions.duration.enteringScreen, exit: theme.transitions.duration.leavingScreen, } |The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object.
+`TransitionProps`| object | | Props applied to the transition element. By default, the element is based on this Transition component.
 
 
 ## License
