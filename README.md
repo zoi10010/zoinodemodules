@@ -1114,7 +1114,6 @@ function DropZoneSample () {
   const [file,setFile]=useState("")
   const fileDrop=(file)=>{
     //convert file to base 64 and store in state
-    setFile(file)
     console.log(file)
   }
   const remove=()=>{
