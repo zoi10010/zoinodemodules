@@ -1,6 +1,6 @@
 import React from 'react'
 import Dialog from '@mui/material/Dialog';
-import { makeStyles  ,Theme  } from '@mui/styles';
+import { makeStyles  } from '@mui/styles';
 import Colors from '../../utils/constants/Colors';
 import constants from '../../utils/constants/ConstantCss';
 
