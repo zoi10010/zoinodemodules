@@ -12,9 +12,7 @@ npm install --save react-zoi-common-components
 
 <!-- TOC -->
 
-## Index
-
-- Zoi Common components 
+- [Zoi Components Navigation](#react-zoi-common-components -navigation)
    
     - [TextField](#TextField)
     - [Button](#Button)
@@ -33,6 +31,10 @@ npm install --save react-zoi-common-components
     - [CheckBox](#CheckBox) 
     - [Skeleton](#Skeleton) 
     - [AppBar](#ZAppBar)
+    - [IconButton](#IconButton)
+    - [Icon](#Icon)
+    - [Header](#Header)
+    - [Dropzone](#ZDropZone)
 <!-- /TOC -->
 
 
@@ -1102,6 +1104,40 @@ Name|	Type|	Default|	Description
 `color`|	'default', 'inherit', 'primary', 'secondary', 'transparent', string|	'primary'	|The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.enableColorOnDark	bool	false	.If true, the color prop is applied in dark mode.
 `position`|	'absolute', 'fixed', 'relative'| 'static', 'sticky'|	'fixed'	|The positioning type. The behavior of the different options is described in the MDN web docs. Note: sticky is not universally supported and will fall back to static when unavailable.
 `sx`	|Array<func, object , bool> , func, object	||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+## ZDropZone 
+```jsx
+import {
+  ZDropZone,
+} from 'react-zoi-common-components'
+import { useState } from 'react';
+function DropZoneSample () {
+  const [file,setFile]=useState("")
+  const fileDrop=(file)=>{
+    //convert file to base 64 and store in state
+    console.log(file)
+  }
+  const remove=()=>{
+    //on close icon click this function will be called here remove the file from state
+  }
+  return (
+    <div>
+      <div >
+         <ZDropZone  accept={".png,.PNG,.jpg,.JPG,.jpeg,.JPEG"} onDrop={(acceptedFiles) => fileDrop(acceptedFiles)} fileSrc={file} onRemove={remove} />
+                                   
+      </div>
+    </div>
+  );
+}
+
+export default DropZoneSample;
+```
+`Property`
+
+Name|	Type|	Default|	Description
+--- | --- | --- | ---
+`fileSrc`|string	||fileSrc need to be base64 string or url of image. if fileScr Empty default Upload control will show
+`onDrop`|	function 	||in ondrop event will get the file in parameter
+`remove`|	function|	| this props function called on click of close icon, here we can remove from state
 
 ## License
 
