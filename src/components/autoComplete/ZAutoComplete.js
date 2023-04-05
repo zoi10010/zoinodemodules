@@ -35,7 +35,7 @@ export default function ComboBox(props) {
             //    loading={!open}
                 loadingText={props.Loading}
                 onChange={(event, values) => onSelect(values)}
-                renderInput={(params) => <TextField onChange={(e) => handleChange(e.target.value)} onBlur={closePopup} {...params} label={props.label}
+                renderInput={(params) => <TextField disabled={props.disabled} onChange={(e) => handleChange(e.target.value)} onBlur={closePopup} {...params} label={props.label}
                 placeholder={props.placeholder}
                      className={props.className} error={props.error}
                      helperText={props.error} variant ="standard"

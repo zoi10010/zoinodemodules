@@ -99,7 +99,7 @@ function ZAutoCompleteAddButton(props) {
             loading={!open}
             loadingText={props.Loading ? props.Loading : "Loading..."}
             onChange={(event, values) => props.selectvalue(values)}
-            renderInput={(params) => <TextField inputProps={{ maxLength: 3 }}
+            renderInput={(params) => <TextField inputProps={{ maxLength: 3 }} disabled={props.disabled}
                 variant="standard" onKeyPress={alpha} onBlur={props.onBlur} onChange={onChange} {...params} label={props.label}
                 className={props.className} onPaste={checkReg} error={props.error != undefined && props.error.length > 0 ? true : false} helperText={props.error} />}
 
