@@ -23,7 +23,13 @@ function ZDropzone(props) {
                         accept={props.accept}
                     />
                     {props.fileSrc == "" || props.fileSrc == null || props.fileSrc == undefined ?
-                        <ZTypography className={classes.text}>{props.placeHolder ? props.placeHolder : "Upload Image"}</ZTypography>
+                        <div>
+                            {props.children ?
+                                props.children
+                                :
+                                <ZTypography className={classes.text}>{props.placeHolder ? props.placeHolder : "Upload Image"}</ZTypography>
+                            }
+                        </div>
                         :
                         <img src={props.fileSrc} className={classes.image} />
                     }
@@ -40,9 +46,6 @@ const styles = theme => ({
         textAlign: "center",
         width: "100%",
         paddingBottom: 6,
-        [theme.breakpoints.down('md')]: {
-            width: "100%"
-        },
         cursor: "pointer"
         // margin:"0% 30%"
     },
@@ -57,10 +60,6 @@ const styles = theme => ({
         alignItems: "center",
         justifyContent: "center",
         display: "flex",
-        [theme.breakpoints.down('sm')]: {
-            fontSize: 13,
-            textAlign: "center"
-        },
     }
 });
 

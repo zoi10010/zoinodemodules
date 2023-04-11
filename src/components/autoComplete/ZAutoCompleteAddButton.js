@@ -51,65 +51,61 @@ function ZAutoCompleteAddButton(props) {
 
 
     return (
-
-        <>
-
-            <Autocomplete
-                {...props}
-                options={props.data}
-                classes={props.classes}
-                filterOptions={(options, params) => {
+        <Autocomplete
+            {...props}
+            options={props.data}
+            classes={props.classes}
+            filterOptions={(options, params) => {
 
 
-                    const filtered = filter(options, params);
+                const filtered = filter(options, params);
 
-                    if (params.inputValue !== '' && props.isShowAddButton) {
+                if (params.inputValue !== '' && props.isShowAddButton) {
 
-                        filtered.push({
-                            isButton: true,
-                            name: params.inputValue,
-                            value: params.inputValue,
-                        });
-                    }
-                    return filtered;
-                }}
-                getOptionLabel={(option) => option != undefined ? option.name : ""}
-                renderOption={(prop, option) => (
-                    <>
-                        {option.isButton ?  
-
-                            <li  {...prop}>
-                                <Button
-                                   variant="contained"
-                                    color="primary"
-                                    onMouseDown={() => {
-                                        checkDuplicate(text.trim()) ? props.popupError() : props.showpopup(text.trim())
-                                    }}
-                                >
-                                   Add New {props.Loading}
-                                </Button>
-
-                            </li>
-                            :
-                            <li {...prop}>{option.name}</li>
-                        }
-                    </>
-                )
+                    filtered.push({
+                        isButton: true,
+                        name: params.inputValue,
+                        value: params.inputValue,
+                    });
                 }
-                value={props.value}
-                loading={!open}
-                loadingText={props.Loading ? props.Loading : "Loading..."}
-                onChange={(event, values) => props.selectvalue(values)}
-                renderInput={(params) => <TextField inputProps={{ maxLength: 3 }} 
+                return filtered;
+            }}
+            getOptionLabel={(option) => option != undefined ? option.name : ""}
+            renderOption={(prop, option) => {
+                if (option.isButton) {
+                    return (
+                        <li  {...prop}>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onMouseDown={() => {
+                                    checkDuplicate(text.trim()) ? props.popupError() : props.showpopup(text.trim())
+                                }}
+                            >
+                                Add New {props.Loading}
+                            </Button>
+
+                        </li>
+                    )
+                }
+                else {
+                    return (
+                        <li {...prop}>{option.name}</li>
+                    )
+                }
+            }
+            }
+            value={props.value}
+            loading={!open}
+            loadingText={props.Loading ? props.Loading : "Loading..."}
+            onChange={(event, values) => props.selectvalue(values)}
+            renderInput={(params) => <TextField inputProps={{ maxLength: 3 }} disabled={props.disabled}
                 variant="standard" onKeyPress={alpha} onBlur={props.onBlur} onChange={onChange} {...params} label={props.label}
-                    className={props.className} onPaste={checkReg} error={props.error != undefined && props.error.length > 0 ? true : false} helperText={props.error} />}
+                className={props.className} onPaste={checkReg} error={props.error != undefined && props.error.length > 0 ? true : false} helperText={props.error} />}
 
 
-                onClose={() => setText("")}
-            />
-
-            {/* <span >{props.error}</span> */}
-        </>
+            onClose={() => setText("")}
+        />
     );
 }
 
