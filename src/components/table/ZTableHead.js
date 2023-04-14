@@ -1,7 +1,7 @@
 import React from 'react'
-import { TableHead } from '@material-ui/core';
+import { TableHead } from '@mui/material';
 
-export default function ZTable(props) {
+export default function ZTableHead(props) {
     return (
         <TableHead
             {...props}

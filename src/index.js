@@ -36,6 +36,20 @@ export { default as ZSkeleton } from './components/SkeletonLoader/ZSkeleton';
 export { default as ZSnackbar } from './components/snackBar/ZSnackbar';
 export { default as ZCommonDialog } from './components/dialog/ZCommonDialog';
 export { default as ZDropZone } from "./components/dropZone/ZDropZone";
-// export { default as ZCommonTable } from './components/table/ZTable';
-
-
+export { default as ZTable } from "./components/table/ZTable";
+export { default as ZTableBody } from "./components/table/ZTableBody";
+export { default as ZTableCell } from "./components/table/ZTableCell";
+export { default as ZTableContainer } from "./components/table/ZTableContainer";
+export { default as ZTableFooter } from "./components/table/ZTableFooter";
+export { default as ZTableRow } from "./components/table/ZTableRow";
+export { default as ZTableHead } from "./components/table/ZTableHead";
+export { default as ZDivider } from "./components/divider/ZDivider";
+export { default as ZCollapse } from "./components/collapse/ZCollapse";
+export { default as ZList } from "./components/list/ZList";
+export { default as ZListItem } from "./components/list/ZListItem";
+export { default as ZListItemAvatar } from "./components/list/ZListItemAvatar";
+export { default as ZListItemButton } from "./components/list/ZListItemButton";
+export { default as ZListItemIcon } from "./components/list/ZListItemIcon";
+export { default as ZListItemSecondaryAction } from "./components/list/ZListItemSecondaryAction";
+export { default as ZListItemText } from "./components/list/ZListItemText";
+export { default as ZListSubHeader } from "./components/list/ZListSubHeader";

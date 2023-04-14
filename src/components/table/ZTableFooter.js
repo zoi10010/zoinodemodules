@@ -1,5 +1,5 @@
 import React from 'react'
-import TableFooter from '@material-ui/core/TableFooter';
+import {TableFooter} from '@mui/material';
 
 export default function ZTableFooter(props) {
     return (
