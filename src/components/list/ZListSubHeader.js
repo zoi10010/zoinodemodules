@@ -1,10 +1,10 @@
 import React from 'react'
-import { ZListSubHeader } from '@mui/material';
+import { ListSubheader } from '@mui/material';
 
 export default function ZListSubHeader(props) {
     return (
-        <ZListSubHeader {...props}>
+        <ListSubheader {...props}>
             {props.children}
-        </ZListSubHeader>
+        </ListSubheader>
     )
 }

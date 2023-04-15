@@ -44,7 +44,6 @@ export { default as ZTableFooter } from "./components/table/ZTableFooter";
 export { default as ZTableRow } from "./components/table/ZTableRow";
 export { default as ZTableHead } from "./components/table/ZTableHead";
 export { default as ZDivider } from "./components/divider/ZDivider";
-export { default as ZCollapse } from "./components/collapse/ZCollapse";
 export { default as ZList } from "./components/list/ZList";
 export { default as ZListItem } from "./components/list/ZListItem";
 export { default as ZListItemAvatar } from "./components/list/ZListItemAvatar";
