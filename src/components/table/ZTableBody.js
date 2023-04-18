@@ -1,7 +1,7 @@
 import React from 'react'
-import { TableBody } from '@material-ui/core';
+import { TableBody } from '@mui/material';
 
-export default function ZTable(props) {
+export default function ZTableBody(props) {
     return (
         <TableBody
             {...props}

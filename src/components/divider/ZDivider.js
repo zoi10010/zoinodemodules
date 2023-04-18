@@ -1,5 +1,5 @@
 import React from 'react'
-import Divider from '@mui/material/Divider';
+import { Divider } from '@mui/material';
 
 
 export default function ZDivider(props) {
