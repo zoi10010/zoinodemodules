@@ -33,4 +33,4 @@ function ZButton(props) {
 }
 
 
-export default withStyles(styles)(ZButton)
+export default withStyles(ZButton)
