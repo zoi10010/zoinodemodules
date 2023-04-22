@@ -7,13 +7,17 @@ import {
   ZCommonDialog,
   ZPaper,
   ZCommonTable,
-  ZTextField, ZInputAdornment, 
+  ZTextField, ZInputAdornment, ZButton
 } from 'zoinodemodules'
 
 import About from '../src/asset/About.svg';
 import 'zoinodemodules/dist/index.css'
-import constants from "../../src/utils/constants/ConstantCss";
-import { createTheme} from '@mui/material/styles';
+import { alpha,  createTheme, ThemeProvider ,styled} from '@mui/material/styles';
+import Colors from './constants/Colors';
+import Constants from './constants/ConstantCSS';
+import{makeStyles} from '@mui/styles'
+
+
 const data = {
   head: [
     {
@@ -104,9 +108,169 @@ const data = {
 
 const App = () => {
 
-
+  const classes = useStyles();
   return <div>
-    <ZTextField />
+            <ZTextField/>
+             <ZHeader title={"hello"}></ZHeader>
+          {/* <Zpaper className={classes.paperContainer} elevation={0}>
+          <ZGrid sx={{m:2}}> 
+              <ZHeader variant="h1" className={classes.dsds} title={"Daily Report"}></ZHeader>
+              <ZTypography variant="body2">You can't undo this operation </ZTypography>
+          </ZGrid>
+            <ZGrid sx={{p:2}} container spacing={4}>
+                <ZGrid item xs={3}>
+                  <ZTextBox
+                    id="standard-search"
+                    label="Email"
+                  />
+                </ZGrid>
+                <ZGrid item xs={3}>
+                  <ZTextBox
+                    id="standard-search"
+                    label="Password"
+                  />
+                </ZGrid>                         
+                <ZGrid item xs={3}>
+                  <ZTextBox
+                      id="standard-search"
+                      label="Password"
+                      variant={Constants.variant.standard}
+                  />
+                </ZGrid>   
+                <ZGrid item xs={3}>
+                    <ZTextBox variant={Constants.variant.standard}
+                        label="Username"
+                        InputProps={{
+                            startAdornment: <InputAdornment position={Constants.position.start}><span><PersonIcon/></span></InputAdornment>
+                        }}
+                        >
+                    </ZTextBox>
+                  </ZGrid>    
+
+                  <ZGrid item xs={3}>
+                    <ZTextBox variant={Constants.variant.outlined}
+                    
+                        label="Username"
+                        InputProps={{
+                            endAdornment: <InputAdornment position={Constants.position.end}>
+                              <ZIconButton sx={{p:0}}><PersonIcon/></ZIconButton>
+                              </InputAdornment>
+                        }}
+                        helperText="Please enter your name"
+                        >
+                    </ZTextBox>
+                  </ZGrid>  
+
+                  <ZGrid item xs={3}>
+                    <ZTextBoxSearch placeholder="Search Icons"></ZTextBoxSearch>
+                  </ZGrid> 
+
+                  <ZGrid row item xs={3}>
+                    <ZFormControl>
+                      <FormLabel id="demo-customized-radios">Select User</FormLabel>
+                      <ZRadioGroup row className={classes.radioButtonGroup}>
+                            <ZFormControlLabel sx={{ml:1}} value="dept" control={<ZRadio color={Constants.color.primary} />} label="department" />
+                            <ZFormControlLabel sx={{ml:1}} value="user" control={<ZRadio color={Constants.color.primary} />} label="UserWise" />
+                        </ZRadioGroup>
+                      </ZFormControl>
+                  </ZGrid> 
+                  
+                  <ZGrid item xs={3} sx={{display:"flex"}}>
+                      <ZFormControlLabel
+                          value="end"
+                          control={<ZCheckbox />}
+                          label="Standard"
+                          labelPlacement={Constants.position.end}
+                        />                 
+                  </ZGrid> 
+
+                  <ZGrid item xs={12}>
+                      <ZDivider></ZDivider>
+                  </ZGrid>
+
+                  <ZGrid item xs={3} container>
+                      <Box>
+                        <ZButton  sx={{m:2}} name="Open Confirmation dialog" elevation={0} variant={Constants.variant.contained} onClick={() => setOpen (true)}>            
+                        
+                        </ZButton>
+                        <ZDialog open={open} onClose={() => setOpen (false)} role="Open Confirmation dialog">  
+                          <DialogTitle id="alert-dialog-title" dividers>
+                              {"Confirmation"}
+                          </DialogTitle>
+                          <DialogContent>
+                            <DialogContentText>
+                              Are you sure you want to discard all of your notes?
+                            </DialogContentText>
+                          </DialogContent>
+                          <DialogActions>
+                            <ZButton onClick={handleClose} variant={Constants.variant.outlined}>Cancel</ZButton>
+                            <ZButton onClick={handleClose} autoFocus variant={Constants.variant.contained}> Discard notes </ZButton>
+                          </DialogActions>
+                        </ZDialog>
+                      </Box> 
+                  </ZGrid>
+
+                  <ZGrid item xs={3}>
+                    <ZAutoComplete
+                      label="combo-box-demo"
+                      data={countries}
+                      error={3}
+                    />
+                    
+                  </ZGrid>
+                  
+                  <ZGrid item container xs={3} sx={{gap:2}}>
+                      <ZButton variant="outlined" startIcon={<DeleteIcon />}>
+                        Delete
+                      </ZButton>
+                      <ZButton variant="contained" endIcon={<SendIcon />}>
+                        Send
+                      </ZButton>
+                  </ZGrid>
+
+                  <ZGrid item xs={12}>
+                      <Box>
+                        <ZButton variant={Constants.variant.outlined} onClick={handleClickOpen}>
+                        Open form dialog
+                        </ZButton>
+                          <ZDialog open={open} onClose={handleClose} scroll="paper">
+                            <DialogTitle>Subscribe</DialogTitle>
+                            <DialogContent>
+                              <DialogContentText>
+                                To subscribe to this website, please enter your email address here. We
+                                will send updates occasionally.
+                              </DialogContentText>
+                              <ZTextBox
+                                autoFocus
+                                fullWidth 
+                                margin="dense"
+                                id="name"
+                                label="Email Address"
+                                type="email"                  
+                                variant={Constants.variant.standard}
+                              />
+                            </DialogContent>
+                            <DialogActions>
+                              <ZButton onClick={handleClose} variant={Constants.variant.outlined}>Cancel</ZButton>
+                              <ZButton onClick={handleClose} variant={Constants.variant.contained}>Subscribe</ZButton>
+                            </DialogActions>
+                          </ZDialog>
+                      </Box>
+
+                        <ZCard 
+                          key={0} 
+                          name={"Info card"} 
+                          icon={nature} 
+                          description={"Card description"} 
+                          color={Colors.primary} 
+                          background={Colors.whiteSmoke}
+                        />
+                  </ZGrid>
+            </ZGrid>
+          </Zpaper> */}
+
+      
+    {/* <ZTextField /> */}
     {/* <ZDropzone
       accept={".png,.PNG,.jpg,.JPG,.jpeg,.JPEG"}
 
@@ -115,7 +279,7 @@ const App = () => {
       fileSrc={this.state.profilepic.value}
       error={this.state.profilepic.error}
       remove={this.removeImage} /> */}
-    <ZHeader title={"helloss"}></ZHeader>
+    {/* <ZHeader title={"helloss"}></ZHeader> */}
     {/* <ZPaper elevation={0} />
     <ZPaper />
     <ZPaper elevation={3} /> */}
@@ -125,7 +289,7 @@ const App = () => {
     </ZAppBar>
     <ZNoData></ZNoData>
    
-    <ZTypography>hello</ZTypography> */}
+    */}
 
     {/* <ZGrid container >
       <ZCommonTable isPagination={true} isLoading={false} data={data} />
@@ -136,8 +300,24 @@ const App = () => {
     {/* <ZCommonDialog open={true} close={() => {}} head="User Details" actionButton={[{ name: 'Cancel', action: {}, variant: "outlined", color: "primary" }, { name: 'ok', action: {}, variant: "contained", color: "primary" }]}>
         <div>This is common dialog</div>
       </ZCommonDialog> */}
+      
   </div>
 }
+
+const useStyles = makeStyles(({
+  root:{
+      padding:"1rem"
+  },
+
+  paperContainer:{
+    marginBottom:"1rem",
+    paddingBottom:"1rem",
+    border: `2px solid ${Colors.solitude}`,
+    borderRadius:`${Constants.borderRadius.sm} !important`
+  },
+
+}));
+
 
 const theme = createTheme ({
   palette: {
@@ -166,7 +346,15 @@ const theme = createTheme ({
 
   components: {
       // Name of the component
-
+    // ZHeader:{
+    //   styleOverrides:{
+    //     gridHeader:{
+    //       "&.MuiTypography-body1":{
+    //           fontSize:Constants.fontSize.xl,
+    //         }
+    //       }      
+    //     }
+    // },
 
     MuiBackdrop:{
       styleOverrides:{
@@ -224,9 +412,9 @@ const theme = createTheme ({
       styleOverrides: {
         // Name of the slot
         root: {
-              fontWeight: constants.fontWeight.lg,
-              fontSize: constants.fontSize.lg,
-              borderBottom:`${constants.border.solid} ${Colors.lightGray}`, 
+              fontWeight: Constants.fontWeight.lg,
+              fontSize: Constants.fontSize.lg,
+              borderBottom:`${Constants.border.solid} ${Colors.lightGray}`, 
                          
         },
       },
@@ -269,7 +457,7 @@ const theme = createTheme ({
     MuiCircularProgress:{
       styleOverrides: {
         root: {
-         position:constants.position.absolute,
+         position:Constants.position.absolute,
          color:Colors.white
 
         },
@@ -293,22 +481,31 @@ const theme = createTheme ({
     MuiButtonBase:{
       styleOverrides: {
         root: {
-          borderRadius: constants.borderRadius.xs, 
-          fontSize: constants.fontSize.md,
-          fontWeight: constants.fontWeight.sm,
-          lineHeight: constants.lineHeight.md,
-          boxShadow:`${constants.boxShadow.none} !important`,
-          textTransform:`${constants.textTransform.capital} !important`,
+          borderRadius: Constants.borderRadius.xs, 
+          fontSize: Constants.fontSize.md,
+          fontWeight: Constants.fontWeight.sm,
+          lineHeight: Constants.lineHeight.md,
+          boxShadow:`${Constants.boxShadow.none} !important`,
+          textTransform:`${Constants.textTransform.capital} !important`,
           padding:".375rem 1rem !important",
           minHeight:37,
           margin:"0 !important",
           "&:hover":{
-              boxShadow:constants.boxShadow.none,
+              boxShadow:Constants.boxShadow.none,
           },
 
           "& > p.MuiTypography-root":{
-            fontSize: `${constants.fontSize.sm} !important`,
+            fontSize: `${Constants.fontSize.sm} !important`,
           },
+
+          // "& .MuiIconButton-root":{
+           
+          // }
+
+          // '& + span': {
+          //     right: Constants.inset.md,
+          //     position: Constants.position.absolute
+          // }
         },
       },
     },
@@ -317,8 +514,16 @@ const theme = createTheme ({
       styleOverrides:{
           positionEnd:{
             "& button.MuiButtonBase-root.MuiIconButton-root":{
-              padding:"0 !important"
-            }
+              padding:"0 !important",
+              pointerEvents:"none"
+            },            
+          },
+
+          positionStart:{
+            "&.MuiInputAdornment-root":{
+              pointerEvents:"none"
+            },
+            
           }
       }
     },
@@ -344,13 +549,13 @@ const theme = createTheme ({
     },
 
     MuiInputBase:{
-      root:{
-        "&.Mui-focused":{
-          border: `${constants.border.solid} ${Colors.highlightedBorder}`,   
-          background:"red !important"                
-        },    
+      root:{  
       },
 
+      input:{
+          padding:"0.53125rem 0.875rem !important",    
+      },
+   
       adornedEnd:{
         paddingRight: ".65rem"
       }
@@ -360,9 +565,9 @@ const theme = createTheme ({
       styleOverrides:{
         root:{
           color:Colors.placeholder,
-          fontSize:constants.fontSize.sm,
+          fontSize:Constants.fontSize.sm,
           "&.Mui-focused":{
-            fontSize: `${constants.fontSize.md} !important`,
+            fontSize: `${Constants.fontSize.md} !important`,
           }
         }
       }
@@ -380,17 +585,17 @@ const theme = createTheme ({
         standard:{
           "& + .MuiInputBase-root":{
             "&:before":{
-              borderBottom: `${constants.border.solid} ${Colors.border}`,
+              borderBottom: `${Constants.border.solid} ${Colors.border}`,
             },
      
             "&:hover":{
               "&:before":{
-                borderBottom: `${constants.border.solid} ${Colors.highlightedBorder}`,
+                borderBottom: `${Constants.border.solid} ${Colors.highlightedBorder}`,
               }
             } ,         
      
             "& + .MuiInputBase-root:after":{
-                borderBottom: `${constants.border.solid} ${Colors.highlightedBorder}`,
+                borderBottom: `${Constants.border.solid} ${Colors.highlightedBorder}`,
             }
         }
       }
@@ -426,12 +631,43 @@ const theme = createTheme ({
               top:"0px !important"
             }
           },
-
-          endAdornment:{
-            top:"unset !important",
-            right:"0 !important"
-          }
                 
+        },
+        endAdornment:{
+          top:"unset !important",
+          right:"5px !important",
+          "& button.MuiButtonBase-root":{
+            paddingRight:".3125rem !important"
+          }
+        }
+      }
+    },
+
+    MuiDivider:{
+      styleOverrides:{
+        root:{
+          borderColor:Colors.border
+        }
+      }
+    },
+
+    MuiCardHeader:{
+      styleOverrides:{
+        title:{
+          fontSize:"1.25rem",
+        }
+      }
+    },
+
+    MuiTableCell:{
+      styleOverrides:{
+        head:{
+          color:Colors.fadedBlack,
+          padding:"0.3125rem 1rem"
+        },
+
+        body:{
+          padding:".5rem 1rem"
         }
       }
     }
