@@ -43,9 +43,10 @@ export default function ZCommonDialog(props) {
                     {props.children}
                 </DialogContent>
                 <MuiDialogActions >
-                    {props.actionButton.map(i => {
+                    {props.actionButton.map((i, index) => {
                         return (
                             <ZButton
+                                key={index}
                                 variant={i.variant}
                                 color={i.color}
                                 onClick={() => i.action()}
