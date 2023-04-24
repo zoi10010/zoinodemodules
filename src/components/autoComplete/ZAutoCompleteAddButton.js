@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import { createFilterOptions } from '@mui/material/Autocomplete';
 import Autocomplete from '@mui/material/Autocomplete';
-import { Button, Box } from "@mui/material";
+import { Button } from "@mui/material";
 
 function ZAutoCompleteAddButton(props) {
     const filter = createFilterOptions();

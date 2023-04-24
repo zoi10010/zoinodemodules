@@ -18,12 +18,12 @@ function ZTextBox(props) {
 }
 
 const styles = theme => ({
-    formControl: {
-        width: "100%"
-    },
-    textStyle: {
-        fontSize: 10
-    }
+    // formControl: {
+    //     width: "100%"
+    // },
+    // textStyle: {
+    //     fontSize: 10
+    // }
 });
 
 export default withStyles(styles)(ZTextBox);
