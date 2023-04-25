@@ -27,29 +27,30 @@ function ZTextBoxSearch(props) {
 
 const styles = theme => ({
   root: {
-    display:constants.display.inlineFlex,
-    border: `${constants.border.solid} ${Colors.border}`,
-    width:"100%",
-    "&:hover":{
-      border: `${constants.border.solid} ${Colors.highlightedBorder}`,
-    },
-    "& div.MuiInputBase-root.Mui-focused":{
-      border: `${constants.border.solid} ${Colors.highlightedBorder}`,
-    },
+    display: 'flex',
+    alignItems: 'center',
+    background: "#F4F6FC !important",
+    borderRadius: 8
+  },
 
-    "& div.MuiInputBase-root":{
-      paddingLeft:40,
-      minWidth:"100%",
-      fontSize: constants.fontSize.sm,
-      "& input":{
-        padding: "0.53125rem 0.875rem"
-      }
-    },
-
-    "& button.MuiButtonBase-root":{
-      position:"absolute"
+  input: {
+    // marginLeft: theme.spacing(1),
+    flex: 1,
+    "& ::-webkit-input-placeholder": {
+      color: "#B1B1B1",
+      fontSize: 14,
     }
   },
+
+  iconButton: {
+    padding: 10,
+    cursor: 'context-menu'
+  },
+  divider: {
+    height: 28,
+    margin: 4,
+  },
+
 });
 
 export default withStyles(styles)(ZTextBoxSearch)
