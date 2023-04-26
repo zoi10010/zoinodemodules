@@ -5,6 +5,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 function ZButton(props) {
     const [loading, setLoading] = useState(false)
+    const { classes } = props
     useEffect(() => {
         setLoading(props.isLoading)
     }, [props.isLoading, props.disabled])
@@ -32,5 +33,37 @@ function ZButton(props) {
     );
 }
 
+// const styles = theme => ({
+//     root: {
+//         display: 'flex',
+//         '& > *': {
+//         },
+//         '& button': {
+//             borderRadius: 4,
+//             '& p': {
+//                 fontSize: 13,
+//                 fontFamily: "GT Walsheim Pro",
+//                 lineHeight: 1.5,
 
-export default withStyles(ZButton)
+//                 '& + span': {
+//                     right: '1rem',
+//                     position: 'absolute'
+//                 }
+//             },
+//         }
+//     },
+//     buttonProgress: {
+
+//         position: 'absolute',
+//         top: '50%',
+//         left: '50%',
+//         marginTop: -12,
+//         marginLeft: -12,
+//     },
+//     customWidth: {
+//         fontSize: 14
+//     },
+// });
+
+
+export default ZButton

@@ -7,7 +7,7 @@ import {
   ZCommonDialog,
   ZPaper,
   ZCommonTable,
-  ZTextField, ZInputAdornment, ZButton
+  ZTextField, ZInputAdornment, ZButton,ZTextBox
 } from 'zoinodemodules'
 
 import About from '../src/asset/About.svg';
@@ -112,6 +112,11 @@ const App = () => {
   return <div>
             <ZTextField/>
              <ZHeader title={"hello"}></ZHeader>
+                    
+                {/* <ZButton variant="outlined" name="delete">
+                  
+                </ZButton> */}
+
           {/* <Zpaper className={classes.paperContainer} elevation={0}>
           <ZGrid sx={{m:2}}> 
               <ZHeader variant="h1" className={classes.dsds} title={"Daily Report"}></ZHeader>
