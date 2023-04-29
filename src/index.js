@@ -59,3 +59,4 @@ export { default as ZTabs } from "./components/tab/ZTabs";
 export { default as ZTabContent} from "./components/tab/ZTabContent";
 export { default as ZTabList } from "./components/tab/ZTabList";
 export { default as ZTabPanel } from "./components/tab/ZTabPanel";
+export { default as ZDialogAction } from "./components/dialog/ZDialogAction";

@@ -43,6 +43,7 @@ npm install --save react-zoi-common-components
     - [TabList][#ZTabList]
     - [TabContent][#ZTabContent]
     - [TabPanel][#ZTabPanel]
+    - [DialogActions][#ZDialogActions]
 <!-- /TOC -->
 
 ## Drawer
@@ -242,6 +243,66 @@ Prop Name | Type | Default | Description
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
+
+## Dialog , ## DialogContent , ##DialogContentText , ##DialogTitle , ##ZDialogActions
+
+```jsx
+import React, { Component } from 'react'
+
+import { ZDialog , ZDialogContent , ZDialogActions , ZDialogTitle , ZButton } from 'react-zoi-common-components'
+export default function ZDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <ZButton variant="outlined" onClick={handleClickOpen}>
+        Open alert dialog
+      </ZButton>
+      <ZDialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <ZDialogTitle id="alert-dialog-title">
+          {"Use Google's location service?"}
+        </ZDialogTitle>
+        <ZDialogContent>
+          <DialogContentText id="alert-dialog-description">
+           We made you to easy interact with the react through this "Zoi Common Component"
+          </ZDialogContentText>
+        </ZDialogContent>
+        <ZDialogActions>
+          <ZButton onClick={handleClose}>Disagree</Button>
+          <ZButton onClick={handleClose} autoFocus>
+            Agree
+          </ZButton>
+        </ZDialogActions>
+      </ZDialog>
+    </div>
+  );
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
 
