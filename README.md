@@ -43,7 +43,13 @@ npm install --save react-zoi-common-components
     - [TabList][#ZTabList]
     - [TabContent][#ZTabContent]
     - [TabPanel][#ZTabPanel]
+    - [Dialog][#ZDialog]
+    - [DialogContent][ZDialogContent]
+    - [DialogContentText][ZDialogContentText]
+    - [DialogTitle][ZDialogTitle]
     - [DialogActions][#ZDialogActions]
+    - [ToolBar][#ZToolBar]
+    - [ToolTip][ZToolTip]
     - [DesktopDatePicker](#DesktopDatePicker)
 <!-- /TOC -->
 
@@ -243,6 +249,65 @@ Prop Name | Type | Default | Description
 `helperText` | String | | If `true`, The error text content.
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
+
+## ZTollBar 
+```jsx
+import {ZToolBar , ZAppBar} from 'react-zoi-common-components'
+import { useState } from 'react';
+
+export default function AppBarExample () {
+  return (
+    <div>
+      <div >
+          <ZAppBar position="static" color="primary" enableColorOnDark>
+              <ZToolBar variant="dense">
+                    icon
+              </ZToolBar>
+          </ZAppBar>
+      </div>
+    </div>
+  );
+}
+```
+`Property`
+
+Name|	Type|	Default|	Description
+--- | --- | --- | ---
+`children`|	node||The content of the component.
+`classes`|	object	||Override or extend the styles applied to the component. See CSS API below for more details.
+`color`|	'default', 'inherit', 'primary', 'secondary', 'transparent', string|	'primary'	|The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.enableColorOnDark	bool	false	.If true, the color prop is applied in dark mode.
+`position`|	'absolute', 'fixed', 'relative'| 'static', 'sticky'|	'fixed'	|The positioning type. The behavior of the different options is described in the MDN web docs. Note: sticky is not universally supported and will fall back to static when unavailable.
+`sx`	|Array<func, object , bool> , func, object	||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+
+
+## ToolTip
+```jsx
+import React from 'react';
+import {ZToolTip , ZButton} from 'react-zoi-common-components';
+export default function ZToolTip()
+{
+  return(
+  <div>
+    <ZToolTip title="Submit">
+      <ZButton>Submit</ZButton>
+    </ZToolTip>
+  </div>
+  );
+}
+
+```
+`Property`
+
+Name|	Type|	Default|	Description
+--- | --- | --- | ---
+`children`|	node||The content of the component.
+`classes`|	object	||Override or extend the styles applied to the component. See CSS API below for more details.
+`color`|	'default', 'inherit', 'primary', 'secondary', 'transparent', string|	'primary'	|The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.enableColorOnDark	bool	false	.If true, the color prop is applied in dark mode.
+`position`|	'absolute', 'fixed', 'relative'| 'static', 'sticky'|	'fixed'	|The positioning type. The behavior of the different options is described in the MDN web docs. Note: sticky is not universally supported and will fall back to static when unavailable.
+`sx`	|Array<func, object , bool> , func, object	||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+
+
 
 
 ## Dialog , ## DialogContent , ##DialogContentText , ##DialogTitle , ##ZDialogActions
@@ -1339,6 +1404,7 @@ Name |	Type |	Default |	Description
 `width`|number,string| |Width of the skeleton. Useful when the skeleton is inside an inline element with no width of its own.
 `sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
 `variant`|'circular','rectangular','rounded','text',string|text|The type of content that will be rendered.
+
 ## ZAppBar 
 ```jsx
 import {
@@ -1373,6 +1439,7 @@ Name|	Type|	Default|	Description
 `color`|	'default', 'inherit', 'primary', 'secondary', 'transparent', string|	'primary'	|The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.enableColorOnDark	bool	false	.If true, the color prop is applied in dark mode.
 `position`|	'absolute', 'fixed', 'relative'| 'static', 'sticky'|	'fixed'	|The positioning type. The behavior of the different options is described in the MDN web docs. Note: sticky is not universally supported and will fall back to static when unavailable.
 `sx`	|Array<func, object , bool> , func, object	||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+
 ## ZDropZone 
 ```jsx
 import {
@@ -1407,8 +1474,6 @@ Name|	Type|	Default|	Description
 `fileSrc`|string	||fileSrc need to be base64 string or url of image. if fileScr Empty default Upload control will show
 `onDrop`|	function 	||in ondrop event will get the file in parameter
 `remove`|	function|	| this props function called on click of close icon, here we can remove from state
-
-
 
 ## DesktopDatePicker
 ```jsx
