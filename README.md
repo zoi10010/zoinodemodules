@@ -1169,9 +1169,6 @@ Name|	Type|	Default|	Description
 `closeOnSelect`	|bool	| |`true` for desktop, `false` for mobile (based on the chosen wrapper and 
 `components`	|object	| |{} Overridable components.
 `componentsProps`	|object| |{} The props used for each component slot.
-`dayOfWeekFormatter`|	func	| |(day) => day.charAt(0).toUpperCase() function(day: string) => string
-day: The day of week provided by the adapter's method getWeekdays.
-returns (string): The name to display.
 `defaultCalendarMonth`|	any| 	|Default calendar month displayed when value={null}.
 `defaultValue`	| any |    |The default value. Used when the component is not controlled.
 `desktopModeMediaQuery`	|string|	|'@media (pointer: fine)'	CSS media query when Mobile mode will be changed to Desktop.
