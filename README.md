@@ -1164,39 +1164,39 @@ export default CustomDatePicker;
 `Property`
 Name|	Type|	Default|	Description
 --- | --- | --- | ---
-`autoFocus` |	bool|	false	If true, the main element is focused during the first mount. This main element is: - the element chosen by the visible view if any (i.e: the selected day on the day view). - the input element if there is a field rendered.
-`className`	|string	|	Class name applied to the root element.
-`closeOnSelect`	|bool	|`true` for desktop, `false` for mobile (based on the chosen wrapper and `desktopModeMediaQuery` prop).	If true, the popover or modal will close after submitting the full date.
-`components`	|object	|{} Overridable components.
-`componentsProps`	|object| {} The props used for each component slot.
-`dayOfWeekFormatter`|	func	|(day) => day.charAt(0).toUpperCase() function(day: string) => string
+`autoFocus` |	bool|	 |false	If true, the main element is focused during the first mount. This main element is: - the element chosen by the visible view if any (i.e: the selected day on the day view). - the input element if there is a field rendered.
+`className`	|string	|	|Class name applied to the root element.
+`closeOnSelect`	|bool	| |`true` for desktop, `false` for mobile (based on the chosen wrapper and 
+`components`	|object	| |{} Overridable components.
+`componentsProps`	|object| |{} The props used for each component slot.
+`dayOfWeekFormatter`|	func	| |(day) => day.charAt(0).toUpperCase() function(day: string) => string
 day: The day of week provided by the adapter's method getWeekdays.
 returns (string): The name to display.
-`defaultCalendarMonth`|	any| 	Default calendar month displayed when value={null}.
-`defaultValue`	| any |    The default value. Used when the component is not controlled.
-`desktopModeMediaQuery`	|string|	'@media (pointer: fine)'	CSS media query when Mobile mode will be changed to Desktop.
-`disabled`	|bool	|false	If true, the picker and text field are disabled.
-`disableFuture`|	bool	|false	If true, disable values after the current date for date components, time for time components and both for date time components.
-`disableHighlightToday`	|bool	|false	If true, today's date is rendering without highlighting with circle.
-`disableOpenPicker`|	bool|	false	If true, the open picker button will not be rendered (renders only the field).
-`disablePast`	|bool|	false	If true, disable values before the current date for date components, time for time components and both for date time components.
-`displayWeekNumber`|	bool|	false	If true, the week number will be display in the calendar.
-`fixedWeekNumber`	|number|	undefined	Calendar will show more weeks in order to match this value. Put it to 6 for having fix number of week in Gregorian calendars
-`format`|	string	|	Format of the date when rendered in the input(s). Defaults to localized format based on the used views.
-`formatDensity`	|'dense''spacious'	"dense"|	Density of the format when rendered in the input. Setting formatDensity to "spacious" will add a space before and after each /, - and . character.
-`inputRef`	|func | { current?: object }|		Pass a ref to the input element.
-`label`|	node |		The label content.
-`loading`	|bool|	false	If true, calls renderLoading instead of rendering the day calendar. Can be used to preload information and show it in calendar.
-`localeText`|	object |	Locale for components texts. Allows overriding texts coming from LocalizationProvider and theme.
-`maxDate`|	any	|	Maximal selectable date.
-`minDate`|	any		|Minimal selectable date.
-`monthsPerRow`	3| 4|3	Months rendered per row.
-`onOpen`|	func|		Callback fired when the popup requests to be opened. Use in controlled mode (see open).
-`onError`|	func| error: The new error describing why the current value is not valid.
+`defaultCalendarMonth`|	any| 	|Default calendar month displayed when value={null}.
+`defaultValue`	| any |    |The default value. Used when the component is not controlled.
+`desktopModeMediaQuery`	|string|	|'@media (pointer: fine)'	CSS media query when Mobile mode will be changed to Desktop.
+`disabled`	|bool	|  |false	If true, the picker and text field are disabled.
+`disableFuture`|	bool	| |false	If true, disable values after the current date for date components, time for time components and both for date time components.
+`disableHighlightToday`	|bool	| |false	If true, today's date is rendering without highlighting with circle.
+`disableOpenPicker`|	bool|	 |false	If true, the open picker button will not be rendered (renders only the field).
+`disablePast`	|bool|	|false	If true, disable values before the current date for date components, time for time components and both for date time components.
+`displayWeekNumber`|	bool|	 |false	If true, the week number will be display in the calendar.
+`fixedWeekNumber`	|number|	|undefined	Calendar will show more weeks in order to match this value. Put it to 6 for having fix number of week in Gregorian calendars
+`format`|	string	|	 |Format of the date when rendered in the input(s). Defaults to localized format based on the used views.   
+`formatDensity`	|'dense''spacious'	"dense"|	|Density of the format when rendered in the input. Setting formatDensity to "spacious" will add a space before and after each /, - and . character.
+`inputRef`	|func | { current?: object }|		| Pass a ref to the input element.
+`label`|	node |	 |	The label content.
+`loading`	|bool|	|false	If true, calls renderLoading instead of rendering the day calendar. Can be used to preload information and show it in calendar.
+`localeText`|	object |	 |Locale for components texts. Allows overriding texts coming from LocalizationProvider and theme.
+`maxDate`|	any	|	|Maximal selectable date.
+`minDate`|	any	|	|Minimal selectable date.
+`monthsPerRow`	3| 4| |3	Months rendered per row.
+`onOpen`|	func|		| Callback fired when the popup requests to be opened. Use in controlled mode (see open).
+`onError`|	func| |  error: The new error describing why the current value is not valid.
 value: The value associated to the error.
-`onChange`|	func|value: The new value.context: The context containing the validation result of the current value.
-`shouldDisableDate`|func|function(day: TDate) => booleanday: The date to test.returns (boolean): If true the date will be disabled.
-`shouldDisableMonth`	|func|function(month: TDate) => booleanmonth: The month to test.returns (boolean): If true, the month will be disabled.
+`onChange`|	func| | value: The new value.context: The context containing the validation result of the current value.
+`shouldDisableDate`|func| |function(day: TDate) => booleanday: The date to test.returns (boolean): If true the date will be disabled.
+`shouldDisableMonth`	|func| |function(month: TDate) => booleanmonth: The month to test.returns (boolean): If true, the month will be disabled.
 
 ## License
 
