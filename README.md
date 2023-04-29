@@ -1184,7 +1184,7 @@ returns (string): The name to display.
 `fixedWeekNumber`	|number|	|undefined	Calendar will show more weeks in order to match this value. Put it to 6 for having fix number of week in Gregorian calendars
 `format`|	string	|	 |Format of the date when rendered in the input(s). Defaults to localized format based on the used views.   
 `formatDensity`	|'dense''spacious'	"dense"|	|Density of the format when rendered in the input. Setting formatDensity to "spacious" will add a space before and after each /, - and . character.
-`inputRef`	|func | { current?: object }|		| Pass a ref to the input element.
+`inputRef`	|func | 	|  { current?: object }| Pass a ref to the input element.
 `label`|	node |	 |	The label content.
 `loading`	|bool|	|false	If true, calls renderLoading instead of rendering the day calendar. Can be used to preload information and show it in calendar.
 `localeText`|	object |	 |Locale for components texts. Allows overriding texts coming from LocalizationProvider and theme.
@@ -1192,8 +1192,7 @@ returns (string): The name to display.
 `minDate`|	any	|	|Minimal selectable date.
 `monthsPerRow`	3| 4| |3	Months rendered per row.
 `onOpen`|	func|		| Callback fired when the popup requests to be opened. Use in controlled mode (see open).
-`onError`|	func| |  error: The new error describing why the current value is not valid.
-value: The value associated to the error.
+`onError`|	func| |  error: The new error describing why the current value is not valid value: The value associated to the error.
 `onChange`|	func| | value: The new value.context: The context containing the validation result of the current value.
 `shouldDisableDate`|func| |function(day: TDate) => booleanday: The date to test.returns (boolean): If true the date will be disabled.
 `shouldDisableMonth`	|func| |function(month: TDate) => booleanmonth: The month to test.returns (boolean): If true, the month will be disabled.
