@@ -35,6 +35,7 @@ npm install --save react-zoi-common-components
     - [Icon](#Icon)
     - [Header](#Header)
     - [Dropzone](#ZDropZone)
+     - [DesktopDatePicker](#DesktopDatePicker)
 <!-- /TOC -->
 
 
