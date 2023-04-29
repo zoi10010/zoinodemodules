@@ -4,12 +4,9 @@ import { DialogContentText } from '@material-ui/core';
 
 function ZDialogContentText(props) {
     return (
-  
-            <Dialog >
-                <DialogContentText>{...props}</DialogContentText>
-                {props.children}
-            </Dialog>
-    
+        <DialogContentText {...props}>
+            {props.children}
+        </DialogContentText>
     );
 }
 

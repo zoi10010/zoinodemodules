@@ -1,14 +1,12 @@
 import React from 'react'
 import { Tooltip } from '@material-ui/core';
 
-function ZTooltip (props) {
+function ZTooltip(props) {
     return (
-        <div>
-            <Tooltip  {...props}>
-                {props.children}
-            </Tooltip >
-        </div>
+        <Tooltip  {...props}>
+            {props.children}
+        </Tooltip >
     );
 }
 
-export default ZTooltip ;
+export default ZTooltip;
