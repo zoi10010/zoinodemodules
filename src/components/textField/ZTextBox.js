@@ -26,4 +26,5 @@ const styles = theme => ({
     // }
 });
 
-export default ZTextBox;
+
+export default withStyles(styles)(ZTextBox)
