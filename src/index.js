@@ -55,6 +55,7 @@ export { default as ZDrawer } from "./components/drawer/ZDrawer";
 export { default as ZCard } from "./components/card/ZMuiCard";
 export { default as ZCardContent } from "./components/card/ZMuiCardContent";
 export { default as ZTab } from "./components/tab/ZTab";
+export { default as ZTabs } from "./components/tab/ZTabs";
 export { default as ZTabContent} from "./components/tab/ZTabContent";
 export { default as ZTabList } from "./components/tab/ZTabList";
 export { default as ZTabPanel } from "./components/tab/ZTabPanel";
