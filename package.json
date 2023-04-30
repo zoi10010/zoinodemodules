@@ -58,6 +58,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.11.11",
+    "@mui/lab": "^5.0.0-alpha.128",
     "@mui/material": "^5.11.7",
     "@mui/styles": "^5.12.0",
     "classnames": "^2.3.1",
@@ -65,7 +66,8 @@
     "dropzone": "^6.0.0-beta.2",
     "react-csv": "^2.0.3",
     "react-dropzone": "^14.2.3",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-is": "^18.2.0"
   },
   "bugs": {
     "url": "https://github.com/zoi10010/zoinodemodules/issues"

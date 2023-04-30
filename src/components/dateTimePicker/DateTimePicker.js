@@ -4,8 +4,7 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 function ZDateTimePicker(props) {
   return (
-    <DateTimePicker>
-      {...props}
+    <DateTimePicker  {...props}>
       {props.children}
     </DateTimePicker >
   );

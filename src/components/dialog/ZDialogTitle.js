@@ -5,10 +5,9 @@ import { DialogTitle } from '@material-ui/core';
 function ZDialogTitle(props) {
     return (
         <div>
-            <Dialog >
-                <DialogTitle>{...props}</DialogTitle>
+                <DialogTitle {...props}>
                 {props.children}
-            </Dialog>
+                </DialogTitle>
         </div>
     );
 }
