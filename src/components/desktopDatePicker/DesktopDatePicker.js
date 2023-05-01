@@ -4,7 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 function ZDatepicker(props) {
     return (
-        <DatePicker  {...props}>
+        <DatePicker {...props}>
             {props.children}
         </DatePicker >
     );

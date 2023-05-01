@@ -1,5 +1,5 @@
 import React from 'react'
-import { TabPanel } from '@mui/base';
+import { TabPanel } from '@mui/lab';
 
 export default function ZTabPanel(props) {
     return (

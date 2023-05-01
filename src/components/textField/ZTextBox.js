@@ -8,7 +8,7 @@ function ZTextBox(props) {
     
 
     return (
-        <FormControl>
+        <FormControl className={classes.formControl}>
             <TextField
                 {...props}
                 
@@ -21,10 +21,9 @@ const styles = theme => ({
     formControl: {
         width: "100%"
     },
-    // textStyle: {
-    //     fontSize: 10
-    // }
+    textStyle: {
+        fontSize: 10
+    }
 });
 
-
-export default withStyles(styles)(ZTextBox)
+export default withStyles(styles)(ZTextBox);
