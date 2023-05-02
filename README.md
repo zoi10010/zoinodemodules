@@ -36,9 +36,11 @@ npm install --save react-zoi-common-components
     - [Header](#Header)
     - [Dropzone](#ZDropZone)
     - [Drawer](#Drawer)
-    - [Card](#ZCardContent)
+    - [Card](#ZCard)
     - [CardContent](#CardContent)
-    - [TabPanel](#TabPanel)
+    - [Tabs][ZTabs]
+    - [TabPanel](#ZTabPanel)
+    - [TabList](#ZTabList)
     - [DialogActions](#DialogActions)
     - [ToolBar](#ToolBar)
     - [ToolTip](#ToolTip)
@@ -101,7 +103,7 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
- ## CardContent
+ ## ZCard
 
 ```jsx
 import React, { Component } from 'react'
@@ -175,7 +177,7 @@ Prop Name | Type | Default | Description
 
 
 
-## TabPanel  
+## ZTabPanel  
 
 
 ```jsx
@@ -223,9 +225,7 @@ Prop Name | Type | Default | Description
 
 
 
-## Tabs ,
-
-  
+## ZTabs ,
 
 ```jsx
 import React, { Component } from 'react'
@@ -241,7 +241,6 @@ export default function BasicTabs() {
 
   render() {
    return (
-    <ZBox sx={{ width: '100%' }}>
       <ZBox sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <ZTabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <ZTab label="Item One" {...a11yProps(0)} />
@@ -249,16 +248,50 @@ export default function BasicTabs() {
           <ZTab label="Item Three" {...a11yProps(2)} />
         </ZTabs>
       </ZBox>
-      <ZTabPanel value={value} index={0}>
-        Item One
-      </ZTabPanel>
-      <ZTabPanel value={value} index={1}>
-        Item Two
-      </ZTabPanel>
-      <ZTabPanel value={value} index={2}>
-        Item Three
-      </ZTabPanel>
-    </ZBox>
+     
+  );
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use. -->
+
+
+## ZTabList and ZTabContext ,
+
+```jsx
+import React, { Component } from 'react'
+import { ZTab , ZTabs } from 'react-zoi-common-components'
+
+export default function BasicTabs() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  render() {
+   return (
+     <ZTabContext value={value}>
+      <ZBox sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <ZTabList value={value} onChange={handleChange} aria-label="basic tabs example">
+          <ZTab label="Item One" {...a11yProps(0)} />
+          <ZTab label="Item Two" {...a11yProps(1)} />
+          <ZTab label="Item Three" {...a11yProps(2)} />
+        </ZTabs>
+      </ZBox>
+      </ZTabContext>
+     
   );
   }
 }
