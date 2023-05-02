@@ -109,15 +109,14 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
-## Card ,
- ## CardContent
+## Card , ## CardContent
 
 ```jsx
 import React, { Component } from 'react'
 
 import { ZCard ,ZHeader} from 'react-zoi-common-components'
 
-class Card extends Component {
+class ZCard extends Component {
   constructor(props) {
     super(props)
     this.state={
