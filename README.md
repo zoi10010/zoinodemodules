@@ -11,6 +11,7 @@ npm install --save react-zoi-common-components
 ```
 
 <!-- TOC -->
+
 - [Zoi Components Navigation](#react-zoi-common-components -navigation)
    
     - [TextField](#TextField)
@@ -108,15 +109,12 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
-## Card ,
-##  CardContent,
-
-
+## Card , ## CardContent
 
 ```jsx
 import React, { Component } from 'react'
 
-import { ZCard ,ZCardContent , ZContainer} from 'react-zoi-common-components'
+import { ZCard ,ZHeader} from 'react-zoi-common-components'
 
 class Card extends Component {
   constructor(props) {
@@ -130,10 +128,7 @@ class Card extends Component {
       <div>
         <ZCard>
           <ZCardContent>
-           <ZContainer sx={{ height: 100, lineHeight: 2}}>
-            Hello React
-           </ZContainer>
-          </ZCardContent>
+              <ZHeader>Card Using Zoi Common Component</ZHeader>
           </ZCard>
     )
   }
@@ -202,9 +197,8 @@ Prop Name | Type | Default | Description
 
 
 
-## Tabs , 
-## Tab ,
-## TabPanel  
+## Tabs , ## Tab ,  ## TabPanel  
+
 ```jsx
 import React, { Component } from 'react'
 
@@ -252,7 +246,7 @@ Prop Name | Type | Default | Description
 `error` | bool |false | If  `true`, the label is displayed in an error state.
 `helperText` | String | | If `true`, The error text content.
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
-`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use. -->
 
 
 ## ToolBar 
@@ -1411,6 +1405,7 @@ Name |	Type |	Default |	Description
 `width`|number,string| |Width of the skeleton. Useful when the skeleton is inside an inline element with no width of its own.
 `sx`|	Array<func, object, bool>, func, object||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
 `variant`|'circular','rectangular','rounded','text',string|text|The type of content that will be rendered.
+
 ## ZAppBar 
 ```jsx
 import {
@@ -1445,6 +1440,7 @@ Name|	Type|	Default|	Description
 `color`|	'default', 'inherit', 'primary', 'secondary', 'transparent', string|	'primary'	|The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.enableColorOnDark	bool	false	.If true, the color prop is applied in dark mode.
 `position`|	'absolute', 'fixed', 'relative'| 'static', 'sticky'|	'fixed'	|The positioning type. The behavior of the different options is described in the MDN web docs. Note: sticky is not universally supported and will fall back to static when unavailable.
 `sx`	|Array<func, object , bool> , func, object	||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+
 ## ZDropZone 
 ```jsx
 import {
@@ -1479,8 +1475,6 @@ Name|	Type|	Default|	Description
 `fileSrc`|string	||fileSrc need to be base64 string or url of image. if fileScr Empty default Upload control will show
 `onDrop`|	function 	||in ondrop event will get the file in parameter
 `remove`|	function|	| this props function called on click of close icon, here we can remove from state
-
-
 
 ## DesktopDatePicker
 ```jsx
