@@ -40,7 +40,7 @@ npm install --save react-zoi-common-components
     - [CardContent](#CardContent)
     - [Tabs](#ZTabs)
     - [TabPanel](#ZTabPanel)
-    - [TabList](#ZTabList)
+    - [TabList](#ZTabPanel)
     - [TabContext](#ZTabList)
     - [DialogActions](#DialogActions)
     - [ToolBar](#ToolBar)
@@ -184,7 +184,7 @@ Prop Name | Type | Default | Description
 ```jsx
 import React, { Component } from 'react'
 
-import { ZTab , ZTabList , ZBox , ZTabList , ZTabPanel} from 'react-zoi-common-components'
+import { ZTab , ZTabList , ZBox , ZTabPanel} from 'react-zoi-common-components'
 
 export default function ZTabPanel() {
   const [value, setValue] = React.useState('1');
