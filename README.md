@@ -118,9 +118,8 @@ class ZCard extends Component {
     return (
       <div>
         <ZCard>
-          <ZCardContent>
-              <ZHeader>Card Using Zoi Common Component</ZHeader>
-          </ZCard>
+            <ZHeader>Card Using Zoi Common Component</ZHeader>
+        </ZCard>
     )
   }
 }
@@ -137,6 +136,42 @@ Prop Name | Type | Default | Description
 `helperText` | String | | If `true`, The error text content.
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
+
+## ZCardContent
+```jsx
+import React from 'react';
+import {ZCard , ZCardContent , ZTypography} from 'react-zoi-commom-components';
+
+class ZCardContent extends React.Component{
+  constructor(props){
+  super(props)
+    this.state = {
+      
+    }
+    <ZCard>
+      <ZHeader>CardContent Using Zoi Common Component</ZHeader>
+      <ZCardContent>
+          <ZTypography variant="h1" component="h2">This Was ZCardContent Using The Zoi-Common-Component</ZTypography>  
+      </ZCardContent>
+    </ZCard>
+  }
+}
+
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
 
 
 ## TabPanel  
