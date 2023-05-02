@@ -40,7 +40,7 @@ npm install --save react-zoi-common-components
     - [CardContent](#CardContent)
     - [Tabs](#ZTabs)
     - [TabPanel](#ZTabPanel)
-    - [TabList](#ZTabList)
+    - [TabList](#ZTabList and ZTabContext)
     - [TabContext](#ZTabList)
     - [DialogActions](#DialogActions)
     - [ToolBar](#ToolBar)
