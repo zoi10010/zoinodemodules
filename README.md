@@ -229,7 +229,7 @@ Prop Name | Type | Default | Description
 ```jsx
 import React, { Component } from 'react'
 
-import { ZTabs , ZTab , ZButton , ZTabPanel} from 'react-zoi-common-components'
+import { ZTab , ZTabs } from 'react-zoi-common-components'
 
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
