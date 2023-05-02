@@ -34,8 +34,340 @@ npm install --save react-zoi-common-components
     - [Icon](#Icon)
     - [Header](#Header)
     - [Dropzone](#ZDropZone)
-     - [DesktopDatePicker](#DesktopDatePicker)
+    - [Drawer](#ZDrawer)
+    - [Card](#ZCard)
+    - [CardContent](#ZCardContent)
+    - [Tabs](#ZTabs)
+    - [Tab](#ZTab)
+    - [TabList](#ZTabList)
+    - [TabContent](#ZTabContent)
+    - [TabPanel](#ZTabPanel)
+    - [Dialog](#ZDialog)
+    - [DialogContent](ZDialogContent)
+    - [DialogContentText](ZDialogContentText)
+    - [DialogTitle](#ZDialogTitle)
+    - [DialogActions](#ZDialogActions)
+    - [ToolBar](#ZToolBar)
+    - [ToolTip](#ZToolTip)
+    - [DesktopDatePicker](#DesktopDatePicker)
 <!-- /TOC -->
+
+
+```jsx
+import React, { Component } from 'react'
+import { ZButton , ZDrawer } from 'react-zoi-common-components'
+
+
+const data = [
+  {
+    name: "Home",
+    icon: <HomeOutlined />,
+  },
+  { name: "Inbox", icon: <InboxOutlined /> },
+  { name: "Outbox", icon: <CheckBoxOutlineBlankOutlined /> },
+  { name: "Sent mail", icon: <MailOutline /> },
+  { name: "Draft", icon: <DraftsOutlined /> },
+  { name: "Trash", icon: <ReceiptOutlined /> },
+];
+
+  function App() {
+  const [open, setOpen] = useState(false);
+
+  const getList = () => (
+    <div style={{ width: 250 }} onClick={() => setOpen(false)}>
+      {data.map((item, index) => (
+        <ListItem button key={index}>
+          <ListItemIcon>{item.icon}</ListItemIcon>
+          <ListItemText primary={item.name} />
+        </ListItem>
+      ))}
+    </div>
+  );
+
+  return (
+    <div>
+      <ZButton onClick={() => setOpen(true)}>Click me</ZButton>
+      <ZDrawer open={open} anchor={"left"} onClose={() => setOpen(false)}>
+        {getList()}
+      </ZDrawer>
+    </div>
+  );
+}
+
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
+
+## Card , ## CardContent
+
+```jsx
+import React, { Component } from 'react'
+
+import { ZCard ,ZCardContent , ZContainer} from 'react-zoi-common-components'
+
+class Card extends Component {
+  constructor(props) {
+    super(props)
+    this.state={
+    open:false
+  }
+  }
+  render() {
+    return (
+      <div>
+        <ZCard>
+          <ZCardContent>
+           <ZContainer sx={{ height: 100, lineHeight: 2}}>
+            Hello React
+           </ZContainer>
+          </ZCardContent>
+          </ZCard>
+    )
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
+## Tab , ## TabList ,  ## TabPanel  , ##TabContent
+
+```jsx
+import React, { Component } from 'react'
+
+import { ZTab , ZTabList , ZBox , ZTabList , ZTabPanel} from 'react-zoi-common-components'
+
+export default function LabTabs() {
+  const [value, setValue] = React.useState('1');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <ZBox sx={{ width: '100%', typography: 'body1' }}>
+      <ZTabContext value={value}>
+        <ZBox sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <ZTabList onChange={handleChange} aria-label="lab API tabs example">
+            <ZTab label="Item One" value="1" />
+            <ZTab label="Item Two" value="2" />
+            <ZTab label="Item Three" value="3" />
+          </ZTabList>
+        </ZBox>
+        <ZTabPanel value="1">Item One</ZTabPanel>
+        <ZTabPanel value="2">Item Two</ZTabPanel>
+        <ZTabPanel value="3">Item Three</ZTabPanel>
+      </ZTabContext>
+    </ZBox>
+  );
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
+
+
+## Tabs , ## Tab ,  ## TabPanel  
+
+```jsx
+import React, { Component } from 'react'
+
+import { ZTabs , ZTab , ZButton , ZTabPanel} from 'react-zoi-common-components'
+
+export default function BasicTabs() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  render() {
+   return (
+    <ZBox sx={{ width: '100%' }}>
+      <ZBox sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <ZTabs value={value} onChange={handleChange} aria-label="basic tabs example">
+          <ZTab label="Item One" {...a11yProps(0)} />
+          <ZTab label="Item Two" {...a11yProps(1)} />
+          <ZTab label="Item Three" {...a11yProps(2)} />
+        </ZTabs>
+      </ZBox>
+      <ZTabPanel value={value} index={0}>
+        Item One
+      </ZTabPanel>
+      <ZTabPanel value={value} index={1}>
+        Item Two
+      </ZTabPanel>
+      <ZTabPanel value={value} index={2}>
+        Item Three
+      </ZTabPanel>
+    </ZBox>
+  );
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
+
+## ZTollBar 
+```jsx
+import {ZToolBar , ZAppBar} from 'react-zoi-common-components'
+import { useState } from 'react';
+
+export default function AppBarExample () {
+  return (
+    <div>
+      <div >
+          <ZAppBar position="static" color="primary" enableColorOnDark>
+              <ZToolBar variant="dense">
+                    icon
+              </ZToolBar>
+          </ZAppBar>
+      </div>
+    </div>
+  );
+}
+```
+`Property`
+
+Name|	Type|	Default|	Description
+--- | --- | --- | ---
+`children`|	node||The content of the component.
+`classes`|	object	||Override or extend the styles applied to the component. See CSS API below for more details.
+`color`|	'default', 'inherit', 'primary', 'secondary', 'transparent', string|	'primary'	|The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.enableColorOnDark	bool	false	.If true, the color prop is applied in dark mode.
+`position`|	'absolute', 'fixed', 'relative'| 'static', 'sticky'|	'fixed'	|The positioning type. The behavior of the different options is described in the MDN web docs. Note: sticky is not universally supported and will fall back to static when unavailable.
+`sx`	|Array<func, object , bool> , func, object	||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+
+
+## ToolTip
+```jsx
+import React from 'react';
+import {ZToolTip , ZButton} from 'react-zoi-common-components';
+export default function ZToolTip()
+{
+  return(
+  <div>
+    <ZToolTip title="Submit">
+      <ZButton>Submit</ZButton>
+    </ZToolTip>
+  </div>
+  );
+}
+
+```
+`Property`
+
+Name|	Type|	Default|	Description
+--- | --- | --- | ---
+`children`|	node||The content of the component.
+`classes`|	object	||Override or extend the styles applied to the component. See CSS API below for more details.
+`color`|	'default', 'inherit', 'primary', 'secondary', 'transparent', string|	'primary'	|The color of the component. It supports both default and custom theme colors, which can be added as shown in the palette customization guide.enableColorOnDark	bool	false	.If true, the color prop is applied in dark mode.
+`position`|	'absolute', 'fixed', 'relative'| 'static', 'sticky'|	'fixed'	|The positioning type. The behavior of the different options is described in the MDN web docs. Note: sticky is not universally supported and will fall back to static when unavailable.
+`sx`	|Array<func, object , bool> , func, object	||The system prop that allows defining system overrides as well as additional CSS styles. See the `sx` page for more details.
+
+
+
+
+## Dialog , ## DialogContent , ##DialogContentText , ##DialogTitle , ##ZDialogActions
+
+```jsx
+import React, { Component } from 'react'
+
+import { ZDialog , ZDialogContent , ZDialogActions , ZDialogTitle , ZButton } from 'react-zoi-common-components'
+export default function ZDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <ZButton variant="outlined" onClick={handleClickOpen}>
+        Open alert dialog
+      </ZButton>
+      <ZDialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <ZDialogTitle id="alert-dialog-title">
+          {"Use Google's location service?"}
+        </ZDialogTitle>
+        <ZDialogContent>
+          <DialogContentText id="alert-dialog-description">
+           We made you to easy interact with the react through this "Zoi Common Component"
+          </ZDialogContentText>
+        </ZDialogContent>
+        <ZDialogActions>
+          <ZButton onClick={handleClose}>Disagree</Button>
+          <ZButton onClick={handleClose} autoFocus>
+            Agree
+          </ZButton>
+        </ZDialogActions>
+      </ZDialog>
+    </div>
+  );
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
 
 
 ## TextField
