@@ -111,12 +111,14 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
-## Card , ## CardContent
+## Card 
+
+<!-- //,ZCardContent , ZContainer , ## CardContent -->
 
 ```jsx
 import React, { Component } from 'react'
 
-import { ZCard ,ZCardContent , ZContainer} from 'react-zoi-common-components'
+import { ZCard ,ZHeader} from 'react-zoi-common-components'
 
 class Card extends Component {
   constructor(props) {
@@ -130,10 +132,7 @@ class Card extends Component {
       <div>
         <ZCard>
           <ZCardContent>
-           <ZContainer sx={{ height: 100, lineHeight: 2}}>
-            Hello React
-           </ZContainer>
-          </ZCardContent>
+              <ZHeader>Card Using Zoi Common Component</ZHeader>
           </ZCard>
     )
   }
