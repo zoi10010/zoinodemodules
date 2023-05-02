@@ -36,13 +36,23 @@ npm install --save react-zoi-common-components
     - [Header](#Header)
     - [Dropzone](#ZDropZone)
     - [Drawer](#Drawer)
-    - [CardContent](#CardContent)
-    - [TabPanel](#TabPanel)
-    - [DialogActions](#DialogActions)
+    - [Card](#ZCard)
+    - [CardContent](#ZCardContent)
+    - [Tab](#ZTabs)
+    - [TabPanel](#ZTabPanel)
+    - [TabList](#ZTabList)
+    - [TabContext](#ZTabList)
+    - [DialogContent](#ZDialogActions)
+    - [DialogTitle](#ZDialogActions)
+    - [Dialog](#ZDialogActions)
+    - [DialogContentText](#ZDialogActions)
+    - [DialogActions](#ZDialogActions)
     - [ToolBar](#ToolBar)
     - [ToolTip](#ToolTip)
     - [DesktopDatePicker](#DesktopDatePicker)
-    -[Link](#link)
+    - [AutoComplete](#ZAutoComplete)
+    - [Avator](#ZAvator)
+    - [DropZone](#ZDropZone)
 <!-- /TOC -->
 
 ## Drawer
@@ -103,129 +113,6 @@ Prop Name | Type | Default | Description
 ## AutoCompleteAvatar
 ```jsx
 
-import React, { useState } from 'react';
-import { Autocomplete } from '@material-ui/lab';
-import { TextField, Avatar } from '@material-ui/core';
-
-const options = [
-  { name: 'Alice', avatar: 'https://i.pravatar.cc/50?img=1' },
-  { name: 'Bob', avatar: 'https://i.pravatar.cc/50?img=2' },
-  { name: 'Charlie', avatar: 'https://i.pravatar.cc/50?img=3' },
-  { name: 'Dave', avatar: 'https://i.pravatar.cc/50?img=4' },
-];
-
-const ZAutoCompleteAvatar = () => {
-  const [value, setValue] = useState(null);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const renderOption = (option) => (
-    <React.Fragment>
-      <Avatar alt={option.name} src={option.avatar} />
-      {option.name}
-    </React.Fragment>
-  );
-
-  return (
-    <Autocomplete
-      value={value}
-      onChange={handleChange}
-      options={options}
-      getOptionLabel={(option) => option.name}
-      renderOption={renderOption}
-      renderInput={(params) => <TextField {...params} label="Select a user" variant="outlined" />}
-    />
-  );
-};
-
-export default ZAutoCompleteAvatar;
-```
-`Property`
-
-Prop Name | Type | Default | Description
---- | --- | --- | ---
-options*|	array| |Array of options.
-renderInput*|	func|Render the input.Signature:function(params: object) => ReactNode
-autoComplete|	bool|	false|If true, the portion of the selected suggestion that has not been typed by the user, known as the completion string, appears inline after the input cursor in the textbox. The inline completion string is visually highlighted and has a selected state.
-disabled|	bool|	false|If true, the component is disabled.
-
-## Link
-```jsx
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-const MyComponent = () => {
-  return (
-    <div>
-      <h1>Welcome to My App</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  );
-};
-export default MyComponent;
-```
-`Property`
-
-Prop Name | Type | Default | Description
---- | --- | --- | ---
-children|node| |The content of the component.
-color	|any|	'primary'|The color of the link.
-TypographyClasses|object|		|classes prop applied to the Typography element.
-underline	|'always' 'hover''none'	|'always'|	
-Controls when the link should have an underline.
-
-## InputAdroment
-```jsx
-import React, { useState } from 'react';
-import Input from '@material-ui/core/Input';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import SearchIcon from '@material-ui/icons/Search';
-
-function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  function handleSearch(event) {
-    // handle search logic here
-  }
-
-  return (
-    <Input
-      placeholder="Search"
-      value={searchTerm}
-      onChange={(event) => setSearchTerm(event.target.value)}
-      endAdornment={
-        <InputAdornment position="end">
-          <SearchIcon onClick={handleSearch} />
-        </InputAdornment>
-      }
-    />
-  );
-}
-
-```
-`Property`
-
-Prop Name | Type | Default | Description
---- | --- | --- | ---
-position*|	'end' 'start'| |The position this adornment should appear relative to the Input.
-children|node	|	|The content of the component, normally an IconButton or string.
-disableTypography|	bool|	false|If children is a string then disable wrapping in a Typography component.
-component	|elementType| |The component used for the root node. Either a string to use a HTML element or a component.
  ## CardContent
 
 ```jsx
@@ -301,12 +188,14 @@ Prop Name | Type | Default | Description
 
 
 ## TabPanel  
+
+
 ```jsx
 import React, { Component } from 'react'
 
-import { ZTab , ZTabList , ZBox , ZTabList , ZTabPanel} from 'react-zoi-common-components'
+import { ZTab , ZTabList , ZBox , ZTabPanel} from 'react-zoi-common-components'
 
-export default function LabTabs() {
+export default function ZTabPanel() {
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
@@ -345,9 +234,7 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
-## Tabs ,
-
-  
+## ZTabs
 
 ```jsx
 import React, { Component } from 'react'
@@ -363,7 +250,6 @@ export default function BasicTabs() {
 
   render() {
    return (
-    <ZBox sx={{ width: '100%' }}>
       <ZBox sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <ZTabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <ZTab label="Item One" {...a11yProps(0)} />
@@ -371,16 +257,50 @@ export default function BasicTabs() {
           <ZTab label="Item Three" {...a11yProps(2)} />
         </ZTabs>
       </ZBox>
-      <ZTabPanel value={value} index={0}>
-        Item One
-      </ZTabPanel>
-      <ZTabPanel value={value} index={1}>
-        Item Two
-      </ZTabPanel>
-      <ZTabPanel value={value} index={2}>
-        Item Three
-      </ZTabPanel>
-    </ZBox>
+     
+  );
+  }
+}
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use. -->
+
+
+## ZTabList 
+
+```jsx
+import React, { Component } from 'react'
+import { ZTab , ZTabs , ZTabList , ZBox , ZTabContext} from 'react-zoi-common-components'
+
+export default function ZTabList() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  render() {
+   return (
+     <ZTabContext value={value}>
+      <ZBox sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <ZTabList value={value} onChange={handleChange} aria-label="basic tabs example">
+          <ZTab label="Item One" {...a11yProps(0)} />
+          <ZTab label="Item Two" {...a11yProps(1)} />
+          <ZTab label="Item Three" {...a11yProps(2)} />
+        </ZTabs>
+      </ZBox>
+      </ZTabContext>
+     
   );
   }
 }
@@ -457,7 +377,8 @@ Name|	Type|	Default|	Description
 
 
 
-## DialogActions
+## ZDialog
+
 
 ```jsx
 import React, { Component } from 'react'
@@ -488,17 +409,22 @@ export default function ZDialog() {
         <ZDialogTitle id="alert-dialog-title">
           {"Use Google's location service?"}
         </ZDialogTitle>
+
         <ZDialogContent>
+
           <DialogContentText id="alert-dialog-description">
            We made you to easy interact with the react through this "Zoi Common Component"
           </ZDialogContentText>
+
         </ZDialogContent>
+
         <ZDialogActions>
           <ZButton onClick={handleClose}>Disagree</Button>
           <ZButton onClick={handleClose} autoFocus>
             Agree
           </ZButton>
         </ZDialogActions>
+
       </ZDialog>
     </div>
   );
@@ -517,7 +443,116 @@ Prop Name | Type | Default | Description
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
+## ZAutoComplete 
+```jsx
 
+import React from 'react';
+import { ZAutocomplete } from 'react-zoi-common-components';
+
+export default function ComboBox() {
+    return (
+      <ZAutocomplete
+        disablePortal
+        id="combo-box-demo"
+        options={top100Films}
+        sx={{ width: 300 }}
+        renderInput={(params) => <TextField {...params} label="Movie" />}
+      />
+    );
+  }
+  const top100Films = [
+    { label: 'The Shawshank Redemption', year: 1994 },
+    { label: 'The Godfather', year: 1972 },
+    { label: 'The Godfather: Part II', year: 1974 },
+    { label: 'The Dark Knight', year: 2008 },
+    { label: '12 Angry Men', year: 1957 },
+    { label: "Schindler's List", year: 1993 },
+    { label: 'Pulp Fiction', year: 1994 },
+    {
+      label: 'The Lord of the Rings: The Return of the King',
+      year: 2003,
+    },
+    { label: 'The Good, the Bad and the Ugly', year: 1966 },
+    { label: 'Fight Club', year: 1999 },
+    {
+      label: 'The Lord of the Rings: The Fellowship of the Ring',
+      year: 2001,
+    },
+]; 
+
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
+## ZAvator 
+```jsx
+import * as React from 'react';
+import {ZAvatar} from 'react-zoi-common-components';
+
+export default function ZAvator() {
+  return (
+      <ZAvatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+      <ZAvatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+      <ZAvatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+  );
+}
+
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
+
+## ZDropZone
+
+```jsx
+import React from 'react';
+import {ZBox , ZDropZone} from 'react-zoi-commmon-components';
+
+const MyComponent = () => {
+  const handleDrop = (files) => {
+    console.log('Files dropped:', files);
+  };
+
+  return (
+    <ZBox sx={{ maxWidth: 600, margin: 'auto' }}>
+      <ZDropzone onDrop={handleDrop} accept="image/*" multiple label="Drop files here" />
+    </ZBox>
+  );
+};
+
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 ## TextField
 
