@@ -50,6 +50,8 @@ npm install --save react-zoi-common-components
     - [ToolBar](#ToolBar)
     - [ToolTip](#ToolTip)
     - [DesktopDatePicker](#DesktopDatePicker)
+    -[InputAdroment](#InputAdroment)
+    -[Link](#link)
     - [AutoComplete](#ZAutoComplete)
     - [Avator](#ZAvator)
     - [DropZone](#ZDropZone)
@@ -113,7 +115,131 @@ Prop Name | Type | Default | Description
 ## AutoCompleteAvatar
 ```jsx
 
- ## CardContent
+import React, { useState } from 'react';
+import { Autocomplete } from '@material-ui/lab';
+import { TextField, Avatar } from '@material-ui/core';
+
+const options = [
+  { name: 'Alice', avatar: 'https://i.pravatar.cc/50?img=1' },
+  { name: 'Bob', avatar: 'https://i.pravatar.cc/50?img=2' },
+  { name: 'Charlie', avatar: 'https://i.pravatar.cc/50?img=3' },
+  { name: 'Dave', avatar: 'https://i.pravatar.cc/50?img=4' },
+];
+
+const ZAutoCompleteAvatar = () => {
+  const [value, setValue] = useState(null);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const renderOption = (option) => (
+    <React.Fragment>
+      <Avatar alt={option.name} src={option.avatar} />
+      {option.name}
+    </React.Fragment>
+  );
+
+  return (
+    <Autocomplete
+      value={value}
+      onChange={handleChange}
+      options={options}
+      getOptionLabel={(option) => option.name}
+      renderOption={renderOption}
+      renderInput={(params) => <TextField {...params} label="Select a user" variant="outlined" />}
+    />
+  );
+};
+
+export default ZAutoCompleteAvatar;
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+options*|	array| |Array of options.
+renderInput*|	func|Render the input.Signature:function(params: object) => ReactNode
+autoComplete|	bool|	false|If true, the portion of the selected suggestion that has not been typed by the user, known as the completion string, appears inline after the input cursor in the textbox. The inline completion string is visually highlighted and has a selected state.
+disabled|	bool|	false|If true, the component is disabled.
+
+## Link
+```jsx
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const MyComponent = () => {
+  return (
+    <div>
+      <h1>Welcome to My App</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
+export default MyComponent;
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+children|node| |The content of the component.
+color	|any|	'primary'|The color of the link.
+TypographyClasses|object|		|classes prop applied to the Typography element.
+underline	|'always' 'hover''none'	|'always'|	
+Controls when the link should have an underline.
+
+## InputAdroment
+```jsx
+import React, { useState } from 'react';
+import Input from '@material-ui/core/Input';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import SearchIcon from '@material-ui/icons/Search';
+
+function SearchBar() {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  function handleSearch(event) {
+    // handle search logic here
+  }
+
+  return (
+    <Input
+      placeholder="Search"
+      value={searchTerm}
+      onChange={(event) => setSearchTerm(event.target.value)}
+      endAdornment={
+        <InputAdornment position="end">
+          <SearchIcon onClick={handleSearch} />
+        </InputAdornment>
+      }
+    />
+  );
+}
+
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+position*|	'end' 'start'| |The position this adornment should appear relative to the Input.
+children|node	|	|The content of the component, normally an IconButton or string.
+disableTypography|	bool|	false|If children is a string then disable wrapping in a Typography component.
+component	|elementType| |The component used for the root node. Either a string to use a HTML element or a component.
+
+
 
 ```jsx
 import React, { Component } from 'react'
@@ -187,7 +313,7 @@ Prop Name | Type | Default | Description
 
 
 
-## TabPanel  
+## ZTabPanel  
 
 
 ```jsx
@@ -232,6 +358,7 @@ Prop Name | Type | Default | Description
 `helperText` | String | | If `true`, The error text content.
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
 
 
 ## ZTabs
