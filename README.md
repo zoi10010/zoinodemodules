@@ -41,6 +41,7 @@ npm install --save react-zoi-common-components
     - [Tabs](#ZTabs)
     - [TabPanel](#ZTabPanel)
     - [TabList](#ZTabList)
+    - [TabContext](#ZTabList)
     - [DialogActions](#DialogActions)
     - [ToolBar](#ToolBar)
     - [ToolTip](#ToolTip)
@@ -225,7 +226,7 @@ Prop Name | Type | Default | Description
 
 
 
-## ZTabs ,
+## ZTabs
 
 ```jsx
 import React, { Component } from 'react'
