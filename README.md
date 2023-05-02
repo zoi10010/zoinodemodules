@@ -36,17 +36,8 @@ npm install --save react-zoi-common-components
     - [Header](#Header)
     - [Dropzone](#ZDropZone)
     - [Drawer](#Drawer)
-    - [Card](#Card)
     - [CardContent](#CardContent)
-    - [Tabs](#Tabs)
-    - [Tab](#Tab)
-    - [TabList](#TabList)
-    - [TabContent](#TabContent)
     - [TabPanel](#TabPanel)
-    - [Dialog](#Dialog)
-    - [DialogContent](#DialogContent)
-    - [DialogContentText](#DialogContentText)
-    - [DialogTitle](#DialogTitle)
     - [DialogActions](#DialogActions)
     - [ToolBar](#ToolBar)
     - [ToolTip](#ToolTip)
@@ -109,7 +100,7 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
-## Card , ## CardContent
+ ## CardContent
 
 ```jsx
 import React, { Component } from 'react'
@@ -147,10 +138,9 @@ Prop Name | Type | Default | Description
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
-## Tab , 
-## TabList ,  
-## TabPanel  ,
- ## TabContent
+
+## TabPanel  
+
 
 ```jsx
 import React, { Component } from 'react'
@@ -198,8 +188,8 @@ Prop Name | Type | Default | Description
 
 
 ## Tabs ,
- ## Tab , 
- ## TabPanel  
+
+  
 
 ```jsx
 import React, { Component } from 'react'
@@ -309,10 +299,6 @@ Name|	Type|	Default|	Description
 
 
 
-## Dialog ,
-## DialogContent ,
-## DialogContentText , 
-## DialogTitle ,
 ## DialogActions
 
 ```jsx
