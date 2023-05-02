@@ -66,4 +66,6 @@ export{default as ZDialogContentText} from"./components/dialog/ZDialogContentTex
 export{default as ZDialogTitle} from"./components/dialog/ZDialogTitle";
 export{default as ZToolbar} from"./components/toolbar/ZToolBar";
 export {default as ZTooltip} from "./components/toolTip/ZToolTip";
+export {default as ZAutocompleteAvatar} from "./components/autoCompleteAvatar/ZAutoCompleteAvatar";
+export {default as InputAdornment} from "./components/inputAdroment/InputAdroment";
 
