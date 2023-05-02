@@ -36,7 +36,7 @@ npm install --save react-zoi-common-components
     - [Header](#Header)
     - [Dropzone](#ZDropZone)
     - [Drawer](#ZDrawer)
-    - [Card](#ZCard)
+    - [Card](#Card)
     - [CardContent](#ZCardContent)
     - [Tabs](#ZTabs)
     - [Tab](#ZTab)
@@ -109,7 +109,7 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
-## ZCard 
+## ZCard , ## ZCardContent
 
 ```jsx
 import React, { Component } from 'react'
@@ -127,9 +127,8 @@ class ZCard extends Component {
     return (
       <div>
         <ZCard>
-          <ZCardContent>
-              <ZHeader>Card Using Zoi Common Component</ZHeader>
-          </ZCard>
+            <ZHeader>Card Using Zoi Common Component</ZHeader>
+        </ZCard>
     )
   }
 }
