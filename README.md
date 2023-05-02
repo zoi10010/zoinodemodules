@@ -186,7 +186,7 @@ import React, { Component } from 'react'
 
 import { ZTab , ZTabList , ZBox , ZTabList , ZTabPanel} from 'react-zoi-common-components'
 
-export default function LabTabs() {
+export default function ZTabPanel() {
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
@@ -272,9 +272,9 @@ Prop Name | Type | Default | Description
 
 ```jsx
 import React, { Component } from 'react'
-import { ZTab , ZTabs } from 'react-zoi-common-components'
+import { ZTab , ZTabs , ZTabList , ZBox , ZTabContext} from 'react-zoi-common-components'
 
-export default function BasicTabs() {
+export default function ZTabList() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
