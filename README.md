@@ -42,7 +42,11 @@ npm install --save react-zoi-common-components
     - [TabPanel](#ZTabPanel)
     - [TabList](#ZTabList)
     - [TabContext](#ZTabList)
-    - [DialogActions](#DialogActions)
+    - [DialogContent](#ZDialogContent)
+    - [DialogTitle](#ZDialogActions)
+    - [Dialog](#ZDialogActions)
+    - [DialogContentText](#ZDialogActions)
+    - [DialogActions](#ZDialogActions)
     - [ToolBar](#ToolBar)
     - [ToolTip](#ToolTip)
     - [DesktopDatePicker](#DesktopDatePicker)
@@ -369,7 +373,7 @@ Name|	Type|	Default|	Description
 
 
 
-## DialogActions
+## ZDialogActions
 
 ```jsx
 import React, { Component } from 'react'
@@ -400,17 +404,22 @@ export default function ZDialog() {
         <ZDialogTitle id="alert-dialog-title">
           {"Use Google's location service?"}
         </ZDialogTitle>
+
         <ZDialogContent>
+
           <DialogContentText id="alert-dialog-description">
            We made you to easy interact with the react through this "Zoi Common Component"
           </ZDialogContentText>
+
         </ZDialogContent>
+
         <ZDialogActions>
           <ZButton onClick={handleClose}>Disagree</Button>
           <ZButton onClick={handleClose} autoFocus>
             Agree
           </ZButton>
         </ZDialogActions>
+
       </ZDialog>
     </div>
   );
