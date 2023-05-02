@@ -109,7 +109,7 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
-## ZCard 
+## Card , ## CardContent
 
 ```jsx
 import React, { Component } from 'react'
@@ -232,7 +232,9 @@ Prop Name | Type | Default | Description
 
 
 
-## Tabs , ## Tab ,  ## TabPanel  
+## Tabs ,
+ ## Tab , 
+ ## TabPanel  
 
 ```jsx
 import React, { Component } from 'react'
