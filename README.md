@@ -36,7 +36,7 @@ npm install --save react-zoi-common-components
     - [Header](#Header)
     - [Dropzone](#ZDropZone)
     - [Drawer](#ZDrawer)
-    - [Card](#Card)
+    - [Card](#ZCard)
     - [CardContent](#ZCardContent)
     - [Tabs](#ZTabs)
     - [Tab](#ZTab)
@@ -109,14 +109,14 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
-## Card , ## CardContent
+## ZCard 
 
 ```jsx
 import React, { Component } from 'react'
 
 import { ZCard ,ZHeader} from 'react-zoi-common-components'
 
-class Card extends Component {
+class ZCard extends Component {
   constructor(props) {
     super(props)
     this.state={
