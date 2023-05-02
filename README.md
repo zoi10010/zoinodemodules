@@ -36,7 +36,7 @@ npm install --save react-zoi-common-components
     - [Header](#Header)
     - [Dropzone](#ZDropZone)
     - [Drawer](#ZDrawer)
-    - [Card](#ZMuiCard)
+    - [Card](#Card)
     - [CardContent](#ZCardContent)
     - [Tabs](#ZTabs)
     - [Tab](#ZTab)
