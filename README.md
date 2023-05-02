@@ -51,7 +51,7 @@ npm install --save react-zoi-common-components
     - [ToolTip](#ToolTip)
     - [DesktopDatePicker](#DesktopDatePicker)
     - [InputAdroment](#InputAdroment)
-    - [Link] (#link)
+    - [Link](#link)
     - [AutoComplete](#ZAutoComplete)
     - [Avator](#ZAvator)
     - [DropZone](#ZDropZone)
