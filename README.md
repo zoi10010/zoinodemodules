@@ -50,6 +50,7 @@ npm install --save react-zoi-common-components
     - [ToolBar](#ToolBar)
     - [ToolTip](#ToolTip)
     - [DesktopDatePicker](#DesktopDatePicker)
+    - [AutoComplete](#ZAutoComplete)
 <!-- /TOC -->
 
 ## Drawer
@@ -108,7 +109,7 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
- ## ZCard
+## ZCard
 
 ```jsx
 import React, { Component } from 'react'
@@ -373,7 +374,7 @@ Name|	Type|	Default|	Description
 
 
 
-## ZDialogActions
+## ZDialog
 
 
 ```jsx
@@ -439,7 +440,56 @@ Prop Name | Type | Default | Description
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
+## ZAutoComplete 
+```jsx
 
+import React from 'react';
+import { Autocomplete } from '@mui/material';
+
+export default function ComboBox() {
+    return (
+      <Autocomplete
+        disablePortal
+        id="combo-box-demo"
+        options={top100Films}
+        sx={{ width: 300 }}
+        renderInput={(params) => <TextField {...params} label="Movie" />}
+      />
+    );
+  }
+  const top100Films = [
+    { label: 'The Shawshank Redemption', year: 1994 },
+    { label: 'The Godfather', year: 1972 },
+    { label: 'The Godfather: Part II', year: 1974 },
+    { label: 'The Dark Knight', year: 2008 },
+    { label: '12 Angry Men', year: 1957 },
+    { label: "Schindler's List", year: 1993 },
+    { label: 'Pulp Fiction', year: 1994 },
+    {
+      label: 'The Lord of the Rings: The Return of the King',
+      year: 2003,
+    },
+    { label: 'The Good, the Bad and the Ugly', year: 1966 },
+    { label: 'Fight Club', year: 1999 },
+    {
+      label: 'The Lord of the Rings: The Fellowship of the Ring',
+      year: 2001,
+    },
+]; 
+
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 ## TextField
 
