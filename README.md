@@ -692,7 +692,7 @@ Prop Name | Type | Default | Description
 ```jsx
 
 import React from 'react';
-import { Table, TableBody, TableCell, TableHead, TableRow , TableContainer , TableFooter} from '@material-ui/core';
+import { Table, TableBody, TableCell, TableHead, TableRow , TableContainer , TableFooter} from 'react-zoi-common-components';
 
 const rows = [
   { id: 1, name: 'John', age: 25 },
@@ -714,27 +714,27 @@ export default function ZTable() {
   };
 
   return (
-  <TableContainer component={Paper}>
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell>ID</TableCell>
-          <TableCell>Name</TableCell>
-          <TableCell>Age</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
+  <ZTableContainer component={Paper}>
+    <ZTable>
+      <ZTableHead>
+        <ZTableRow>
+          <ZTableCell>ID</TableCell>
+          <ZTableCell>Name</TableCell>
+          <ZTableCell>Age</TableCell>
+        </ZTableRow>
+      </ZTableHead>
+      <ZTableBody>
         {rows.map((row) => (
-          <TableRow key={row.id}>
-            <TableCell>{row.id}</TableCell>
-            <TableCell>{row.name}</TableCell>
-            <TableCell>{row.age}</TableCell>
-          </TableRow>
+          <ZTableRow key={row.id}>
+            <ZTableCell>{row.id}</TableCell>
+            <ZTableCell>{row.name}</TableCell>
+            <ZTableCell>{row.age}</TableCell>
+          </ZTableRow>
         ))}
-      </TableBody>
-              <TableFooter>
-          <TableRow>
-            <TablePagination
+      </ZTableBody>
+              <ZTableFooter>
+          <ZTableRow>
+            <ZTablePagination
               rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
               colSpan={3}
               count={rows.length}
@@ -749,11 +749,11 @@ export default function ZTable() {
               onPageChange={handleChangePage}
               onRowsPerPageChange={handleChangeRowsPerPage}
             />
-          </TableRow>
-        </TableFooter>
+          </ZTableRow>
+        </ZTableFooter>
 
-    </Table>
-  </TableContainer>
+    </ZTable>
+  </ZTableContainer>
 
   );
 }
