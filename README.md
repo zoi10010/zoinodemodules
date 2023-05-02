@@ -36,7 +36,7 @@ npm install --save react-zoi-common-components
     - [Header](#Header)
     - [Dropzone](#ZDropZone)
     - [Drawer](#Drawer)
-    - [Card](#ZMuiCard)
+    - [Card](#Card)
     - [CardContent](#CardContent)
     - [Tabs](#Tabs)
     - [Tab](#Tab)
@@ -109,7 +109,8 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
 
 
-## Card , ## CardContent
+## Card ,
+ ## CardContent
 
 ```jsx
 import React, { Component } from 'react'
@@ -197,7 +198,9 @@ Prop Name | Type | Default | Description
 
 
 
-## Tabs , ## Tab ,  ## TabPanel  
+## Tabs ,
+ ## Tab , 
+ ## TabPanel  
 
 ```jsx
 import React, { Component } from 'react'
