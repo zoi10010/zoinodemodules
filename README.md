@@ -51,6 +51,7 @@ npm install --save react-zoi-common-components
     - [ToolTip](#ToolTip)
     - [DesktopDatePicker](#DesktopDatePicker)
     - [AutoComplete](#ZAutoComplete)
+    - [Avator](#ZAvator)
 <!-- /TOC -->
 
 ## Drawer
@@ -444,11 +445,11 @@ Prop Name | Type | Default | Description
 ```jsx
 
 import React from 'react';
-import { Autocomplete } from '@mui/material';
+import { ZAutocomplete } from 'react-zoi-common-components';
 
 export default function ComboBox() {
     return (
-      <Autocomplete
+      <ZAutocomplete
         disablePortal
         id="combo-box-demo"
         options={top100Films}
@@ -490,6 +491,34 @@ Prop Name | Type | Default | Description
 `helperText` | String | | If `true`, The error text content.
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
+## ZAvator 
+```jsx
+import * as React from 'react';
+import {ZAvatar} from 'react-zoi-common-components';
+
+export default function ZAvator() {
+  return (
+      <ZAvatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+      <ZAvatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+      <ZAvatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+  );
+}
+
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
 
 ## TextField
 
