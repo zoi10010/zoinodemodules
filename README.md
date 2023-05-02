@@ -42,7 +42,7 @@ npm install --save react-zoi-common-components
     - [TabPanel](#ZTabPanel)
     - [TabList](#ZTabList)
     - [TabContext](#ZTabList)
-    - [DialogContent](#ZDialogContent)
+    - [DialogContent](#ZDialogActions)
     - [DialogTitle](#ZDialogActions)
     - [Dialog](#ZDialogActions)
     - [DialogContentText](#ZDialogActions)
