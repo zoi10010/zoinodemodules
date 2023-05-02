@@ -53,6 +53,13 @@ npm install --save react-zoi-common-components
     - [AutoComplete](#ZAutoComplete)
     - [Avator](#ZAvator)
     - [DropZone](#ZDropZone)
+    - [Table](#ZTable)
+    - [TableBody](#ZTable)
+    - [TableCell](#ZTable)
+    - [TableHead](#ZTable)
+    - [TableRow](#ZTable)
+    - [TableContainer](#ZTable)
+    - [TableFooter](#ZTable)
 <!-- /TOC -->
 
 ## Drawer
@@ -552,6 +559,91 @@ Prop Name | Type | Default | Description
 `helperText` | String | | If `true`, The error text content.
 `InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
+## ZTable
+```jsx
+
+import React from 'react';
+import { Table, TableBody, TableCell, TableHead, TableRow , TableContainer , TableFooter} from '@material-ui/core';
+
+const rows = [
+  { id: 1, name: 'John', age: 25 },
+  { id: 2, name: 'Jane', age: 30 },
+  { id: 3, name: 'Bob', age: 40 },
+];
+
+export default function ZTable() {
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  return (
+  <TableContainer component={Paper}>
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell>ID</TableCell>
+          <TableCell>Name</TableCell>
+          <TableCell>Age</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {rows.map((row) => (
+          <TableRow key={row.id}>
+            <TableCell>{row.id}</TableCell>
+            <TableCell>{row.name}</TableCell>
+            <TableCell>{row.age}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+              <TableFooter>
+          <TableRow>
+            <TablePagination
+              rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+              colSpan={3}
+              count={rows.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              SelectProps={{
+                inputProps: {
+                  'aria-label': 'rows per page',
+                },
+                native: true,
+              }}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </TableRow>
+        </TableFooter>
+
+    </Table>
+  </TableContainer>
+
+  );
+}
+
+```
+`Property`
+
+Prop Name | Type | Default | Description
+--- | --- | --- | ---
+`value` | String | | Value represented by this `Input` if it is controlled. 
+`isLoading` | bool | | If `true`, Skeleton component load. 
+`defaultValue` | String | | Default value represented by this `Input` if it is uncontrolled.
+`disabled` | bool | false| If `true`, the component is disabled.
+`error` | bool |false | If  `true`, the label is displayed in an error state.
+`helperText` | String | | If `true`, The error text content.
+`InputProps` | object | | Props applied to the Input element. It will be a FilledInput, OutlinedInput or Input component depending on the variant prop value.
+`variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use.
+
 
 ## TextField
 
