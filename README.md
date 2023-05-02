@@ -40,7 +40,7 @@ npm install --save react-zoi-common-components
     - [CardContent](#CardContent)
     - [Tabs](#ZTabs)
     - [TabPanel](#ZTabPanel)
-    - [TabList](#ZTabList and ZTabContext)
+    - [TabList](#ZTabList)
     - [TabContext](#ZTabList)
     - [DialogActions](#DialogActions)
     - [ToolBar](#ToolBar)
@@ -268,7 +268,7 @@ Prop Name | Type | Default | Description
 `variant` | 'filled'| 'outlined'| 'standard' | outlined| If `true`, The variant to use. -->
 
 
-## ZTabList and ZTabContext ,
+## ZTabList ,
 
 ```jsx
 import React, { Component } from 'react'
